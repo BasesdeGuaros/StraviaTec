@@ -5,14 +5,18 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {ConnectionServiceModule} from 'ng-connection-service';
 
 
+
 import { AppComponent } from './app.component';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
-
 import { RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { LobbyComponent } from './lobby/lobby.component';
 import { AmigosComponent } from './amigos/amigos.component';
+import { GroupsComponent } from './groups/groups.component';
+import { RacingComponent } from './racing/racing.component';
+import { ChallengingComponent } from './challenging/challenging.component';
+import { OrganizerComponent } from './organizer/organizer.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +24,11 @@ import { AmigosComponent } from './amigos/amigos.component';
     LoginComponent,
     SignupComponent,
     LobbyComponent,
-    AmigosComponent
+    AmigosComponent,
+    GroupsComponent,
+    RacingComponent,
+    ChallengingComponent,
+    OrganizerComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +44,10 @@ import { AmigosComponent } from './amigos/amigos.component';
       { path: '', component: LoginComponent, pathMatch: 'full' },
       { path: 'signup', component: SignupComponent},
       { path: 'lobby', component: LobbyComponent},
-      { path: 'friends', component: AmigosComponent}
+      { path: 'friends', component: AmigosComponent},
+      { path: 'race', component: RacingComponent},
+      { path: 'groups', component: GroupsComponent},
+      { path: 'organizer', component: OrganizerComponent}
     
     ])
   ],
