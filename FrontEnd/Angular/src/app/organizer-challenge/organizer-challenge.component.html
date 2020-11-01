@@ -1,1 +1,187 @@
-<p>organizer-challenge works!</p>
+<!-- Editable table -->
+<div class="card">
+    <h3 class="card-header text-center font-weight-bold text-uppercase py-4">Gestión de Retos</h3>
+    <div class="card-body">
+      <div id="table" class="table-editable">
+        <span class="table-add float-right mb-3 mr-2">
+          <a class="text-success" (click)="frame.show()">
+            <mdb-icon fas icon="plus" size="2x"></mdb-icon>
+          </a>
+        </span>
+        <table class="table table-bordered table-responsive-md table-striped text-center">
+          <tr>
+            <th class="text-center">Nombre de Reto</th>
+            <th class="text-center">Progreso</th>
+            <th class="text-center">Periodo de Disponibilidad</th>
+            <th class="text-center">Tipo de Actividad</th>
+            <th class="text-center">Es Privado</th>
+            <th class="text-center">Fondo o Altitud</th>
+            <th class="text-center">Lista de Patrocinadores</th>
+            <th class="text-center">Eliminar</th>
+          </tr>
+          <tr *ngFor="let person of personList; let id = index"> <!--ng for de la lista de la base de datos--->
+            <td>
+              <span (keyup)="changeValue(id, 'name', $event)" (blur)="updateList(id, 'name', $event)" contenteditable="true">{{person.name}}</span>
+            </td>
+            <td>
+                <br>
+                <div class="progress">
+                    <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+            </td>
+            <td>
+              <span contenteditable="true" (keyup)="changeValue(id, 'age', $event)" (blur)="updateList(id, 'age', $event)">{{person.age}}</span>
+            </td>
+            <td>
+              <span contenteditable="true" (keyup)="changeValue(id, 'companyName', $event)" (blur)="updateList(id, 'companyName', $event)">{{person.companyName}}</span>
+            </td>
+            <td>
+              <span contenteditable="true" (keyup)="changeValue(id, 'country', $event)" (blur)="updateList(id, 'country', $event)">{{person.country}}</span>
+            </td>
+            <td>
+              <span contenteditable="true" (keyup)="changeValue(id, 'city', $event)" (blur)="updateList(id, 'city', $event)">{{person.city}}</span>
+            </td>
+            <td>
+                <span contenteditable="true" (keyup)="changeValue(id, 'city', $event)" (blur)="updateList(id, 'city', $event)">{{person.city}}</span>
+            </td>
+            <td>
+              <span class="table-remove">
+                <button type="button" mdbBtn color="danger" rounded="true" size="sm" class="my-0" (click)="remove(id)">Eliminar</button>
+              </span>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+  <!-- Editable table -->
+
+  <!-- New Form -->
+<div mdbModal #frame="mdbModal" class="modal fade left" id="frameModalTop" tabindex="-1" role="dialog"
+     aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Nuevo Reto</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="frame.hide()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <div class="modal-body mx-3">
+
+        <div class="md-form mb-5">
+          <mdb-icon fas icon="user" class="prefix grey-text"></mdb-icon>
+          <input type="text" id="form34" class="form-control" mdbInput mdbValidate [formControl]="contactFormModalName">
+          <label for="form34">Nombre del Reto</label>
+          <mdb-error
+            *ngIf="contactFormModalName.invalid && (contactFormModalName.dirty || contactFormModalName.touched)">Input
+            invalid
+          </mdb-error>
+          <mdb-success
+            *ngIf="contactFormModalName.valid && (contactFormModalName.dirty || contactFormModalName.touched)">Input
+            valid
+          </mdb-success>
+        </div>
+
+        <div class="md-form mb-5">
+          <mdb-icon fas icon="envelope" class="prefix grey-text"></mdb-icon>
+          <label for="form29">Periodo del Reto</label>
+
+          <input type="date" id="form29" class="form-control" mdbInput mdbValidate [formControl]="contactFormModalEmail">
+          <input type="date" id="form30" class="form-control" mdbInput mdbValidate [formControl]="contactFormModalEmail">
+          <mdb-error
+            *ngIf="contactFormModalEmail.invalid && (contactFormModalEmail.dirty || contactFormModalEmail.touched)">
+            Input invalid
+          </mdb-error>
+          <mdb-success
+            *ngIf="contactFormModalEmail.valid && (contactFormModalEmail.dirty || contactFormModalEmail.touched)">Input
+            valid
+          </mdb-success>
+        </div>
+
+        <div class="md-form mb-5">
+            <mdb-icon fas icon="user" class="prefix grey-text"></mdb-icon>
+            
+            <select class="browser-default custom-select mb-5 ">
+                <option value="" disabled>Tipo de Actividad</option>
+                <option value="1">Correr</option>
+                <option value="2">Nadar</option>
+                <option value="3">Ciclismo</option>
+                <option value="4">Senderismo</option>
+                <option value="5">Kayak</option>
+                <option value="6">Caminata</option>
+            </select>
+
+            <mdb-error
+              *ngIf="contactFormModalName.invalid && (contactFormModalName.dirty || contactFormModalName.touched)">Input
+              invalid
+            </mdb-error>
+            <mdb-success
+              *ngIf="contactFormModalName.valid && (contactFormModalName.dirty || contactFormModalName.touched)">Input
+              valid
+            </mdb-success>
+        </div>
+
+        <div class="md-form mb-5">
+            <mdb-icon fas icon="user" class="prefix grey-text"></mdb-icon>
+            
+            <label>Privacidad</label>
+            <select class="browser-default custom-select mb-4">
+                <option value="" disabled>¿Es privado?</option>
+                <option value="1" selected>Si</option>
+                <option value="2">No</option>
+            </select>
+
+            <mdb-error
+              *ngIf="contactFormModalName.invalid && (contactFormModalName.dirty || contactFormModalName.touched)">Input
+              invalid
+            </mdb-error>
+            <mdb-success
+              *ngIf="contactFormModalName.valid && (contactFormModalName.dirty || contactFormModalName.touched)">Input
+              valid
+            </mdb-success>
+        </div>
+
+        <div class="md-form mb-5">
+            <mdb-icon fas icon="user" class="prefix grey-text"></mdb-icon>
+            
+            <label>Privacidad</label>
+            <select class="browser-default custom-select mb-4">
+                <option value="" disabled>¿Fondo o Altitud?</option>
+                <option value="1" selected>Fondo</option>
+                <option value="2">Altitud</option>
+            </select>
+
+            <mdb-error
+              *ngIf="contactFormModalName.invalid && (contactFormModalName.dirty || contactFormModalName.touched)">Input
+              invalid
+            </mdb-error>
+            <mdb-success
+              *ngIf="contactFormModalName.valid && (contactFormModalName.dirty || contactFormModalName.touched)">Input
+              valid
+            </mdb-success>
+        </div>
+
+          <div class="md-form mb-5">
+            <mdb-icon fas icon="user" class="prefix grey-text"></mdb-icon>
+            <input type="text" id="form34" class="form-control" mdbInput mdbValidate [formControl]="contactFormModalName">
+            <label for="form34">Lista de Patrocinadores</label>
+            <mdb-error
+              *ngIf="contactFormModalName.invalid && (contactFormModalName.dirty || contactFormModalName.touched)">Input
+              invalid
+            </mdb-error>
+            <mdb-success
+              *ngIf="contactFormModalName.valid && (contactFormModalName.dirty || contactFormModalName.touched)">Input
+              valid
+            </mdb-success>
+          </div>
+      </div>
+      <div class="modal-footer d-flex justify-content-center">
+        <button mdbBtn color="unique" class="waves-light" mdbWavesEffect>Send
+          <mdb-icon far icon="paper-plane" class="ml-1"></mdb-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
