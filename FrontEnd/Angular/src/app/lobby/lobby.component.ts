@@ -14,11 +14,7 @@ export class LobbyComponent implements OnInit {
 
 
   constructor() { }
-
   
-
-  
-
   ngOnInit(): void {
 
     this.validatingForm = new FormGroup({

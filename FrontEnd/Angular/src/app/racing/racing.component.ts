@@ -11,9 +11,11 @@ import {FormControl, FormGroup, Validators} from "@angular/forms";
 export class RacingComponent implements OnInit {
   validatingForm: FormGroup;
 
-
-  
   constructor() { }
+
+  races = [{"name":"Carrera CE","descript":"description of ce carrier"},
+  {"name":"Amazing Race","descript":"amazing race its the better"},
+  {"name":"Carrera Garza","descript":"fuck daniel sing and elias are gays"}]
 
   ngOnInit(): void {
     this.validatingForm = new FormGroup({
