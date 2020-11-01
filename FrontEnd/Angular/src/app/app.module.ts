@@ -17,6 +17,9 @@ import { GroupsComponent } from './groups/groups.component';
 import { RacingComponent } from './racing/racing.component';
 import { ChallengingComponent } from './challenging/challenging.component';
 import { OrganizerComponent } from './organizer/organizer.component';
+import { OrganizerRaceComponent } from './organizer-race/organizer-race.component';
+import { OrganizerChallengeComponent } from './organizer-challenge/organizer-challenge.component';
+import { OrganizerGroupComponent } from './organizer-group/organizer-group.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +31,10 @@ import { OrganizerComponent } from './organizer/organizer.component';
     GroupsComponent,
     RacingComponent,
     ChallengingComponent,
-    OrganizerComponent
+    OrganizerComponent,
+    OrganizerRaceComponent,
+    OrganizerChallengeComponent,
+    OrganizerGroupComponent
   ],
   imports: [
     BrowserModule,
@@ -46,8 +52,12 @@ import { OrganizerComponent } from './organizer/organizer.component';
       { path: 'lobby', component: LobbyComponent},
       { path: 'friends', component: AmigosComponent},
       { path: 'race', component: RacingComponent},
+      { path: "challenge", component: ChallengingComponent},
       { path: 'groups', component: GroupsComponent},
-      { path: 'organizer', component: OrganizerComponent}
+      { path: 'organizer', component: OrganizerComponent},
+      { path: 'organizerRace', component: OrganizerRaceComponent},
+      { path: 'organizerChallenge', component: OrganizerChallengeComponent},
+      { path: 'organizerGroup', component: OrganizerGroupComponent}
     
     ])
   ],
