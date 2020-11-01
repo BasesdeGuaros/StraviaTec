@@ -54,6 +54,16 @@
           Buscar amigos
         </button>
       </form>
+      
+    
+      
+      <div class="container2">  
+        <input class="search-input" type="text" placeholder="Search here..." />
+        <div class="suggestions">
+        </div>
+      </div>
+     
+
     </links>
   </mdb-navbar>
 
@@ -214,7 +224,7 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header text-center">
-          <h4 class="modal-title w-100 font-weight-bold">Sign up</h4>
+          <h4 class="modal-title w-100 font-weight-bold">Editar información</h4>
           <button
             type="button"
             class="close"
@@ -226,91 +236,236 @@
           </button>
         </div>
         <div class="modal-body mx-3">
-          <div class="md-form mb-5">
-            <mdb-icon fas icon="user" class="prefix grey-text"></mdb-icon>
-            <input
-              type="text"
-              id="orangeForm-name"
-              class="form-control"
-              [formControl]="signupFormModalName"
-              mdbInput
-              mdbValidate
-            />
-            <label for="orangeForm-name">Your name</label>
-            <mdb-error
-              *ngIf="
-                signupFormModalName.invalid &&
-                (signupFormModalName.dirty || signupFormModalName.touched)
-              "
-            >
-              Input invalid
-            </mdb-error>
-            <mdb-success
-              *ngIf="
-                signupFormModalName.valid &&
-                (signupFormModalName.dirty || signupFormModalName.touched)
-              "
-            >
-              Input valid
-            </mdb-success>
-          </div>
-          <div class="md-form mb-5">
-            <mdb-icon fas icon="envelope" class="prefix grey-text"></mdb-icon>
-            <input
-              type="email"
-              id="orangeForm-email"
-              class="form-control"
-              [formControl]="signupFormModalEmail"
-              mdbInput
-              mdbValidate
-            />
-            <label for="orangeForm-email">Your email</label>
-            <mdb-error
-              *ngIf="
-                signupFormModalEmail.invalid &&
-                (signupFormModalEmail.dirty || signupFormModalEmail.touched)
-              "
-              >Input invalid
-            </mdb-error>
-            <mdb-success
-              *ngIf="
-                signupFormModalEmail.valid &&
-                (signupFormModalEmail.dirty || signupFormModalEmail.touched)
-              "
-              >Input valid
-            </mdb-success>
+
+          <div class = "row">
+            <div class="col">
+              <div class="md-form mb-5">
+                <mdb-icon fas icon="address-card" class="prefix grey-text"></mdb-icon>
+    
+                <input
+                  type="text"
+                  id="orangeForm-name"
+                  class="form-control"
+                  [formControl]="signupFormModalName"
+                  mdbInput
+                  mdbValidate
+                />
+                <label for="orangeForm-name">Nombre</label>
+
+                <mdb-error
+                  *ngIf="
+                    signupFormModalName.invalid &&
+                    (signupFormModalName.dirty || signupFormModalName.touched)
+                  "
+                >
+                  Input invalid
+                </mdb-error>
+                <mdb-success
+                  *ngIf="
+                    signupFormModalName.valid &&
+                    (signupFormModalName.dirty || signupFormModalName.touched)
+                  "
+                >
+                  Input valid
+                </mdb-success>
+              </div>
+            </div>
+            <div class="col">
+              <div class="md-form mb-5">
+                <mdb-icon fas icon="address-card" class="prefix grey-text"></mdb-icon>
+                <input
+                  type="text"
+                  id="orangeForm-email"
+                  class="form-control"
+                  [formControl]="signupFormModalEmail"
+                  mdbInput
+                  mdbValidate
+                />
+                <label for="orangeForm-email">Apellidos</label>
+                <mdb-error
+                  *ngIf="
+                    signupFormModalEmail.invalid &&
+                    (signupFormModalEmail.dirty || signupFormModalEmail.touched)
+                  "
+                  >Input invalid
+                </mdb-error>
+                <mdb-success
+                  *ngIf="
+                    signupFormModalEmail.valid &&
+                    (signupFormModalEmail.dirty || signupFormModalEmail.touched)
+                  "
+                  >Input valid
+                </mdb-success>
+              </div>
+            </div>
+
           </div>
 
-          <div class="md-form mb-4">
-            <mdb-icon fas icon="lock" class="prefix grey-text"></mdb-icon>
-            <input
-              type="password"
-              id="orangeForm-pass"
-              class="form-control"
-              [formControl]="signupFormModalPassword"
-              mdbInput
-              mdbValidate
-            />
-            <label for="orangeForm-pass">Your password</label>
-            <mdb-error
-              *ngIf="
-                signupFormModalPassword.invalid &&
-                (signupFormModalPassword.dirty ||
-                  signupFormModalPassword.touched)
-              "
-            >
-              Input invalid
-            </mdb-error>
-            <mdb-success
-              *ngIf="
-                signupFormModalPassword.valid &&
-                (signupFormModalPassword.dirty ||
-                  signupFormModalPassword.touched)
-              "
-            >
-              Input valid
-            </mdb-success>
+          <div class = "row">
+            <div class="col">
+              <div class="md-form mb-5">
+                <mdb-icon fas icon="hourglass-half" class="prefix grey-text"></mdb-icon>
+    
+                <input
+                  type="text"
+                  id="orangeForm-name"
+                  class="form-control"
+                  [formControl]="signupFormModalName"
+                  mdbInput
+                  mdbValidate
+                />
+                <label for="orangeForm-name">Nacimiento</label>
+                <mdb-error
+                  *ngIf="
+                    signupFormModalName.invalid &&
+                    (signupFormModalName.dirty || signupFormModalName.touched)
+                  "
+                >
+                  Input invalid
+                </mdb-error>
+                <mdb-success
+                  *ngIf="
+                    signupFormModalName.valid &&
+                    (signupFormModalName.dirty || signupFormModalName.touched)
+                  "
+                >
+                  Input valid
+                </mdb-success>
+              </div>
+            </div>
+            <div class="col">
+              <div class="md-form mb-5">
+                <mdb-icon fas icon="globe-americas" class="prefix grey-text"></mdb-icon>
+                <input
+                  type="text"
+                  id="orangeForm-email"
+                  class="form-control"
+                  [formControl]="signupFormModalEmail"
+                  mdbInput
+                  mdbValidate
+                />
+                <label for="orangeForm-email">Nacionalidad</label>
+                <mdb-error
+                  *ngIf="
+                    signupFormModalEmail.invalid &&
+                    (signupFormModalEmail.dirty || signupFormModalEmail.touched)
+                  "
+                  >Input invalid
+                </mdb-error>
+                <mdb-success
+                  *ngIf="
+                    signupFormModalEmail.valid &&
+                    (signupFormModalEmail.dirty || signupFormModalEmail.touched)
+                  "
+                  >Input valid
+                </mdb-success>
+              </div>
+            </div>
+
           </div>
+          <div class = "row">
+            <div class="col">
+              <div class="md-form mb-5">
+                <mdb-icon fas icon="file" class="prefix grey-text"></mdb-icon>
+    
+                <input
+                  type="text"
+                  id="orangeForm-name"
+                  class="form-control"
+                  [formControl]="signupFormModalName"
+                  mdbInput
+                  mdbValidate
+                />
+                <label for="orangeForm-name">Foto</label>
+                <mdb-error
+                  *ngIf="
+                    signupFormModalName.invalid &&
+                    (signupFormModalName.dirty || signupFormModalName.touched)
+                  "
+                >
+                  Input invalid
+                </mdb-error>
+                <mdb-success
+                  *ngIf="
+                    signupFormModalName.valid &&
+                    (signupFormModalName.dirty || signupFormModalName.touched)
+                  "
+                >
+                  Input valid
+                </mdb-success>
+              </div>
+            </div>
+            <div class="col">
+              <div class="md-form mb-5">
+                <mdb-icon fas icon="user" class="prefix grey-text"></mdb-icon>
+                <input
+                  type="text"
+                  id="orangeForm-email"
+                  class="form-control"
+                  [formControl]="signupFormModalEmail"
+                  mdbInput
+                  mdbValidate
+                />
+                <label for="orangeForm-email">Nombre de Usuario</label>
+                <mdb-error
+                  *ngIf="
+                    signupFormModalEmail.invalid &&
+                    (signupFormModalEmail.dirty || signupFormModalEmail.touched)
+                  "
+                  >Input invalid
+                </mdb-error>
+                <mdb-success
+                  *ngIf="
+                    signupFormModalEmail.valid &&
+                    (signupFormModalEmail.dirty || signupFormModalEmail.touched)
+                  "
+                  >Input valid
+                </mdb-success>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="row">
+            
+            <div class="col">
+              <div class="md-form mb-4">
+                <mdb-icon fas icon="lock" class="prefix grey-text"></mdb-icon>
+                <input
+                  type="password"
+                  id="orangeForm-pass"
+                  class="form-control"
+                  [formControl]="signupFormModalPassword"
+                  mdbInput
+                  mdbValidate
+                />
+                <label for="orangeForm-pass">Your password</label>
+                <mdb-error
+                  *ngIf="
+                    signupFormModalPassword.invalid &&
+                    (signupFormModalPassword.dirty ||
+                      signupFormModalPassword.touched)
+                  "
+                >
+                  Input invalid
+                </mdb-error>
+                <mdb-success
+                  *ngIf="
+                    signupFormModalPassword.valid &&
+                    (signupFormModalPassword.dirty ||
+                      signupFormModalPassword.touched)
+                  "
+                >
+                  Input valid
+                </mdb-success>
+              </div>
+            </div>
+          </div>
+
+          
+          
+          
+          
         </div>
         <div class="modal-footer d-flex justify-content-center">
           <button mdbBtn color="deep-orange" class="waves-light" mdbWavesEffect>
