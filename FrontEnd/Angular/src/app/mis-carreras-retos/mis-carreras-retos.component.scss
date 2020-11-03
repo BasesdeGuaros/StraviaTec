@@ -49,9 +49,9 @@ header,
 }
 
 .rgba-gradient {
-  background: -moz-linear-gradient(45deg, rgba(213, 15, 61, 0.6), rgba(13, 17, 198, 0.69) 100%);
-  background: -webkit-linear-gradient(45deg, rgba(213, 15, 61, 0.6), rgba(13, 17, 198, 0.69) 100%);
-  background: linear-gradient(45deg, rgba(213, 15, 61, 0.6), rgba(13, 17, 198, 0.69) 100%);
+  background: -moz-linear-gradient(45deg, rgba(31, 204, 88, 0.6), rgba(212, 148, 28, 0.69) 100%);
+  background: -webkit-linear-gradient(45deg, rgba(15, 213, 203, 0.6), rgba(194, 30, 166, 0.69) 100%);
+  background: linear-gradient(45deg, rgba(216, 203, 15, 0.6), rgba(22, 25, 175, 0.69) 100%);
 }
 
 .view.mask {
@@ -128,6 +128,7 @@ body {
 }
 
 .mygradientbg{
+
   background: rgb(2,0,36);
   background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
 }
