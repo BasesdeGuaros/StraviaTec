@@ -23,6 +23,8 @@ export class RacingComponent implements OnInit {
       loginFormModalPassword: new FormControl('', Validators.required)
     });
   }
+  
+  
 
   get loginFormModalEmail() {
     return this.validatingForm.get('loginFormModalEmail');

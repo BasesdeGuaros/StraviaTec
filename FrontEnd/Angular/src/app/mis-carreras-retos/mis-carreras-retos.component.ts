@@ -2,14 +2,18 @@ import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 
 @Component({
-  selector: 'app-challenging',
-  templateUrl: './challenging.component.html',
-  styleUrls: ['./challenging.component.scss']
+  selector: 'app-mis-carreras-retos',
+  templateUrl: './mis-carreras-retos.component.html',
+  styleUrls: ['./mis-carreras-retos.component.scss']
 })
-export class ChallengingComponent implements OnInit {
+export class MisCarrerasRetosComponent implements OnInit {
   validatingForm: FormGroup;
-
   constructor() { }
+
+  races = [{"name":"Carrera CE","descript":"description of ce carrier"},
+  {"name":"Amazing Race","descript":"amazing race its the better"},
+  {"name":"Carrera Garza","descript":"fuck daniel sing and elias are gays"}]
+
   challenges = [{"name":"Carrera CE","descript":"description of ce carrier"},
   {"name":"Amazing Race","descript":"amazing race its the better"},
   {"name":"Carrera Garza","descript":"fuck daniel sing and elias are gays"}]
@@ -21,6 +25,7 @@ export class ChallengingComponent implements OnInit {
     });
   }
 
+  
   get loginFormModalEmail() {
     return this.validatingForm.get('loginFormModalEmail');
   }
@@ -30,5 +35,3 @@ export class ChallengingComponent implements OnInit {
   }
 
 }
-
-
