@@ -1,21 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RacingComponent } from './racing.component';
+import { MisCarrerasRetosComponent } from './mis-carreras-retos.component';
 
-describe('RacingComponent', () => {
-  let component: RacingComponent;
-  let fixture: ComponentFixture<RacingComponent>;
+describe('MisCarrerasRetosComponent', () => {
+  let component: MisCarrerasRetosComponent;
+  let fixture: ComponentFixture<MisCarrerasRetosComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ RacingComponent ]
+      declarations: [ MisCarrerasRetosComponent ]
     })
     .compileComponents();
   });
 
-  
   beforeEach(() => {
-    fixture = TestBed.createComponent(RacingComponent);
+    fixture = TestBed.createComponent(MisCarrerasRetosComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
