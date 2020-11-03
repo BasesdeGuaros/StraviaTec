@@ -19,6 +19,7 @@ export class OrganizerChallengeComponent implements OnInit {
     { id: 5, name: 'Elisa Gallagher', age: 31, companyName: 'Portica', country: 'United Kingdom', city: 'London' },
   ];
 
+  
   awaitingPersonList: Array<any> = [
     { id: 6, name: 'George Vega', age: 28, companyName: 'Classical', country: 'Russia', city: 'Moscow' },
     { id: 7, name: 'Mike Low', age: 22, companyName: 'Lou', country: 'USA', city: 'Los Angeles' },
@@ -32,9 +33,11 @@ export class OrganizerChallengeComponent implements OnInit {
   ngOnInit(): void {
     this.validatingForm = new FormGroup({
       contactFormModalName: new FormControl('', Validators.required),
-      contactFormModalEmail: new FormControl('', Validators.email),
-      contactFormModalSubject: new FormControl('', Validators.required),
-      contactFormModalMessage: new FormControl('', Validators.required)
+      contactFormModalDate: new FormControl('', Validators.required),
+      contactFormModalType: new FormControl('', Validators.required), //de fondo o profundidad
+      contactFormModalActivity: new FormControl('', Validators.required),
+      contactFormModalPrivacy: new FormControl('', Validators.required),
+      contactFormModalSponsors: new FormControl('', Validators.required),
     });
   }
 
@@ -65,16 +68,26 @@ export class OrganizerChallengeComponent implements OnInit {
     return this.validatingForm.get('contactFormModalName');
   }
 
-  get contactFormModalEmail() {
-    return this.validatingForm.get('contactFormModalEmail');
+  get contactFormModalDate() {
+    return this.validatingForm.get('contactFormModalDate');
   }
 
-  get contactFormModalSubject() {
-    return this.validatingForm.get('contactFormModalSubject');
+  get contactFormModalType() {
+    return this.validatingForm.get('contactFormModalType');
   }
 
-  get contactFormModalMessage() {
-    return this.validatingForm.get('contactFormModalMessage');
+  get contactFormModalActivity() {
+    return this.validatingForm.get('contactFormModalActivity');
   }
+
+  get contactFormModalPrivacy() {
+    return this.validatingForm.get('contactFormModalPrivacy');
+  }
+
+
+  get contactFormModalSponsors() {
+    return this.validatingForm.get('contactFormModalSponsors');
+  }
+
 
 }
