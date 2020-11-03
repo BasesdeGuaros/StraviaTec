@@ -31,9 +31,13 @@ export class OrganizerRaceComponent implements OnInit {
   ngOnInit(): void {
     this.validatingForm = new FormGroup({
       contactFormModalName: new FormControl('', Validators.required),
-      contactFormModalEmail: new FormControl('', Validators.email),
-      contactFormModalSubject: new FormControl('', Validators.required),
-      contactFormModalMessage: new FormControl('', Validators.required)
+      contactFormModalDate: new FormControl('', Validators.required),
+      contactFormModalRoute: new FormControl('', Validators.required),
+      contactFormModalActivity: new FormControl('', Validators.required),
+      contactFormModalPrivacy: new FormControl('', Validators.required),
+      contactFormModalBankAccount: new FormControl('', Validators.required),
+      contactFormModalCategory: new FormControl('', Validators.required),
+      contactFormModalSponsors: new FormControl('', Validators.required),
     });
   }
 
@@ -63,16 +67,36 @@ export class OrganizerRaceComponent implements OnInit {
       return this.validatingForm.get('contactFormModalName');
     }
   
-    get contactFormModalEmail() {
-      return this.validatingForm.get('contactFormModalEmail');
+    get contactFormModalDate() {
+      return this.validatingForm.get('contactFormModalDate');
     }
   
-    get contactFormModalSubject() {
-      return this.validatingForm.get('contactFormModalSubject');
+    get contactFormModalRoute() {
+      return this.validatingForm.get('contactFormModalRoute');
     }
   
     get contactFormModalMessage() {
       return this.validatingForm.get('contactFormModalMessage');
     }
 
+    get contactFormModalActivity() {
+      return this.validatingForm.get('contactFormModalActivity');
+    }
+
+    get contactFormModalPrivacy() {
+      return this.validatingForm.get('contactFormModalPrivacy');
+    }
+
+    get contactFormModalBankAccount() {
+      return this.validatingForm.get('contactFormModalBankAccount');
+    }
+
+    get contactFormModalCategory() {
+      return this.validatingForm.get('contactFormModalCategory');
+    }
+
+    get contactFormModalSponsors() {
+      return this.validatingForm.get('contactFormModalSponsors');
+    }
+    
 }
