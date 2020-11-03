@@ -75,12 +75,9 @@ export class OrganizerChallengeComponent implements OnInit {
     return this.validatingForm.get('contactFormModalType');
   }
 
-
   get contactFormModalActivity() {
     return this.validatingForm.get('contactFormModalActivity');
   }
-
-  
 
   get contactFormModalPrivacy() {
     return this.validatingForm.get('contactFormModalPrivacy');
