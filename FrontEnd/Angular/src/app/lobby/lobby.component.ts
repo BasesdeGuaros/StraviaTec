@@ -24,7 +24,11 @@ export class LobbyComponent implements OnInit {
     {"name":"F","admin":"Elias","number":0}
   ]
 
-
+  public friendsList = [
+    {"name":"Daniel Garcia", "seguidores":244, "seguidos":312,"actividades":123},
+    {"name":"Daniel Sing", "seguidores":345, "seguidos":298,"actividades":235},
+    {"name":"Elias Arce", "seguidores":0, "seguidos":235,"actividades":0}
+  ];
 
 
   constructor() { }
@@ -37,44 +41,8 @@ export class LobbyComponent implements OnInit {
       signupFormModalPassword: new FormControl('', Validators.required),
     });
     
-      
-    this.function();
-
   }
  
-  public function(){
-    
-    const countries = [
-      {name: 'USA'},
-      {name: 'India'},
-      {name: 'Argentina'},
-      {name: 'Armenia'}
-    ];
-    
-    
-    const searchInput = document.querySelector('.search-input');
-    const suggestionsPanel = document.querySelector('.suggestions');
-    
-    searchInput.addEventListener('keyup', function() {
-    
-      const input = searchInput.value;
-      suggestionsPanel.innerHTML = '';
-      const suggestions = countries.filter(function(country) {
-        return country.name.toLowerCase().startsWith(input);
-      });
-      suggestions.forEach(function(suggested) {
-        const div = document.createElement('div');
-        div.innerHTML = suggested.name;
-        suggestionsPanel.appendChild(div);
-      });
-      if (input === '') {
-        suggestionsPanel.innerHTML = '';  
-      }
-    })
-  }
-
-
-
   get signupFormModalName() {
     return this.validatingForm.get('signupFormModalName');
   }
