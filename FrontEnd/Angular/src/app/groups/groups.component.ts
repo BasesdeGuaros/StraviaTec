@@ -10,6 +10,11 @@ export class GroupsComponent implements OnInit {
     console.log(event);
   }
   constructor() { }
+  groupsList = [
+    {"name":"grupoSing","admin":"Sing","number":982},
+    {"name":"grupoGarza","admin":"Garza","number":12314},
+    {"name":"grupoElias","admin":"Elias","number":0}
+  ]
 
   ngOnInit(): void {
   }
