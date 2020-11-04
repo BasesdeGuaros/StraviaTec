@@ -1,4 +1,5 @@
 <header>
+<div class="mask rgba-gradient">
 
   <mdb-navbar
     SideClass="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar"
@@ -9,43 +10,45 @@
       >
     </mdb-navbar-brand>
   </mdb-navbar>
-
+  <div>
   
-  <div class="bg">
-  
-    <div class="card-deck" >
+    <div class="card-deck-scrollable col-md-6 center">
       <!-- Card -->
-      <mdb-card *ngFor="let race of races; let i = index"> 
-        <div class="view overlay waves-light" mdbWavesEffect>
-          <!-- Card img -->
-          <!---- MAPA QUE NO SIRVE XD
-          <agm-map [latitude]="map.lat" [longitude]="map.lng" style="height: 300px">
-              <agm-marker [latitude]="map.lat" [longitude]="map.lng"></agm-marker>
-          </agm-map>
-          --->
-          <mdb-card-img
-            src="https://mdbootstrap.com/img/Photos/Others/images/16.jpg"
-            alt="Card image cap"
-          ></mdb-card-img>
-          <a>
-            <div class="mask rgba-white-slight"></div>
-          </a>
-        </div>
-        <!--Card content-->
-        <mdb-card-body class="center">
-          <!--Title-->
-          <mdb-card-title>
-            <h4>{{race.name}}</h4>
-          </mdb-card-title>
-  
-          <!--Text-->
-          <mdb-card-text> {{race.descript}} </mdb-card-text>
-  
-          <a class="btn aqua-gradient btn-rounded btn-sm my-0 " mdbWavesEffect (click)="frame.show()">
-            Suscribirse
-          </a>
-        </mdb-card-body>
-      </mdb-card>
+      <div class="myborder">
+        <mdb-card *ngFor="let race of races; let i = index"> 
+          <div class="view overlay waves-light" mdbWavesEffect>
+            <!-- Card img -->
+            <!---- MAPA QUE NO SIRVE XD
+            <agm-map [latitude]="map.lat" [longitude]="map.lng" style="height: 300px">
+                <agm-marker [latitude]="map.lat" [longitude]="map.lng"></agm-marker>
+            </agm-map>
+            --->
+            <mdb-card-img
+              src="https://mdbootstrap.com/img/Photos/Others/images/16.jpg"
+              alt="Card image cap"
+            ></mdb-card-img>
+            <a>
+              <div class="mask rgba-white-slight"></div>
+            </a>
+          </div>
+          <!--Card content-->
+          <mdb-card-body class="myborderdown">
+            <!--Title-->
+            <mdb-card-title>
+              <h4>{{race.name}}</h4>
+            </mdb-card-title>
+    
+            <!--Text-->
+            <mdb-card-text> {{race.descript}} </mdb-card-text>
+    
+            <a class="btn aqua-gradient btn-rounded btn-sm my-0 " mdbWavesEffect (click)="frame.show()">
+              Suscribirse
+            </a>
+          </mdb-card-body>
+        </mdb-card>
+      </div>
+
+
     </div>
   
       <div
@@ -144,6 +147,6 @@
       </div>
     
   </div>
-  
-  
+</div>
+
 </header>

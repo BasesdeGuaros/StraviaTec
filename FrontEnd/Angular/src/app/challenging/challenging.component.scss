@@ -117,5 +117,19 @@ body {
 .center {
   margin: auto;
   width: 60%;
-  border: 5px solid #ffffff;
+  
   padding: 10px;}
+
+  .myborder{
+    border:  5px solid rgb(0, 0, 0);
+  }
+  
+  .myborderdown{
+    border-bottom:  5px solid rgb(0, 0, 0);
+  }
+  
+  .mygradientbg{
+  
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+  }

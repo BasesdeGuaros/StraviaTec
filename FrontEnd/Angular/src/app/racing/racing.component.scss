@@ -49,9 +49,9 @@ header,
 }
 
 .rgba-gradient {
-  background: -moz-linear-gradient(45deg, rgba(213, 15, 61, 0.6), rgba(13, 17, 198, 0.69) 100%);
-  background: -webkit-linear-gradient(45deg, rgba(213, 15, 61, 0.6), rgba(13, 17, 198, 0.69) 100%);
-  background: linear-gradient(45deg, rgba(213, 15, 61, 0.6), rgba(13, 17, 198, 0.69) 100%);
+  background: -moz-linear-gradient(45deg, rgba(27, 128, 175, 0.6), rgba(13, 219, 123, 0.69) 100%);
+  background: -webkit-linear-gradient(45deg, rgba(169, 21, 189, 0.6), rgba(198, 13, 13, 0.69) 100%);
+  background: linear-gradient(45deg, rgba(126, 190, 22, 0.6), rgba(13, 170, 198, 0.69) 100%);
 }
 
 .view.mask {
@@ -117,5 +117,18 @@ body {
 .center {
   margin: auto;
   width: 60%;
-  border: 5px solid #ffffff;
   padding: 10px;}
+
+  .myborder{
+    border:  5px solid rgb(0, 0, 0);
+  }
+  
+  .myborderdown{
+    border-bottom:  5px solid rgb(0, 0, 0);
+  }
+  
+  .mygradientbg{
+  
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+  }
