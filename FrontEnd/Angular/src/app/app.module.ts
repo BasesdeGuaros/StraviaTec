@@ -21,6 +21,7 @@ import { OrganizerRaceComponent } from './organizer-race/organizer-race.componen
 import { OrganizerChallengeComponent } from './organizer-challenge/organizer-challenge.component';
 import { OrganizerGroupComponent } from './organizer-group/organizer-group.component';
 import { MisCarrerasRetosComponent } from './mis-carreras-retos/mis-carreras-retos.component';
+import { ActivityComponent } from './activity/activity.component';
 
 
 @NgModule({
@@ -37,7 +38,8 @@ import { MisCarrerasRetosComponent } from './mis-carreras-retos/mis-carreras-ret
     OrganizerRaceComponent,
     OrganizerChallengeComponent,
     OrganizerGroupComponent,
-    MisCarrerasRetosComponent
+    MisCarrerasRetosComponent,
+    ActivityComponent
   ],
   imports: [
     BrowserModule,
@@ -61,7 +63,8 @@ import { MisCarrerasRetosComponent } from './mis-carreras-retos/mis-carreras-ret
       { path: 'organizerRace', component: OrganizerRaceComponent},
       { path: 'organizerChallenge', component: OrganizerChallengeComponent},
       { path: 'organizerGroup', component: OrganizerGroupComponent},
-      { path: 'miscarrerasretos', component: MisCarrerasRetosComponent}
+      { path: 'miscarrerasretos', component: MisCarrerasRetosComponent},
+      { path: 'activity', component: ActivityComponent}
     
       
     ])
