@@ -86,23 +86,18 @@
                       <div class="profile mr-3">
                         <img
                           src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT6L4GYJoPOeJcq1aRWJTeDWIXjAPs3DS1_Ng&usqp=CAU"
-                          alt="..."
-                          width="130"
-                          class="rounded mb-2 img-thumbnail"
-                        />
+                          alt="..." width="130" class="rounded mb-2 img-thumbnail"/>
 
-                        <button
-                          type="button"
-                          mdbBtn
-                          color="default"
-                          rounded="true"
-                          data-toggle="modal"
-                          data-target="#basicExample"
-                          (click)="frame.show()"
-                          mdbWavesEffect
-                        >
+                        <button 
+                          type="button" mdbBtn color="default" rounded="true" data-toggle="modal" data-target="#basicExample" (click)="frame.show()" mdbWavesEffect> 
                           Editar Perfil
                         </button>
+
+                        <button
+                          type="button" mdbBtn color="red" rounded="true" data-toggle="modal" data-target="#basicExample" (click)="frame.show()" mdbWavesEffect>
+                          Iniciar Actividad
+                        </button>
+
                       </div>
 
                       <div class="media-body mb-5 text-white">
@@ -126,14 +121,12 @@
                       <li class="list-inline-item">
                         <h5 class="font-weight-bold mb-0 d-block">745</h5>
                         <small class="text-muted">
-                          <i class="fas fa-user mr-1"></i>Seguidores</small
-                        >
+                          <i class="fas fa-user mr-1"></i>Seguidores</small>
                       </li>
                       <li class="list-inline-item">
                         <h5 class="font-weight-bold mb-0 d-block">340</h5>
                         <small class="text-muted">
-                          <i class="fas fa-user mr-1"></i>Seguidos</small
-                        >
+                          <i class="fas fa-user mr-1"></i>Seguidos</small>
                       </li>
                     </ul>
                   </div>
@@ -186,14 +179,12 @@
                       <li class="list-inline-item">
                         <h5 class="font-weight-bold mb-0 d-block">745</h5>
                         <small class="text-muted">
-                          <i class="fas fa-user mr-1"></i>Seguidores</small
-                        >
+                          <i class="fas fa-user mr-1"></i>Seguidores</small>
                       </li>
                       <li class="list-inline-item">
                         <h5 class="font-weight-bold mb-0 d-block">340</h5>
                         <small class="text-muted">
-                          <i class="fas fa-user mr-1"></i>Seguidos</small
-                        >
+                          <i class="fas fa-user mr-1"></i>Seguidos</small>
                       </li>
                     </ul>
                   </div>
@@ -219,8 +210,8 @@
     tabindex="-1"
     role="dialog"
     aria-labelledby="myModalLabel"
-    aria-hidden="true"
-  >
+    aria-hidden="true">
+
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header text-center">
@@ -230,13 +221,12 @@
             class="close"
             data-dismiss="modal"
             aria-label="Close"
-            (click)="frame.hide()"
-          >
+            (click)="frame.hide()">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <div class="modal-body mx-3">
 
+        <div class="modal-body mx-3">
           <div class = "row">
             <div class="col">
               <div class="md-form mb-5">
@@ -248,8 +238,7 @@
                   class="form-control"
                   [formControl]="signupFormModalName"
                   mdbInput
-                  mdbValidate
-                />
+                  mdbValidate/>
                 <label for="orangeForm-name">Nombre</label>
 
                 <mdb-error

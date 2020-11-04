@@ -20,6 +20,8 @@ export class OrganizerChallengeComponent implements OnInit {
   ];
 
   
+
+  
   awaitingPersonList: Array<any> = [
     { id: 6, name: 'George Vega', age: 28, companyName: 'Classical', country: 'Russia', city: 'Moscow' },
     { id: 7, name: 'Mike Low', age: 22, companyName: 'Lou', country: 'USA', city: 'Los Angeles' },
