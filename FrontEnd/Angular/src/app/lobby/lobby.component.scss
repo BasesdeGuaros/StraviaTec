@@ -39,6 +39,8 @@ header,
 
 .view.mask {
   overflow: auto !important;
+  height: 100%;
+  width: 100%;
 }
 
 ::placeholder {
@@ -57,7 +59,7 @@ header,
     background-repeat: no-repeat
 }
 
-body {
+.body {
     background: #654ea3;
     background: linear-gradient(to right, #e96443, #904e95);
     min-height: 100vh
@@ -97,11 +99,14 @@ body {
   color: #fff;
 }
 
-.mainborder{
-  
-  margin: 20px;
+.myborder{
+  border:  5px solid rgb(0, 0, 0);
 }
 
+.margin{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
 .center {
   margin: auto;
   width: 50%;
