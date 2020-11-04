@@ -27,8 +27,6 @@ export class LobbyComponent implements OnInit {
     this.function();
 
   }
-
-
  
   public function(){
     
