@@ -10,7 +10,21 @@ import {FormControl, FormGroup, Validators} from "@angular/forms";
 })
 export class LobbyComponent implements OnInit {
   validatingForm: FormGroup;
-  
+
+  groupsList = [
+    {"name":"Sing","admin":"Sing","number":982},
+    {"name":"Garza","admin":"Garza","number":12314},
+    {"name":"Elias","admin":"Elias","number":0},
+    {"name":"Johnny","admin":"Elias","number":0},
+    {"name":"MARKO","admin":"Elias","number":0},
+    {"name":"Mierda","admin":"Elias","number":0},
+    {"name":"SQL","admin":"Elias","number":0},
+    {"name":"HOLA","admin":"Elias","number":0},
+    {"name":"ADIOS","admin":"Elias","number":0},
+    {"name":"F","admin":"Elias","number":0}
+  ]
+
+
 
 
   constructor() { }
@@ -36,6 +50,7 @@ export class LobbyComponent implements OnInit {
       {name: 'Argentina'},
       {name: 'Armenia'}
     ];
+    
     
     const searchInput = document.querySelector('.search-input');
     const suggestionsPanel = document.querySelector('.suggestions');
