@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators, FormGroup } from '@angular/forms';
 
-
 @Component({
   selector: 'app-organizer-challenge',
   templateUrl: './organizer-challenge.component.html',
