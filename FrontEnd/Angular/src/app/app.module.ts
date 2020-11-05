@@ -49,8 +49,8 @@ import { ActivityComponent } from './activity/activity.component';
     ConnectionServiceModule,
     FormsModule,
     ReactiveFormsModule,
-    
 
+    
     RouterModule.forRoot([
       { path: '', component: LoginComponent, pathMatch: 'full' },
       { path: 'signup', component: SignupComponent},

@@ -19,20 +19,16 @@ export class RacingComponent implements OnInit {
 
   ngOnInit(): void {
     this.validatingForm = new FormGroup({
-      loginFormModalEmail: new FormControl('', Validators.email),
-      loginFormModalPassword: new FormControl('', Validators.required)
+      voucher: new FormControl('', Validators.required)
     });
   }
   
+
+  get voucher() {
+    return this.validatingForm.get('voucher');
+  }
+
   
-
-  get loginFormModalEmail() {
-    return this.validatingForm.get('loginFormModalEmail');
-  }
-
-  get loginFormModalPassword() {
-    return this.validatingForm.get('loginFormModalPassword');
-  }
 }
 
 
