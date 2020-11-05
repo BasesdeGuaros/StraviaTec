@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 
 
-
 @Component({
   selector: 'app-lobby',
   templateUrl: './lobby.component.html',
@@ -30,6 +29,8 @@ export class LobbyComponent implements OnInit {
     {"name":"Elias Arce", "seguidores":0, "seguidos":235,"actividades":0}
   ];
 
+
+  
 
   constructor() { }
   
