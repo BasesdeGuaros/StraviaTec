@@ -1,89 +1,141 @@
 <header>
 
-    <div class="mask rgba-gradient">
+    <div class="mask rgba-gradient ">
+
     <mdb-navbar
-    SideClass="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar"
+    SideClass="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar "
     >
-    <mdb-navbar-brand>
-      <a class="logo navbar-brand waves-light" mdbWavesEffect href="#"
-        ><strong>Stravia Tec</strong></a
-      >
-    </mdb-navbar-brand>
+
+    
+      <mdb-navbar-brand class="col-md-9">
+        <a class="logo navbar-brand waves-light" mdbWavesEffect href="#"
+          ><strong>CARRERAS</strong></a
+        >
+      </mdb-navbar-brand>
+  
+  
+     
+  
+      <mdb-navbar-brand class="col-md-9">
+        <a class="logo navbar-brand waves-light" mdbWavesEffect href="#"
+          ><strong>RETOS</strong></a
+        >
+      </mdb-navbar-brand>
+  
+
+
+
     </mdb-navbar>
     <div >
-    <div class="card-deck-scrollable col-md-6 center">
+
+    <div class="row">
+
+      <div class=" col-md-6 ">
+        <div class="card-deck-scrollable ">
         
     
-      <!-- Cards of challenges-->
-      <div class="myborder">
-        <mdb-card *ngFor="let challenge of challenges; let i = index" >
-            <div class="view overlay waves-light" mdbWavesEffect>
-              <!-- Card img -->
-              <!---- MAPA QUE NO SIRVE XD
-                <agm-map [latitude]="map.lat" [longitude]="map.lng" style="height: 300px">
-                    <agm-marker [latitude]="map.lat" [longitude]="map.lng"></agm-marker>
-                </agm-map>
-                --->
-              <mdb-card-img
-                src="https://mdbootstrap.com/img/Photos/Others/images/16.jpg"
-                alt="Card image cap"
-              ></mdb-card-img>
-              <a>
-                <div class="mask rgba-white-slight"></div>
-              </a>
-            </div>
-            <!--Card content-->
-            <mdb-card-body class="myborderdown">
-              <!--Title-->
-              <mdb-card-title>
-                <h4>{{challenge.name}}</h4>
-              </mdb-card-title>
-        
-              <!--Text-->
-              <mdb-card-text> {{challenge.descript}} </mdb-card-text>
-        
-              <a class="btn aqua-gradient btn-rounded btn-sm my-0 " mdbWavesEffect >Ver </a>
-            </mdb-card-body>
-          </mdb-card>
-
+          <!-- Cards of challenges-->
+          <div>
+            <mdb-card *ngFor="let race of races; let i = index" class="myborder">
+                <div class="view overlay waves-light" mdbWavesEffect>
+                  <!-- Card img -->
+                  <!---- MAPA QUE NO SIRVE XD
+                    <agm-map [latitude]="map.lat" [longitude]="map.lng" style="height: 300px">
+                        <agm-marker [latitude]="map.lat" [longitude]="map.lng"></agm-marker>
+                    </agm-map>
+                    --->
+                  <mdb-card-img
+                    src="https://mdbootstrap.com/img/Photos/Others/images/16.jpg"
+                    alt="Card image cap"
+                  ></mdb-card-img>
+                  <a>
+                    <div class="mask rgba-white-slight"></div>
+                  </a>
+                </div>
+                <!--Card content-->
+                <mdb-card-body >
+                  <!--Title-->
+                  <mdb-card-title>
+                    <h4>{{race.name}}</h4>
+                  </mdb-card-title>
+            
+                  <!--Text-->
+              
+                  <a class="btn aqua-gradient btn-rounded btn-sm my-0 " mdbWavesEffect >Ver </a>
+                </mdb-card-body>
+              </mdb-card>
     
-
-      <!-- Card of races -->
-      
-        <mdb-card *ngFor="let race of races; let i = index">
-            <div class="view overlay waves-light" mdbWavesEffect>
-              <!-- Card img -->
-              <!---- MAPA QUE NO SIRVE XD
-                <agm-map [latitude]="map.lat" [longitude]="map.lng" style="height: 300px">
-                    <agm-marker [latitude]="map.lat" [longitude]="map.lng"></agm-marker>
-                </agm-map>
-                --->
-              <mdb-card-img
-                src="https://mdbootstrap.com/img/Photos/Others/images/16.jpg"
-                alt="Card image cap"
-              ></mdb-card-img>
-              <a>
-                <div class="mask rgba-white-slight"></div>
-              </a>
-            </div>
-            <!--Card content-->
-            <mdb-card-body class="myborderdown">
-              <!--Title-->
-              <mdb-card-title>
-                <h4>{{race.name}}</h4>
-              </mdb-card-title>
+          </div>
         
-              <!--Text-->
-              <mdb-card-text> {{race.descript}} </mdb-card-text>
-        
-              <a class="btn aqua-gradient btn-rounded btn-sm my-0 " mdbWavesEffect >Ver </a>
-            </mdb-card-body>
-          </mdb-card>
+    
+    
+        </div>
       </div>
+      
+      <div class="col-md-6">
+        <div class="card-deck-scrollable ">
+        
     
+          <!-- Cards of challenges-->
+          <div>
+            <mdb-card *ngFor="let challenge of challenges; let i = index" class="myborder">
+                <div class="view overlay waves-light" mdbWavesEffect>
+                  <!-- Card img -->
+                  <!---- MAPA QUE NO SIRVE XD
+                    <agm-map [latitude]="map.lat" [longitude]="map.lng" style="height: 300px">
+                        <agm-marker [latitude]="map.lat" [longitude]="map.lng"></agm-marker>
+                    </agm-map>
+                    --->
+                  <mdb-card-img
+                    src="https://mdbootstrap.com/img/Photos/Others/images/16.jpg"
+                    alt="Card image cap"
+                  ></mdb-card-img>
+                  <a>
+                    <div class="mask rgba-white-slight"></div>
+                  </a>
+                </div>
+                <!--Card content-->
+                <mdb-card-body class="row">
 
+                  <div class="col-md-4">
+                    <!--Title-->
+                    <mdb-card-title>
+                      <h4>{{challenge.name}}</h4>
+                    </mdb-card-title>
 
+                    <!--Text-->
+                    
+                    <a class="btn aqua-gradient btn-rounded btn-sm my-0 " mdbWavesEffect >Ver </a>
+                  </div>
+
+                  <div class="col-md-8">
+
+                    <div class="black-text"> Progreso </div>
+
+                    <div class="progress">
+                      <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    
+                  </div>
+
+                  
+
+                  
+                </mdb-card-body>
+              </mdb-card>
+    
+          </div>
+        
+    
+    
+        </div>
+      </div>
+      
+      
     </div>
+
+
+
     </div>
 
     
@@ -186,12 +238,7 @@
     </header>
 
 
-    <!--
-<td>
-              <br>
-              <div class="progress">
-                  <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-          </td>
 
-    -->
+
+
+ 

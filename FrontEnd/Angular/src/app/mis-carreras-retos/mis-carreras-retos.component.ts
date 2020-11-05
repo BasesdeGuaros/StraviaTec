@@ -26,6 +26,7 @@ export class MisCarrerasRetosComponent implements OnInit {
   }
 
   
+  
 
   get loginFormModalEmail() {
     return this.validatingForm.get('loginFormModalEmail');

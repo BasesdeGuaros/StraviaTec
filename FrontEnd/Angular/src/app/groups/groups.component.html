@@ -15,7 +15,7 @@
           </button>
         </div>
     
-        <a href="" class="white-text mx-3">Table name</a>
+        <a href="lobby" class="white-text mx-3">Stravia TEC</a>
     
         <div>
           <button type="button" mdbBtn color="white" outline="true" rounded="true" size="sm" class="px-2" mdbWavesEffect>
@@ -35,33 +35,28 @@
         <table id="dtBasicExample" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
           <thead>
             <tr>
-              <th class="th-sm">Nombre</th>
-              <th class="th-sm">Administrador</th>
-              <th class="th-sm">Participantes</th>
-              <th class="th-sm">Ingresar</th>
+              <th class="white-text th-sm">Nombre</th>
+              <th class="white-text th-sm">Administrador</th>
+              <th class="white-text th-sm">Participantes</th>
+              <th class="white-text th-sm">Acciones</th>
               
             </tr>
           </thead>
           <tbody>
             <tr *ngFor="let group of groupsList">
-              <td>{{group.name}}</td>
-              <td>{{group.admin}}</td>
-              <td>{{group.number}}</td>
+              <td class="white-text">{{group.name}}</td>
+              <td class="white-text">{{group.admin}}</td>
+              <td class="white-text">{{group.number}}</td>
               <td><button class="btn aqua-gradient btn-rounded btn-sm my-0 " (click)="confirmationModal.show()"> Ingresar</button></td>
               
             </tr>
            
           </tbody>
-          <tfoot>
-            <th class="th-sm">Nombre</th>
-              <th class="th-sm">Administrador</th>
-              <th class="th-sm">Participantes
-                <th class="th-sm">Ingresar</th>
-          </tfoot>
+
         </table>
     
         <nav aria-label="Page navigation example">
-          <ul class="pagination justify-content-end">
+          <ul class="pagination justify-content-center">
             <li class="page-item">
               <a class="page-link">Previous</a>
             </li>
