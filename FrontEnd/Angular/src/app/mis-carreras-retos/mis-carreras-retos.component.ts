@@ -24,6 +24,7 @@ export class MisCarrerasRetosComponent implements OnInit {
       loginFormModalPassword: new FormControl('', Validators.required)
     });
   }
+  
 
   
   

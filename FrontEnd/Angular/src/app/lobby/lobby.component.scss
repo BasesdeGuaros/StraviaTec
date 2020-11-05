@@ -25,6 +25,10 @@ header,
   background: transparent !important;
 }
 
+.mynavbar{
+    background: transparent !important;
+}
+
 @media (max-width: 991px) {
   .navbar:not(.top-nav-collapse) {
     background: #563e91 !important;
@@ -114,4 +118,9 @@ header,
 
 .gb-trans{
     background: transparent 
+}
+
+.modal{
+    width: 500px;
+    
 }

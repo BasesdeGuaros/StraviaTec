@@ -16,6 +16,7 @@ export class GroupsComponent implements OnInit {
     {"name":"grupoElias","admin":"Elias","number":0}
   ]
 
+
   ngOnInit(): void {
   }
 

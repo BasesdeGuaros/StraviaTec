@@ -564,20 +564,26 @@
   </div>
 </header>
 
+
+
+
 <div
   mdbModal
   #frame="mdbModal"
-  class="modal fade left"
+  class="modal fade right "
   id="frameModalTop"
   tabindex="-1"
   role="dialog"
   aria-labelledby="myModalLabel"
   aria-hidden="true"
 >
-  <div class="modal-dialog modal-dialog-scrollable" role="document">
-    <div class="modal-content">
+
+
+
+<div class="modal-dialog modal-dialog-scrollable " role="document">
+    <div class="modal-content mynavbar ">
       <div class="modal-header text-center">
-        <h4 class="modal-title w-100 font-weight-bold">Nueva Carrera</h4>
+       
         <button
           type="button"
           class="close"
@@ -589,17 +595,17 @@
         </button>
       </div>
 
-      <div class="modal-body mx-3">
+      <div class="modal-body mx-4 mask rgba-gradient">
         <!--empieza lista de amigos-->
         <div>
           <div class="row py-5 px-4">
-            <div class="col-md-8 mx-5">
+            <div class="col-md-16 mx-5">
               <!-- Profile widget -->
               <div
-                class="bg-white shadow rounded overflow-hidden"
+                class="bg-white shadow rounded overflow-hidden margin"
                 *ngFor="let friend of friendsList; let i = index"
               >
-                <div class="px-4 pt-0 pb-4 cover">
+                <div class="px-2 pt-0 pb-5 cover">
                   <div class="media align-items-end profile-head">
                     <div class="profile mr-3">
                       <img
@@ -629,30 +635,7 @@
                   class="bg-light p-4 d-flex justify-content-end text-center"
                 >
                   <ul class="list-inline mb-0">
-                    <li class="list-inline-item">
-                      <h5 class="font-weight-bold mb-0 d-block">
-                        {{ friend.actividades }}
-                      </h5>
-                      <small class="text-muted">
-                        Actividades<i class="fab fa-font-awesome mr-1"></i
-                      ></small>
-                    </li>
-                    <li class="list-inline-item">
-                      <h5 class="font-weight-bold mb-0 d-block">
-                        {{ friend.seguidores }}
-                      </h5>
-                      <small class="text-muted">
-                        Seguidores<i class="fas fa-user mr-1"></i
-                      ></small>
-                    </li>
-                    <li class="list-inline-item">
-                      <h5 class="font-weight-bold mb-0 d-block">
-                        {{ friend.seguidos }}
-                      </h5>
-                      <small class="text-muted">
-                        Seguidos<i class="fas fa-user mr-1"></i
-                      ></small>
-                    </li>
+                   
                   </ul>
                 </div>
               </div>
@@ -662,11 +645,12 @@
         <!--termina lista de amigos-->
       </div>
       <div class="modal-footer d-flex justify-content-center">
-        <button mdbBtn color="unique" class="waves-light" mdbWavesEffect>
-          Enviar
+        <button mdbBtn color="unique" class="btn aqua-gradient btn-rounded btn-sm my-0" mdbWavesEffect (click)="frame.hide()">
+          Ok
           <mdb-icon far icon="paper-plane" class="ml-1"></mdb-icon>
         </button>
       </div>
     </div>
   </div>
 </div>
+  
