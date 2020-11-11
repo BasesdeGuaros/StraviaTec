@@ -43,7 +43,10 @@
               "version": "[7.19.1759, )"
             },
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
             "EntityFramework": {
               "target": "Package",
               "version": "[6.4.4, )"
@@ -70,11 +73,15 @@
               "target": "Package",
               "version": "[3.1.9, )"
             },
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
               "version": "[5.0.0, )"
             },
@@ -86,6 +93,8 @@
               "target": "Package",
               "version": "[1.1.0, )"
 =======
+=======
+>>>>>>> Stashed changes
               "version": "[3.1.9, )"
             },
             "Microsoft.NETCore.App": {
@@ -111,6 +120,9 @@
             "Pomelo.EntityFrameworkCore.MySql": {
               "target": "Package",
               "version": "[3.2.4, )"
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
             }
           },
