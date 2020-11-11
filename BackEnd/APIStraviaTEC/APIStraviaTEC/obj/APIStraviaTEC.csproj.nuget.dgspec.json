@@ -44,10 +44,7 @@
             },
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
 =======
-=======
->>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
             "EntityFramework": {
@@ -77,9 +74,6 @@
               "version": "[3.1.9, )"
             },
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -87,7 +81,6 @@
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
               "version": "[5.0.0, )"
@@ -100,8 +93,6 @@
               "target": "Package",
               "version": "[1.1.0, )"
 =======
-=======
->>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
               "version": "[3.1.9, )"
@@ -130,9 +121,6 @@
               "target": "Package",
               "version": "[3.2.4, )"
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes

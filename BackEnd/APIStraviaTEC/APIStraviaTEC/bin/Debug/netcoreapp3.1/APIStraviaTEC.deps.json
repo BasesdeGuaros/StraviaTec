@@ -26,7 +26,6 @@
         "dependencies": {
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
           "Devart.Data": "5.0.2551",
           "Devart.Data.PostgreSql": "7.19.1759",
           "Devart.Data.PostgreSql.EFCore": "7.19.1759",
@@ -40,8 +39,6 @@
           "Npgsql.EntityFrameworkCore.PostgreSQL.Design": "1.1.0",
           "Pomelo.EntityFrameworkCore.MySql": "2.1.4",
 =======
-=======
->>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
           "Devart.Data.PostgreSql.EFCore": "7.19.1759",
@@ -59,9 +56,6 @@
           "Npgsql.EntityFrameworkCore.PostgreSQL.Design": "1.1.0",
           "Pomelo.EntityFrameworkCore.MySql": "3.2.4",
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -96,11 +90,7 @@
           "Microsoft.AspNetCore.Hosting.Server.Abstractions": "3.1.0.0",
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
           "Microsoft.AspNetCore.Html.Abstractions": "3.1.0.0",
-=======
-          "Microsoft.AspNetCore.Html.Abstractions.Reference": "3.1.0.0",
->>>>>>> Stashed changes
 =======
           "Microsoft.AspNetCore.Html.Abstractions.Reference": "3.1.0.0",
 >>>>>>> Stashed changes
@@ -134,13 +124,8 @@
           "Microsoft.AspNetCore.Mvc.ViewFeatures": "3.1.0.0",
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
           "Microsoft.AspNetCore.Razor": "3.1.0.0",
           "Microsoft.AspNetCore.Razor.Runtime": "3.1.0.0",
-=======
-          "Microsoft.AspNetCore.Razor.Reference": "3.1.0.0",
-          "Microsoft.AspNetCore.Razor.Runtime.Reference": "3.1.0.0",
->>>>>>> Stashed changes
 =======
           "Microsoft.AspNetCore.Razor.Reference": "3.1.0.0",
           "Microsoft.AspNetCore.Razor.Runtime.Reference": "3.1.0.0",
@@ -172,13 +157,9 @@
           "Microsoft.CSharp.Reference": "4.0.0.0",
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
           "Microsoft.Extensions.Configuration.Binder": "3.1.0.0",
           "Microsoft.Extensions.Configuration.CommandLine": "3.1.0.0",
           "Microsoft.Extensions.Configuration": "3.1.0.0",
-=======
-          "Microsoft.Extensions.Configuration.CommandLine": "3.1.0.0",
->>>>>>> Stashed changes
 =======
           "Microsoft.Extensions.Configuration.CommandLine": "3.1.0.0",
 >>>>>>> Stashed changes
@@ -228,7 +209,6 @@
           "System.Buffers": "4.0.2.0",
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
           "System.Collections.Concurrent": "4.0.15.0",
           "System.Collections": "4.1.2.0",
           "System.Collections.NonGeneric": "4.1.2.0",
@@ -239,8 +219,6 @@
           "System.ComponentModel.Primitives": "4.2.2.0",
           "System.ComponentModel.TypeConverter": "4.2.2.0",
 =======
-=======
->>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
           "System.Collections.Concurrent.Reference": "4.0.15.0",
@@ -254,9 +232,6 @@
           "System.ComponentModel.Primitives.Reference": "4.2.2.0",
           "System.ComponentModel.TypeConverter.Reference": "4.2.2.0",
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -269,11 +244,7 @@
           "System.Diagnostics.Contracts": "4.0.4.0",
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
           "System.Diagnostics.Debug": "4.1.2.0",
-=======
-          "System.Diagnostics.Debug.Reference": "4.1.2.0",
->>>>>>> Stashed changes
 =======
           "System.Diagnostics.Debug.Reference": "4.1.2.0",
 >>>>>>> Stashed changes
@@ -287,15 +258,9 @@
           "System.Diagnostics.TextWriterTraceListener": "4.1.2.0",
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
           "System.Diagnostics.Tools": "4.1.2.0",
           "System.Diagnostics.TraceSource": "4.1.2.0",
           "System.Diagnostics.Tracing": "4.2.2.0",
-=======
-          "System.Diagnostics.Tools.Reference": "4.1.2.0",
-          "System.Diagnostics.TraceSource": "4.1.2.0",
-          "System.Diagnostics.Tracing.Reference": "4.2.2.0",
->>>>>>> Stashed changes
 =======
           "System.Diagnostics.Tools.Reference": "4.1.2.0",
           "System.Diagnostics.TraceSource": "4.1.2.0",
@@ -313,13 +278,8 @@
           "System.Globalization.Calendars": "4.1.2.0",
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
           "System.Globalization": "4.1.2.0",
           "System.Globalization.Extensions": "4.1.2.0",
-=======
-          "System.Globalization.Reference": "4.1.2.0",
-          "System.Globalization.Extensions.Reference": "4.1.2.0",
->>>>>>> Stashed changes
 =======
           "System.Globalization.Reference": "4.1.2.0",
           "System.Globalization.Extensions.Reference": "4.1.2.0",
@@ -334,7 +294,6 @@
           "System.IO.Compression.ZipFile": "4.0.5.0",
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
           "System.IO": "4.2.2.0",
           "System.IO.FileSystem": "4.1.2.0",
           "System.IO.FileSystem.DriveInfo": "4.1.2.0",
@@ -342,16 +301,11 @@
 =======
 =======
 >>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
           "System.IO.Reference": "4.2.2.0",
           "System.IO.FileSystem.Reference": "4.1.2.0",
           "System.IO.FileSystem.DriveInfo": "4.1.2.0",
           "System.IO.FileSystem.Primitives.Reference": "4.1.2.0",
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -363,7 +317,6 @@
           "System.IO.UnmanagedMemoryStream": "4.1.2.0",
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
           "System.Linq": "4.2.2.0",
           "System.Linq.Expressions": "4.2.2.0",
           "System.Linq.Parallel": "4.0.4.0",
@@ -372,17 +325,12 @@
 =======
 =======
 >>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
           "System.Linq.Reference": "4.2.2.0",
           "System.Linq.Expressions.Reference": "4.2.2.0",
           "System.Linq.Parallel": "4.0.4.0",
           "System.Linq.Queryable": "4.0.4.0",
           "System.Memory.Reference": "4.2.1.0",
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -392,7 +340,6 @@
           "System.Net.Mail": "4.0.2.0",
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
           "System.Net.NameResolution": "4.1.2.0",
           "System.Net.NetworkInformation": "4.2.2.0",
           "System.Net.Ping": "4.1.2.0",
@@ -400,16 +347,11 @@
 =======
 =======
 >>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
           "System.Net.NameResolution.Reference": "4.1.2.0",
           "System.Net.NetworkInformation": "4.2.2.0",
           "System.Net.Ping": "4.1.2.0",
           "System.Net.Primitives.Reference": "4.1.2.0",
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -424,7 +366,6 @@
           "System.Net.WebSockets": "4.1.2.0",
           "System.Numerics": "4.0.0.0",
           "System.Numerics.Vectors": "4.1.6.0",
-<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
           "System.ObjectModel": "4.1.2.0",
@@ -449,8 +390,6 @@
 =======
 =======
 >>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
           "System.ObjectModel.Reference": "4.1.2.0",
           "System.Reflection.DispatchProxy": "4.0.6.0",
           "System.Reflection.Reference": "4.2.2.0",
@@ -471,9 +410,6 @@
           "System.Runtime.Handles.Reference": "4.1.2.0",
           "System.Runtime.InteropServices.Reference": "4.2.2.0",
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -485,15 +421,9 @@
           "System.Runtime.Serialization": "4.0.0.0",
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
           "System.Runtime.Serialization.Formatters": "4.0.4.0",
           "System.Runtime.Serialization.Json": "4.0.5.0",
           "System.Runtime.Serialization.Primitives": "4.2.2.0",
-=======
-          "System.Runtime.Serialization.Formatters.Reference": "4.0.4.0",
-          "System.Runtime.Serialization.Json.Reference": "4.0.5.0",
-          "System.Runtime.Serialization.Primitives.Reference": "4.2.2.0",
->>>>>>> Stashed changes
 =======
           "System.Runtime.Serialization.Formatters.Reference": "4.0.4.0",
           "System.Runtime.Serialization.Json.Reference": "4.0.5.0",
@@ -510,7 +440,6 @@
           "System.Security.Cryptography.Algorithms": "4.3.2.0",
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
           "System.Security.Cryptography.Cng": "4.3.3.0",
           "System.Security.Cryptography.Csp": "4.1.2.0",
           "System.Security.Cryptography.Encoding": "4.1.2.0",
@@ -518,16 +447,11 @@
 =======
 =======
 >>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
           "System.Security.Cryptography.Cng.Reference": "4.3.3.0",
           "System.Security.Cryptography.Csp": "4.1.2.0",
           "System.Security.Cryptography.Encoding": "4.1.2.0",
           "System.Security.Cryptography.Primitives.Reference": "4.1.2.0",
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -537,7 +461,6 @@
           "System.Security.Permissions.Reference": "4.0.3.0",
           "System.Security.Principal": "4.1.2.0",
           "System.Security.Principal.Windows.Reference": "4.1.1.0",
-<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
           "System.Security.SecureString": "4.1.2.0",
@@ -558,8 +481,6 @@
 =======
 =======
 >>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
           "System.Security.SecureString.Reference": "4.1.2.0",
           "System.ServiceModel.Web": "4.0.0.0",
           "System.ServiceProcess": "4.0.0.0",
@@ -575,9 +496,6 @@
           "System.Threading.Tasks.Reference": "4.1.2.0",
           "System.Threading.Tasks.Extensions.Reference": "4.3.1.0",
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -593,7 +511,6 @@
           "System.Windows": "4.0.0.0",
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
           "System.Windows.Extensions": "4.0.1.0",
           "System.Xml": "4.0.0.0",
           "System.Xml.Linq": "4.0.0.0",
@@ -605,8 +522,6 @@
 =======
 =======
 >>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
           "System.Windows.Extensions.Reference": "4.0.1.0",
           "System.Xml": "4.0.0.0",
           "System.Xml.Linq": "4.0.0.0",
@@ -616,9 +531,6 @@
           "System.Xml.XmlDocument.Reference": "4.1.2.0",
           "System.Xml.XmlSerializer.Reference": "4.1.2.0",
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -637,11 +549,7 @@
         "dependencies": {
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
           "Microsoft.Win32.Registry": "4.5.0"
-=======
-          "Microsoft.Win32.Registry": "4.7.0"
->>>>>>> Stashed changes
 =======
           "Microsoft.Win32.Registry": "4.7.0"
 >>>>>>> Stashed changes
@@ -665,11 +573,7 @@
           "System.Diagnostics.PerformanceCounter": "4.5.0",
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
           "System.Text.Encoding.CodePages": "4.5.0"
-=======
-          "System.Text.Encoding.CodePages": "4.5.1"
->>>>>>> Stashed changes
 =======
           "System.Text.Encoding.CodePages": "4.5.1"
 >>>>>>> Stashed changes
@@ -692,11 +596,7 @@
           "Devart.Data.PostgreSql": "7.19.1759",
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
           "Microsoft.EntityFrameworkCore.Relational": "5.0.0"
-=======
-          "Microsoft.EntityFrameworkCore.Relational": "3.1.9"
->>>>>>> Stashed changes
 =======
           "Microsoft.EntityFrameworkCore.Relational": "3.1.9"
 >>>>>>> Stashed changes
@@ -714,7 +614,6 @@
           "lib/netstandard2.1/Devart.Data.PostgreSql.Entity.EFCore.dll": {}
         }
       },
-<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
       "Humanizer.Core/2.8.26": {
@@ -791,8 +690,6 @@
         "dependencies": {
           "Microsoft.EntityFrameworkCore.Relational": "5.0.0",
 =======
-=======
->>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
       "EntityFramework/6.4.4": {
@@ -1240,9 +1137,6 @@
         "dependencies": {
           "Microsoft.EntityFrameworkCore.Relational": "3.1.9",
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -1252,13 +1146,8 @@
           "lib/netstandard1.3/Microsoft.EntityFrameworkCore.Relational.Design.dll": {
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
             "assemblyVersion": "1.1.6.0",
             "fileVersion": "1.1.6.40621"
-=======
-            "assemblyVersion": "1.1.0.0",
-            "fileVersion": "1.1.0.21115"
->>>>>>> Stashed changes
 =======
             "assemblyVersion": "1.1.0.0",
             "fileVersion": "1.1.0.21115"
@@ -1273,7 +1162,6 @@
           "lib/netstandard1.3/Microsoft.EntityFrameworkCore.Relational.Design.dll": {}
         }
       },
-<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
       "Microsoft.EntityFrameworkCore.Tools/5.0.0": {
@@ -1347,8 +1235,6 @@
             "assemblyVersion": "5.0.0.0",
             "fileVersion": "5.0.20.51904"
 =======
-=======
->>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
       "Microsoft.EntityFrameworkCore.Sqlite/3.1.9": {
@@ -1487,9 +1373,6 @@
             "assemblyVersion": "3.1.9.0",
             "fileVersion": "3.100.920.47302"
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -1499,7 +1382,6 @@
           "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {}
         }
       },
-<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
       "Microsoft.Extensions.Logging/5.0.0": {
@@ -1526,8 +1408,6 @@
             "assemblyVersion": "5.0.0.0",
             "fileVersion": "5.0.20.51904"
 =======
-=======
->>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
       "Microsoft.Extensions.DependencyModel/3.1.6": {
@@ -1567,9 +1447,6 @@
             "assemblyVersion": "3.1.9.0",
             "fileVersion": "3.100.920.47302"
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -1579,7 +1456,6 @@
           "lib/netstandard2.0/Microsoft.Extensions.Logging.Abstractions.dll": {}
         }
       },
-<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
       "Microsoft.Extensions.Options/5.0.0": {
@@ -1607,8 +1483,6 @@
         "compile": {
           "lib/netcoreapp3.0/Microsoft.Extensions.Primitives.dll": {}
 =======
-=======
->>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
       "Microsoft.Extensions.Options/3.1.9": {
@@ -1727,9 +1601,6 @@
         "compile": {
           "lib/netstandard2.0/Microsoft.IdentityModel.Tokens.dll": {}
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -1740,11 +1611,7 @@
           "Microsoft.NETCore.DotNetHostPolicy": "2.2.8",
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
           "Microsoft.NETCore.Platforms": "2.2.4",
-=======
-          "Microsoft.NETCore.Platforms": "3.1.0",
->>>>>>> Stashed changes
 =======
           "Microsoft.NETCore.Platforms": "3.1.0",
 >>>>>>> Stashed changes
@@ -1766,7 +1633,6 @@
           "Microsoft.NETCore.DotNetAppHost": "2.2.8"
         }
       },
-<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
       "Microsoft.NETCore.Platforms/2.2.4": {},
@@ -1994,8 +1860,6 @@
           "Microsoft.NETCore.Platforms": "2.2.4",
           "System.Runtime.CompilerServices.Unsafe": "4.6.0"
 =======
-=======
->>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
       "Microsoft.NETCore.Platforms/3.1.0": {},
@@ -3216,9 +3080,6 @@
           "System.Xml.ReaderWriter": "4.3.0",
           "System.Xml.XmlDocument": "4.3.0"
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -3400,11 +3261,7 @@
       },
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
       "Microsoft.AspNetCore.Html.Abstractions/3.1.0.0": {
-=======
-      "Microsoft.AspNetCore.Html.Abstractions.Reference/3.1.0.0": {
->>>>>>> Stashed changes
 =======
       "Microsoft.AspNetCore.Html.Abstractions.Reference/3.1.0.0": {
 >>>>>>> Stashed changes
@@ -3568,11 +3425,7 @@
       },
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
       "Microsoft.AspNetCore.Razor/3.1.0.0": {
-=======
-      "Microsoft.AspNetCore.Razor.Reference/3.1.0.0": {
->>>>>>> Stashed changes
 =======
       "Microsoft.AspNetCore.Razor.Reference/3.1.0.0": {
 >>>>>>> Stashed changes
@@ -3586,11 +3439,7 @@
       },
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
       "Microsoft.AspNetCore.Razor.Runtime/3.1.0.0": {
-=======
-      "Microsoft.AspNetCore.Razor.Runtime.Reference/3.1.0.0": {
->>>>>>> Stashed changes
 =======
       "Microsoft.AspNetCore.Razor.Runtime.Reference/3.1.0.0": {
 >>>>>>> Stashed changes
@@ -3730,15 +3579,12 @@
       },
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
       "Microsoft.Extensions.Configuration.Binder/3.1.0.0": {
         "compile": {
           "Microsoft.Extensions.Configuration.Binder.dll": {}
         },
         "compileOnly": true
       },
-=======
->>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
@@ -3751,15 +3597,12 @@
       },
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
       "Microsoft.Extensions.Configuration/3.1.0.0": {
         "compile": {
           "Microsoft.Extensions.Configuration.dll": {}
         },
         "compileOnly": true
       },
-=======
->>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
@@ -4012,11 +3855,7 @@
       },
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
       "System.Collections.Concurrent/4.0.15.0": {
-=======
-      "System.Collections.Concurrent.Reference/4.0.15.0": {
->>>>>>> Stashed changes
 =======
       "System.Collections.Concurrent.Reference/4.0.15.0": {
 >>>>>>> Stashed changes
@@ -4030,11 +3869,7 @@
       },
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
       "System.Collections/4.1.2.0": {
-=======
-      "System.Collections.Reference/4.1.2.0": {
->>>>>>> Stashed changes
 =======
       "System.Collections.Reference/4.1.2.0": {
 >>>>>>> Stashed changes
@@ -4048,11 +3883,7 @@
       },
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
       "System.Collections.NonGeneric/4.1.2.0": {
-=======
-      "System.Collections.NonGeneric.Reference/4.1.2.0": {
->>>>>>> Stashed changes
 =======
       "System.Collections.NonGeneric.Reference/4.1.2.0": {
 >>>>>>> Stashed changes
@@ -4066,11 +3897,7 @@
       },
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
       "System.Collections.Specialized/4.1.2.0": {
-=======
-      "System.Collections.Specialized.Reference/4.1.2.0": {
->>>>>>> Stashed changes
 =======
       "System.Collections.Specialized.Reference/4.1.2.0": {
 >>>>>>> Stashed changes
@@ -4084,10 +3911,7 @@
       },
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
 =======
-=======
->>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
       "System.ComponentModel.Annotations.Reference/4.3.1.0": {
@@ -4097,9 +3921,6 @@
         "compileOnly": true
       },
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -4111,11 +3932,7 @@
       },
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
       "System.ComponentModel/4.0.4.0": {
-=======
-      "System.ComponentModel.Reference/4.0.4.0": {
->>>>>>> Stashed changes
 =======
       "System.ComponentModel.Reference/4.0.4.0": {
 >>>>>>> Stashed changes
@@ -4135,11 +3952,7 @@
       },
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
       "System.ComponentModel.Primitives/4.2.2.0": {
-=======
-      "System.ComponentModel.Primitives.Reference/4.2.2.0": {
->>>>>>> Stashed changes
 =======
       "System.ComponentModel.Primitives.Reference/4.2.2.0": {
 >>>>>>> Stashed changes
@@ -4153,11 +3966,7 @@
       },
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
       "System.ComponentModel.TypeConverter/4.2.2.0": {
-=======
-      "System.ComponentModel.TypeConverter.Reference/4.2.2.0": {
->>>>>>> Stashed changes
 =======
       "System.ComponentModel.TypeConverter.Reference/4.2.2.0": {
 >>>>>>> Stashed changes
@@ -4213,11 +4022,7 @@
       },
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
       "System.Diagnostics.Debug/4.1.2.0": {
-=======
-      "System.Diagnostics.Debug.Reference/4.1.2.0": {
->>>>>>> Stashed changes
 =======
       "System.Diagnostics.Debug.Reference/4.1.2.0": {
 >>>>>>> Stashed changes
@@ -4261,11 +4066,7 @@
       },
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
       "System.Diagnostics.Tools/4.1.2.0": {
-=======
-      "System.Diagnostics.Tools.Reference/4.1.2.0": {
->>>>>>> Stashed changes
 =======
       "System.Diagnostics.Tools.Reference/4.1.2.0": {
 >>>>>>> Stashed changes
@@ -4285,11 +4086,7 @@
       },
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
       "System.Diagnostics.Tracing/4.2.2.0": {
-=======
-      "System.Diagnostics.Tracing.Reference/4.2.2.0": {
->>>>>>> Stashed changes
 =======
       "System.Diagnostics.Tracing.Reference/4.2.2.0": {
 >>>>>>> Stashed changes
@@ -4333,11 +4130,7 @@
       },
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
       "System.Globalization/4.1.2.0": {
-=======
-      "System.Globalization.Reference/4.1.2.0": {
->>>>>>> Stashed changes
 =======
       "System.Globalization.Reference/4.1.2.0": {
 >>>>>>> Stashed changes
@@ -4351,11 +4144,7 @@
       },
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
       "System.Globalization.Extensions/4.1.2.0": {
-=======
-      "System.Globalization.Extensions.Reference/4.1.2.0": {
->>>>>>> Stashed changes
 =======
       "System.Globalization.Extensions.Reference/4.1.2.0": {
 >>>>>>> Stashed changes
@@ -4393,11 +4182,7 @@
       },
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
       "System.IO/4.2.2.0": {
-=======
-      "System.IO.Reference/4.2.2.0": {
->>>>>>> Stashed changes
 =======
       "System.IO.Reference/4.2.2.0": {
 >>>>>>> Stashed changes
@@ -4411,11 +4196,7 @@
       },
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
       "System.IO.FileSystem/4.1.2.0": {
-=======
-      "System.IO.FileSystem.Reference/4.1.2.0": {
->>>>>>> Stashed changes
 =======
       "System.IO.FileSystem.Reference/4.1.2.0": {
 >>>>>>> Stashed changes
@@ -4435,11 +4216,7 @@
       },
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
       "System.IO.FileSystem.Primitives/4.1.2.0": {
-=======
-      "System.IO.FileSystem.Primitives.Reference/4.1.2.0": {
->>>>>>> Stashed changes
 =======
       "System.IO.FileSystem.Primitives.Reference/4.1.2.0": {
 >>>>>>> Stashed changes
@@ -4489,11 +4266,7 @@
       },
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
       "System.Linq/4.2.2.0": {
-=======
-      "System.Linq.Reference/4.2.2.0": {
->>>>>>> Stashed changes
 =======
       "System.Linq.Reference/4.2.2.0": {
 >>>>>>> Stashed changes
@@ -4507,11 +4280,7 @@
       },
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
       "System.Linq.Expressions/4.2.2.0": {
-=======
-      "System.Linq.Expressions.Reference/4.2.2.0": {
->>>>>>> Stashed changes
 =======
       "System.Linq.Expressions.Reference/4.2.2.0": {
 >>>>>>> Stashed changes
@@ -4537,11 +4306,7 @@
       },
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
       "System.Memory/4.2.1.0": {
-=======
-      "System.Memory.Reference/4.2.1.0": {
->>>>>>> Stashed changes
 =======
       "System.Memory.Reference/4.2.1.0": {
 >>>>>>> Stashed changes
@@ -4579,11 +4344,7 @@
       },
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
       "System.Net.NameResolution/4.1.2.0": {
-=======
-      "System.Net.NameResolution.Reference/4.1.2.0": {
->>>>>>> Stashed changes
 =======
       "System.Net.NameResolution.Reference/4.1.2.0": {
 >>>>>>> Stashed changes
@@ -4609,11 +4370,7 @@
       },
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
       "System.Net.Primitives/4.1.2.0": {
-=======
-      "System.Net.Primitives.Reference/4.1.2.0": {
->>>>>>> Stashed changes
 =======
       "System.Net.Primitives.Reference/4.1.2.0": {
 >>>>>>> Stashed changes
@@ -4693,11 +4450,7 @@
       },
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
       "System.ObjectModel/4.1.2.0": {
-=======
-      "System.ObjectModel.Reference/4.1.2.0": {
->>>>>>> Stashed changes
 =======
       "System.ObjectModel.Reference/4.1.2.0": {
 >>>>>>> Stashed changes
@@ -4717,11 +4470,7 @@
       },
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
       "System.Reflection/4.2.2.0": {
-=======
-      "System.Reflection.Reference/4.2.2.0": {
->>>>>>> Stashed changes
 =======
       "System.Reflection.Reference/4.2.2.0": {
 >>>>>>> Stashed changes
@@ -4735,11 +4484,7 @@
       },
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
       "System.Reflection.Emit/4.1.2.0": {
-=======
-      "System.Reflection.Emit.Reference/4.1.2.0": {
->>>>>>> Stashed changes
 =======
       "System.Reflection.Emit.Reference/4.1.2.0": {
 >>>>>>> Stashed changes
@@ -4753,11 +4498,7 @@
       },
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
       "System.Reflection.Emit.ILGeneration/4.1.1.0": {
-=======
-      "System.Reflection.Emit.ILGeneration.Reference/4.1.1.0": {
->>>>>>> Stashed changes
 =======
       "System.Reflection.Emit.ILGeneration.Reference/4.1.1.0": {
 >>>>>>> Stashed changes
@@ -4771,11 +4512,7 @@
       },
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
       "System.Reflection.Emit.Lightweight/4.1.1.0": {
-=======
-      "System.Reflection.Emit.Lightweight.Reference/4.1.1.0": {
->>>>>>> Stashed changes
 =======
       "System.Reflection.Emit.Lightweight.Reference/4.1.1.0": {
 >>>>>>> Stashed changes
@@ -4789,11 +4526,7 @@
       },
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
       "System.Reflection.Extensions/4.1.2.0": {
-=======
-      "System.Reflection.Extensions.Reference/4.1.2.0": {
->>>>>>> Stashed changes
 =======
       "System.Reflection.Extensions.Reference/4.1.2.0": {
 >>>>>>> Stashed changes
@@ -4807,11 +4540,7 @@
       },
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
       "System.Reflection.Metadata/1.4.5.0": {
-=======
-      "System.Reflection.Metadata.Reference/1.4.5.0": {
->>>>>>> Stashed changes
 =======
       "System.Reflection.Metadata.Reference/1.4.5.0": {
 >>>>>>> Stashed changes
@@ -4825,11 +4554,7 @@
       },
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
       "System.Reflection.Primitives/4.1.2.0": {
-=======
-      "System.Reflection.Primitives.Reference/4.1.2.0": {
->>>>>>> Stashed changes
 =======
       "System.Reflection.Primitives.Reference/4.1.2.0": {
 >>>>>>> Stashed changes
@@ -4843,11 +4568,7 @@
       },
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
       "System.Reflection.TypeExtensions/4.1.2.0": {
-=======
-      "System.Reflection.TypeExtensions.Reference/4.1.2.0": {
->>>>>>> Stashed changes
 =======
       "System.Reflection.TypeExtensions.Reference/4.1.2.0": {
 >>>>>>> Stashed changes
@@ -4867,11 +4588,7 @@
       },
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
       "System.Resources.ResourceManager/4.1.2.0": {
-=======
-      "System.Resources.ResourceManager.Reference/4.1.2.0": {
->>>>>>> Stashed changes
 =======
       "System.Resources.ResourceManager.Reference/4.1.2.0": {
 >>>>>>> Stashed changes
@@ -4903,11 +4620,7 @@
       },
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
       "System.Runtime/4.2.2.0": {
-=======
-      "System.Runtime.Reference/4.2.2.0": {
->>>>>>> Stashed changes
 =======
       "System.Runtime.Reference/4.2.2.0": {
 >>>>>>> Stashed changes
@@ -4921,11 +4634,7 @@
       },
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
       "System.Runtime.Extensions/4.2.2.0": {
-=======
-      "System.Runtime.Extensions.Reference/4.2.2.0": {
->>>>>>> Stashed changes
 =======
       "System.Runtime.Extensions.Reference/4.2.2.0": {
 >>>>>>> Stashed changes
@@ -4939,11 +4648,7 @@
       },
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
       "System.Runtime.Handles/4.1.2.0": {
-=======
-      "System.Runtime.Handles.Reference/4.1.2.0": {
->>>>>>> Stashed changes
 =======
       "System.Runtime.Handles.Reference/4.1.2.0": {
 >>>>>>> Stashed changes
@@ -4957,11 +4662,7 @@
       },
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
       "System.Runtime.InteropServices/4.2.2.0": {
-=======
-      "System.Runtime.InteropServices.Reference/4.2.2.0": {
->>>>>>> Stashed changes
 =======
       "System.Runtime.InteropServices.Reference/4.2.2.0": {
 >>>>>>> Stashed changes
@@ -5011,11 +4712,7 @@
       },
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
       "System.Runtime.Serialization.Formatters/4.0.4.0": {
-=======
-      "System.Runtime.Serialization.Formatters.Reference/4.0.4.0": {
->>>>>>> Stashed changes
 =======
       "System.Runtime.Serialization.Formatters.Reference/4.0.4.0": {
 >>>>>>> Stashed changes
@@ -5029,11 +4726,7 @@
       },
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
       "System.Runtime.Serialization.Json/4.0.5.0": {
-=======
-      "System.Runtime.Serialization.Json.Reference/4.0.5.0": {
->>>>>>> Stashed changes
 =======
       "System.Runtime.Serialization.Json.Reference/4.0.5.0": {
 >>>>>>> Stashed changes
@@ -5047,11 +4740,7 @@
       },
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
       "System.Runtime.Serialization.Primitives/4.2.2.0": {
-=======
-      "System.Runtime.Serialization.Primitives.Reference/4.2.2.0": {
->>>>>>> Stashed changes
 =======
       "System.Runtime.Serialization.Primitives.Reference/4.2.2.0": {
 >>>>>>> Stashed changes
@@ -5089,11 +4778,7 @@
       },
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
       "System.Security.Cryptography.Cng/4.3.3.0": {
-=======
-      "System.Security.Cryptography.Cng.Reference/4.3.3.0": {
->>>>>>> Stashed changes
 =======
       "System.Security.Cryptography.Cng.Reference/4.3.3.0": {
 >>>>>>> Stashed changes
@@ -5119,11 +4804,7 @@
       },
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
       "System.Security.Cryptography.Primitives/4.1.2.0": {
-=======
-      "System.Security.Cryptography.Primitives.Reference/4.1.2.0": {
->>>>>>> Stashed changes
 =======
       "System.Security.Cryptography.Primitives.Reference/4.1.2.0": {
 >>>>>>> Stashed changes
@@ -5173,11 +4854,7 @@
       },
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
       "System.Security.SecureString/4.1.2.0": {
-=======
-      "System.Security.SecureString.Reference/4.1.2.0": {
->>>>>>> Stashed changes
 =======
       "System.Security.SecureString.Reference/4.1.2.0": {
 >>>>>>> Stashed changes
@@ -5209,11 +4886,7 @@
       },
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
       "System.Text.Encoding/4.1.2.0": {
-=======
-      "System.Text.Encoding.Reference/4.1.2.0": {
->>>>>>> Stashed changes
 =======
       "System.Text.Encoding.Reference/4.1.2.0": {
 >>>>>>> Stashed changes
@@ -5227,11 +4900,7 @@
       },
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
       "System.Text.Encoding.Extensions/4.1.2.0": {
-=======
-      "System.Text.Encoding.Extensions.Reference/4.1.2.0": {
->>>>>>> Stashed changes
 =======
       "System.Text.Encoding.Extensions.Reference/4.1.2.0": {
 >>>>>>> Stashed changes
@@ -5245,11 +4914,7 @@
       },
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
       "System.Text.Encodings.Web/4.0.5.0": {
-=======
-      "System.Text.Encodings.Web.Reference/4.0.5.0": {
->>>>>>> Stashed changes
 =======
       "System.Text.Encodings.Web.Reference/4.0.5.0": {
 >>>>>>> Stashed changes
@@ -5263,7 +4928,6 @@
       },
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
       "System.Text.Json/4.0.1.0": {
         "compile": {
           "System.Text.Json.dll": {}
@@ -5271,9 +4935,6 @@
         "compileOnly": true
       },
       "System.Text.RegularExpressions/4.2.2.0": {
-=======
-      "System.Text.RegularExpressions.Reference/4.2.2.0": {
->>>>>>> Stashed changes
 =======
       "System.Text.RegularExpressions.Reference/4.2.2.0": {
 >>>>>>> Stashed changes
@@ -5293,11 +4954,7 @@
       },
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
       "System.Threading/4.1.2.0": {
-=======
-      "System.Threading.Reference/4.1.2.0": {
->>>>>>> Stashed changes
 =======
       "System.Threading.Reference/4.1.2.0": {
 >>>>>>> Stashed changes
@@ -5323,11 +4980,7 @@
       },
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
       "System.Threading.Tasks/4.1.2.0": {
-=======
-      "System.Threading.Tasks.Reference/4.1.2.0": {
->>>>>>> Stashed changes
 =======
       "System.Threading.Tasks.Reference/4.1.2.0": {
 >>>>>>> Stashed changes
@@ -5341,11 +4994,7 @@
       },
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
       "System.Threading.Tasks.Extensions/4.3.1.0": {
-=======
-      "System.Threading.Tasks.Extensions.Reference/4.3.1.0": {
->>>>>>> Stashed changes
 =======
       "System.Threading.Tasks.Extensions.Reference/4.3.1.0": {
 >>>>>>> Stashed changes
@@ -5419,11 +5068,7 @@
       },
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
       "System.Windows.Extensions/4.0.1.0": {
-=======
-      "System.Windows.Extensions.Reference/4.0.1.0": {
->>>>>>> Stashed changes
 =======
       "System.Windows.Extensions.Reference/4.0.1.0": {
 >>>>>>> Stashed changes
@@ -5449,11 +5094,7 @@
       },
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
       "System.Xml.ReaderWriter/4.2.2.0": {
-=======
-      "System.Xml.ReaderWriter.Reference/4.2.2.0": {
->>>>>>> Stashed changes
 =======
       "System.Xml.ReaderWriter.Reference/4.2.2.0": {
 >>>>>>> Stashed changes
@@ -5473,11 +5114,7 @@
       },
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
       "System.Xml.XDocument/4.1.2.0": {
-=======
-      "System.Xml.XDocument.Reference/4.1.2.0": {
->>>>>>> Stashed changes
 =======
       "System.Xml.XDocument.Reference/4.1.2.0": {
 >>>>>>> Stashed changes
@@ -5491,11 +5128,7 @@
       },
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
       "System.Xml.XmlDocument/4.1.2.0": {
-=======
-      "System.Xml.XmlDocument.Reference/4.1.2.0": {
->>>>>>> Stashed changes
 =======
       "System.Xml.XmlDocument.Reference/4.1.2.0": {
 >>>>>>> Stashed changes
@@ -5509,11 +5142,7 @@
       },
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
       "System.Xml.XmlSerializer/4.1.2.0": {
-=======
-      "System.Xml.XmlSerializer.Reference/4.1.2.0": {
->>>>>>> Stashed changes
 =======
       "System.Xml.XmlSerializer.Reference/4.1.2.0": {
 >>>>>>> Stashed changes
@@ -5551,7 +5180,6 @@
       "serviceable": false,
       "sha512": ""
     },
-<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
     "Devart.Data/5.0.2551": {
@@ -5834,8 +5462,6 @@
       "path": "system.diagnostics.diagnosticsource/5.0.0",
       "hashPath": "system.diagnostics.diagnosticsource.5.0.0.nupkg.sha512"
 =======
-=======
->>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
     "Devart.Data/5.0.2551": {
@@ -6552,9 +6178,6 @@
       "path": "system.diagnostics.diagnosticsource/4.7.1",
       "hashPath": "system.diagnostics.diagnosticsource.4.7.1.nupkg.sha512"
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -6568,10 +6191,7 @@
     },
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
 =======
-=======
->>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
     "System.Diagnostics.Tools/4.3.0": {
@@ -6764,9 +6384,6 @@
       "hashPath": "system.runtime.caching.4.5.0.nupkg.sha512"
     },
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -6777,7 +6394,6 @@
       "path": "system.runtime.compilerservices.unsafe/4.6.0",
       "hashPath": "system.runtime.compilerservices.unsafe.4.6.0.nupkg.sha512"
     },
-<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
     "System.Security.AccessControl/4.5.0": {
@@ -6815,8 +6431,6 @@
       "path": "system.text.encoding.codepages/4.5.0",
       "hashPath": "system.text.encoding.codepages.4.5.0.nupkg.sha512"
 =======
-=======
->>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
     "System.Runtime.Extensions/4.3.0": {
@@ -7008,9 +6622,6 @@
       "path": "system.xml.xmlserializer/4.3.0",
       "hashPath": "system.xml.xmlserializer.4.3.0.nupkg.sha512"
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -7162,11 +6773,7 @@
     },
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
     "Microsoft.AspNetCore.Html.Abstractions/3.1.0.0": {
-=======
-    "Microsoft.AspNetCore.Html.Abstractions.Reference/3.1.0.0": {
->>>>>>> Stashed changes
 =======
     "Microsoft.AspNetCore.Html.Abstractions.Reference/3.1.0.0": {
 >>>>>>> Stashed changes
@@ -7304,11 +6911,7 @@
     },
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
     "Microsoft.AspNetCore.Razor/3.1.0.0": {
-=======
-    "Microsoft.AspNetCore.Razor.Reference/3.1.0.0": {
->>>>>>> Stashed changes
 =======
     "Microsoft.AspNetCore.Razor.Reference/3.1.0.0": {
 >>>>>>> Stashed changes
@@ -7321,11 +6924,7 @@
     },
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
     "Microsoft.AspNetCore.Razor.Runtime/3.1.0.0": {
-=======
-    "Microsoft.AspNetCore.Razor.Runtime.Reference/3.1.0.0": {
->>>>>>> Stashed changes
 =======
     "Microsoft.AspNetCore.Razor.Runtime.Reference/3.1.0.0": {
 >>>>>>> Stashed changes
@@ -7443,14 +7042,11 @@
     },
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
     "Microsoft.Extensions.Configuration.Binder/3.1.0.0": {
       "type": "referenceassembly",
       "serviceable": false,
       "sha512": ""
     },
-=======
->>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
@@ -7462,14 +7058,11 @@
     },
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
     "Microsoft.Extensions.Configuration/3.1.0.0": {
       "type": "referenceassembly",
       "serviceable": false,
       "sha512": ""
     },
-=======
->>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
@@ -7681,11 +7274,7 @@
     },
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
     "System.Collections.Concurrent/4.0.15.0": {
-=======
-    "System.Collections.Concurrent.Reference/4.0.15.0": {
->>>>>>> Stashed changes
 =======
     "System.Collections.Concurrent.Reference/4.0.15.0": {
 >>>>>>> Stashed changes
@@ -7696,7 +7285,6 @@
       "serviceable": false,
       "sha512": ""
     },
-<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
     "System.Collections/4.1.2.0": {
@@ -7706,14 +7294,10 @@
 =======
     "System.Collections.Reference/4.1.2.0": {
 >>>>>>> Stashed changes
-=======
-    "System.Collections.Reference/4.1.2.0": {
->>>>>>> Stashed changes
       "type": "referenceassembly",
       "serviceable": false,
       "sha512": ""
     },
-<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
     "System.Collections.NonGeneric/4.1.2.0": {
@@ -7723,20 +7307,14 @@
 =======
     "System.Collections.NonGeneric.Reference/4.1.2.0": {
 >>>>>>> Stashed changes
-=======
-    "System.Collections.NonGeneric.Reference/4.1.2.0": {
->>>>>>> Stashed changes
       "type": "referenceassembly",
       "serviceable": false,
       "sha512": ""
     },
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
     "System.Collections.Specialized/4.1.2.0": {
 =======
-=======
->>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
     "System.Collections.Specialized.Reference/4.1.2.0": {
@@ -7746,9 +7324,6 @@
     },
     "System.ComponentModel.Annotations.Reference/4.3.1.0": {
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -7763,11 +7338,7 @@
     },
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
     "System.ComponentModel/4.0.4.0": {
-=======
-    "System.ComponentModel.Reference/4.0.4.0": {
->>>>>>> Stashed changes
 =======
     "System.ComponentModel.Reference/4.0.4.0": {
 >>>>>>> Stashed changes
@@ -7785,11 +7356,7 @@
     },
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
     "System.ComponentModel.Primitives/4.2.2.0": {
-=======
-    "System.ComponentModel.Primitives.Reference/4.2.2.0": {
->>>>>>> Stashed changes
 =======
     "System.ComponentModel.Primitives.Reference/4.2.2.0": {
 >>>>>>> Stashed changes
@@ -7802,11 +7369,7 @@
     },
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
     "System.ComponentModel.TypeConverter/4.2.2.0": {
-=======
-    "System.ComponentModel.TypeConverter.Reference/4.2.2.0": {
->>>>>>> Stashed changes
 =======
     "System.ComponentModel.TypeConverter.Reference/4.2.2.0": {
 >>>>>>> Stashed changes
@@ -7854,11 +7417,7 @@
     },
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
     "System.Diagnostics.Debug/4.1.2.0": {
-=======
-    "System.Diagnostics.Debug.Reference/4.1.2.0": {
->>>>>>> Stashed changes
 =======
     "System.Diagnostics.Debug.Reference/4.1.2.0": {
 >>>>>>> Stashed changes
@@ -7896,11 +7455,7 @@
     },
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
     "System.Diagnostics.Tools/4.1.2.0": {
-=======
-    "System.Diagnostics.Tools.Reference/4.1.2.0": {
->>>>>>> Stashed changes
 =======
     "System.Diagnostics.Tools.Reference/4.1.2.0": {
 >>>>>>> Stashed changes
@@ -7918,11 +7473,7 @@
     },
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
     "System.Diagnostics.Tracing/4.2.2.0": {
-=======
-    "System.Diagnostics.Tracing.Reference/4.2.2.0": {
->>>>>>> Stashed changes
 =======
     "System.Diagnostics.Tracing.Reference/4.2.2.0": {
 >>>>>>> Stashed changes
@@ -7960,11 +7511,7 @@
     },
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
     "System.Globalization/4.1.2.0": {
-=======
-    "System.Globalization.Reference/4.1.2.0": {
->>>>>>> Stashed changes
 =======
     "System.Globalization.Reference/4.1.2.0": {
 >>>>>>> Stashed changes
@@ -7977,11 +7524,7 @@
     },
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
     "System.Globalization.Extensions/4.1.2.0": {
-=======
-    "System.Globalization.Extensions.Reference/4.1.2.0": {
->>>>>>> Stashed changes
 =======
     "System.Globalization.Extensions.Reference/4.1.2.0": {
 >>>>>>> Stashed changes
@@ -8014,11 +7557,7 @@
     },
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
     "System.IO/4.2.2.0": {
-=======
-    "System.IO.Reference/4.2.2.0": {
->>>>>>> Stashed changes
 =======
     "System.IO.Reference/4.2.2.0": {
 >>>>>>> Stashed changes
@@ -8031,11 +7570,7 @@
     },
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
     "System.IO.FileSystem/4.1.2.0": {
-=======
-    "System.IO.FileSystem.Reference/4.1.2.0": {
->>>>>>> Stashed changes
 =======
     "System.IO.FileSystem.Reference/4.1.2.0": {
 >>>>>>> Stashed changes
@@ -8053,11 +7588,7 @@
     },
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
     "System.IO.FileSystem.Primitives/4.1.2.0": {
-=======
-    "System.IO.FileSystem.Primitives.Reference/4.1.2.0": {
->>>>>>> Stashed changes
 =======
     "System.IO.FileSystem.Primitives.Reference/4.1.2.0": {
 >>>>>>> Stashed changes
@@ -8100,11 +7631,7 @@
     },
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
     "System.Linq/4.2.2.0": {
-=======
-    "System.Linq.Reference/4.2.2.0": {
->>>>>>> Stashed changes
 =======
     "System.Linq.Reference/4.2.2.0": {
 >>>>>>> Stashed changes
@@ -8117,11 +7644,7 @@
     },
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
     "System.Linq.Expressions/4.2.2.0": {
-=======
-    "System.Linq.Expressions.Reference/4.2.2.0": {
->>>>>>> Stashed changes
 =======
     "System.Linq.Expressions.Reference/4.2.2.0": {
 >>>>>>> Stashed changes
@@ -8144,11 +7667,7 @@
     },
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
     "System.Memory/4.2.1.0": {
-=======
-    "System.Memory.Reference/4.2.1.0": {
->>>>>>> Stashed changes
 =======
     "System.Memory.Reference/4.2.1.0": {
 >>>>>>> Stashed changes
@@ -8181,11 +7700,7 @@
     },
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
     "System.Net.NameResolution/4.1.2.0": {
-=======
-    "System.Net.NameResolution.Reference/4.1.2.0": {
->>>>>>> Stashed changes
 =======
     "System.Net.NameResolution.Reference/4.1.2.0": {
 >>>>>>> Stashed changes
@@ -8208,11 +7723,7 @@
     },
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
     "System.Net.Primitives/4.1.2.0": {
-=======
-    "System.Net.Primitives.Reference/4.1.2.0": {
->>>>>>> Stashed changes
 =======
     "System.Net.Primitives.Reference/4.1.2.0": {
 >>>>>>> Stashed changes
@@ -8280,11 +7791,7 @@
     },
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
     "System.ObjectModel/4.1.2.0": {
-=======
-    "System.ObjectModel.Reference/4.1.2.0": {
->>>>>>> Stashed changes
 =======
     "System.ObjectModel.Reference/4.1.2.0": {
 >>>>>>> Stashed changes
@@ -8302,11 +7809,7 @@
     },
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
     "System.Reflection/4.2.2.0": {
-=======
-    "System.Reflection.Reference/4.2.2.0": {
->>>>>>> Stashed changes
 =======
     "System.Reflection.Reference/4.2.2.0": {
 >>>>>>> Stashed changes
@@ -8317,7 +7820,6 @@
       "serviceable": false,
       "sha512": ""
     },
-<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
     "System.Reflection.Emit/4.1.2.0": {
@@ -8327,14 +7829,10 @@
 =======
     "System.Reflection.Emit.Reference/4.1.2.0": {
 >>>>>>> Stashed changes
-=======
-    "System.Reflection.Emit.Reference/4.1.2.0": {
->>>>>>> Stashed changes
       "type": "referenceassembly",
       "serviceable": false,
       "sha512": ""
     },
-<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
     "System.Reflection.Emit.ILGeneration/4.1.1.0": {
@@ -8344,14 +7842,10 @@
 =======
     "System.Reflection.Emit.ILGeneration.Reference/4.1.1.0": {
 >>>>>>> Stashed changes
-=======
-    "System.Reflection.Emit.ILGeneration.Reference/4.1.1.0": {
->>>>>>> Stashed changes
       "type": "referenceassembly",
       "serviceable": false,
       "sha512": ""
     },
-<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
     "System.Reflection.Emit.Lightweight/4.1.1.0": {
@@ -8361,14 +7855,10 @@
 =======
     "System.Reflection.Emit.Lightweight.Reference/4.1.1.0": {
 >>>>>>> Stashed changes
-=======
-    "System.Reflection.Emit.Lightweight.Reference/4.1.1.0": {
->>>>>>> Stashed changes
       "type": "referenceassembly",
       "serviceable": false,
       "sha512": ""
     },
-<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
     "System.Reflection.Extensions/4.1.2.0": {
@@ -8378,14 +7868,10 @@
 =======
     "System.Reflection.Extensions.Reference/4.1.2.0": {
 >>>>>>> Stashed changes
-=======
-    "System.Reflection.Extensions.Reference/4.1.2.0": {
->>>>>>> Stashed changes
       "type": "referenceassembly",
       "serviceable": false,
       "sha512": ""
     },
-<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
     "System.Reflection.Metadata/1.4.5.0": {
@@ -8395,14 +7881,10 @@
 =======
     "System.Reflection.Metadata.Reference/1.4.5.0": {
 >>>>>>> Stashed changes
-=======
-    "System.Reflection.Metadata.Reference/1.4.5.0": {
->>>>>>> Stashed changes
       "type": "referenceassembly",
       "serviceable": false,
       "sha512": ""
     },
-<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
     "System.Reflection.Primitives/4.1.2.0": {
@@ -8412,20 +7894,13 @@
 =======
     "System.Reflection.Primitives.Reference/4.1.2.0": {
 >>>>>>> Stashed changes
-=======
-    "System.Reflection.Primitives.Reference/4.1.2.0": {
->>>>>>> Stashed changes
       "type": "referenceassembly",
       "serviceable": false,
       "sha512": ""
     },
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
     "System.Reflection.TypeExtensions/4.1.2.0": {
-=======
-    "System.Reflection.TypeExtensions.Reference/4.1.2.0": {
->>>>>>> Stashed changes
 =======
     "System.Reflection.TypeExtensions.Reference/4.1.2.0": {
 >>>>>>> Stashed changes
@@ -8443,11 +7918,7 @@
     },
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
     "System.Resources.ResourceManager/4.1.2.0": {
-=======
-    "System.Resources.ResourceManager.Reference/4.1.2.0": {
->>>>>>> Stashed changes
 =======
     "System.Resources.ResourceManager.Reference/4.1.2.0": {
 >>>>>>> Stashed changes
@@ -8475,11 +7946,7 @@
     },
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
     "System.Runtime/4.2.2.0": {
-=======
-    "System.Runtime.Reference/4.2.2.0": {
->>>>>>> Stashed changes
 =======
     "System.Runtime.Reference/4.2.2.0": {
 >>>>>>> Stashed changes
@@ -8490,7 +7957,6 @@
       "serviceable": false,
       "sha512": ""
     },
-<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
     "System.Runtime.Extensions/4.2.2.0": {
@@ -8500,14 +7966,10 @@
 =======
     "System.Runtime.Extensions.Reference/4.2.2.0": {
 >>>>>>> Stashed changes
-=======
-    "System.Runtime.Extensions.Reference/4.2.2.0": {
->>>>>>> Stashed changes
       "type": "referenceassembly",
       "serviceable": false,
       "sha512": ""
     },
-<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
     "System.Runtime.Handles/4.1.2.0": {
@@ -8517,20 +7979,13 @@
 =======
     "System.Runtime.Handles.Reference/4.1.2.0": {
 >>>>>>> Stashed changes
-=======
-    "System.Runtime.Handles.Reference/4.1.2.0": {
->>>>>>> Stashed changes
       "type": "referenceassembly",
       "serviceable": false,
       "sha512": ""
     },
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
     "System.Runtime.InteropServices/4.2.2.0": {
-=======
-    "System.Runtime.InteropServices.Reference/4.2.2.0": {
->>>>>>> Stashed changes
 =======
     "System.Runtime.InteropServices.Reference/4.2.2.0": {
 >>>>>>> Stashed changes
@@ -8573,11 +8028,7 @@
     },
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
     "System.Runtime.Serialization.Formatters/4.0.4.0": {
-=======
-    "System.Runtime.Serialization.Formatters.Reference/4.0.4.0": {
->>>>>>> Stashed changes
 =======
     "System.Runtime.Serialization.Formatters.Reference/4.0.4.0": {
 >>>>>>> Stashed changes
@@ -8588,7 +8039,6 @@
       "serviceable": false,
       "sha512": ""
     },
-<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
     "System.Runtime.Serialization.Json/4.0.5.0": {
@@ -8598,20 +8048,13 @@
 =======
     "System.Runtime.Serialization.Json.Reference/4.0.5.0": {
 >>>>>>> Stashed changes
-=======
-    "System.Runtime.Serialization.Json.Reference/4.0.5.0": {
->>>>>>> Stashed changes
       "type": "referenceassembly",
       "serviceable": false,
       "sha512": ""
     },
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
     "System.Runtime.Serialization.Primitives/4.2.2.0": {
-=======
-    "System.Runtime.Serialization.Primitives.Reference/4.2.2.0": {
->>>>>>> Stashed changes
 =======
     "System.Runtime.Serialization.Primitives.Reference/4.2.2.0": {
 >>>>>>> Stashed changes
@@ -8644,11 +8087,7 @@
     },
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
     "System.Security.Cryptography.Cng/4.3.3.0": {
-=======
-    "System.Security.Cryptography.Cng.Reference/4.3.3.0": {
->>>>>>> Stashed changes
 =======
     "System.Security.Cryptography.Cng.Reference/4.3.3.0": {
 >>>>>>> Stashed changes
@@ -8671,11 +8110,7 @@
     },
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
     "System.Security.Cryptography.Primitives/4.1.2.0": {
-=======
-    "System.Security.Cryptography.Primitives.Reference/4.1.2.0": {
->>>>>>> Stashed changes
 =======
     "System.Security.Cryptography.Primitives.Reference/4.1.2.0": {
 >>>>>>> Stashed changes
@@ -8718,11 +8153,7 @@
     },
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
     "System.Security.SecureString/4.1.2.0": {
-=======
-    "System.Security.SecureString.Reference/4.1.2.0": {
->>>>>>> Stashed changes
 =======
     "System.Security.SecureString.Reference/4.1.2.0": {
 >>>>>>> Stashed changes
@@ -8750,7 +8181,6 @@
     },
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
     "System.Text.Encoding/4.1.2.0": {
       "type": "referenceassembly",
       "serviceable": false,
@@ -8763,14 +8193,10 @@
 =======
     "System.Text.Encoding.Reference/4.1.2.0": {
 >>>>>>> Stashed changes
-=======
-    "System.Text.Encoding.Reference/4.1.2.0": {
->>>>>>> Stashed changes
       "type": "referenceassembly",
       "serviceable": false,
       "sha512": ""
     },
-<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
     "System.Text.Encodings.Web/4.0.5.0": {
@@ -8780,14 +8206,10 @@
 =======
     "System.Text.Encoding.Extensions.Reference/4.1.2.0": {
 >>>>>>> Stashed changes
-=======
-    "System.Text.Encoding.Extensions.Reference/4.1.2.0": {
->>>>>>> Stashed changes
       "type": "referenceassembly",
       "serviceable": false,
       "sha512": ""
     },
-<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
     "System.Text.Json/4.0.1.0": {
@@ -8797,20 +8219,13 @@
 =======
     "System.Text.Encodings.Web.Reference/4.0.5.0": {
 >>>>>>> Stashed changes
-=======
-    "System.Text.Encodings.Web.Reference/4.0.5.0": {
->>>>>>> Stashed changes
       "type": "referenceassembly",
       "serviceable": false,
       "sha512": ""
     },
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
     "System.Text.RegularExpressions/4.2.2.0": {
-=======
-    "System.Text.RegularExpressions.Reference/4.2.2.0": {
->>>>>>> Stashed changes
 =======
     "System.Text.RegularExpressions.Reference/4.2.2.0": {
 >>>>>>> Stashed changes
@@ -8828,11 +8243,7 @@
     },
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
     "System.Threading/4.1.2.0": {
-=======
-    "System.Threading.Reference/4.1.2.0": {
->>>>>>> Stashed changes
 =======
     "System.Threading.Reference/4.1.2.0": {
 >>>>>>> Stashed changes
@@ -8855,11 +8266,7 @@
     },
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
     "System.Threading.Tasks/4.1.2.0": {
-=======
-    "System.Threading.Tasks.Reference/4.1.2.0": {
->>>>>>> Stashed changes
 =======
     "System.Threading.Tasks.Reference/4.1.2.0": {
 >>>>>>> Stashed changes
@@ -8872,11 +8279,7 @@
     },
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
     "System.Threading.Tasks.Extensions/4.3.1.0": {
-=======
-    "System.Threading.Tasks.Extensions.Reference/4.3.1.0": {
->>>>>>> Stashed changes
 =======
     "System.Threading.Tasks.Extensions.Reference/4.3.1.0": {
 >>>>>>> Stashed changes
@@ -8939,11 +8342,7 @@
     },
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
     "System.Windows.Extensions/4.0.1.0": {
-=======
-    "System.Windows.Extensions.Reference/4.0.1.0": {
->>>>>>> Stashed changes
 =======
     "System.Windows.Extensions.Reference/4.0.1.0": {
 >>>>>>> Stashed changes
@@ -8966,11 +8365,7 @@
     },
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
     "System.Xml.ReaderWriter/4.2.2.0": {
-=======
-    "System.Xml.ReaderWriter.Reference/4.2.2.0": {
->>>>>>> Stashed changes
 =======
     "System.Xml.ReaderWriter.Reference/4.2.2.0": {
 >>>>>>> Stashed changes
@@ -8988,11 +8383,7 @@
     },
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
     "System.Xml.XDocument/4.1.2.0": {
-=======
-    "System.Xml.XDocument.Reference/4.1.2.0": {
->>>>>>> Stashed changes
 =======
     "System.Xml.XDocument.Reference/4.1.2.0": {
 >>>>>>> Stashed changes
@@ -9003,7 +8394,6 @@
       "serviceable": false,
       "sha512": ""
     },
-<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
     "System.Xml.XmlDocument/4.1.2.0": {
@@ -9013,20 +8403,13 @@
 =======
     "System.Xml.XmlDocument.Reference/4.1.2.0": {
 >>>>>>> Stashed changes
-=======
-    "System.Xml.XmlDocument.Reference/4.1.2.0": {
->>>>>>> Stashed changes
       "type": "referenceassembly",
       "serviceable": false,
       "sha512": ""
     },
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
     "System.Xml.XmlSerializer/4.1.2.0": {
-=======
-    "System.Xml.XmlSerializer.Reference/4.1.2.0": {
->>>>>>> Stashed changes
 =======
     "System.Xml.XmlSerializer.Reference/4.1.2.0": {
 >>>>>>> Stashed changes

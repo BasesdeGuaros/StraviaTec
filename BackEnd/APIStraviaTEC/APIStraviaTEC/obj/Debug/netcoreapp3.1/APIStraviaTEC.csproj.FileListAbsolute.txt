@@ -1,6 +1,5 @@
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
 C:\Users\garza\Desktop\IIS2020\Bases de Datos\Proyecto1\Code\StraviaTec\BackEnd\APIStraviaTEC\APIStraviaTEC\bin\Debug\netcoreapp3.1\appsettings.Development.json
 C:\Users\garza\Desktop\IIS2020\Bases de Datos\Proyecto1\Code\StraviaTec\BackEnd\APIStraviaTEC\APIStraviaTEC\bin\Debug\netcoreapp3.1\appsettings.json
 C:\Users\garza\Desktop\IIS2020\Bases de Datos\Proyecto1\Code\StraviaTec\BackEnd\APIStraviaTEC\APIStraviaTEC\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
@@ -56,8 +55,6 @@ C:\Users\garza\Desktop\IIS2020\Bases de Datos\Proyecto1\Code\StraviaTec\BackEnd\
 C:\Users\garza\Desktop\IIS2020\Bases de Datos\Proyecto1\Code\StraviaTec\BackEnd\APIStraviaTEC\APIStraviaTEC\obj\Debug\netcoreapp3.1\APIStraviaTEC.csproj.CoreCompileInputs.cache
 C:\Users\garza\Desktop\IIS2020\Bases de Datos\Proyecto1\Code\StraviaTec\BackEnd\APIStraviaTEC\APIStraviaTEC\obj\Debug\netcoreapp3.1\APIStraviaTEC.MvcApplicationPartsAssemblyInfo.cache
 =======
-=======
->>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 C:\Users\danie\OneDrive\Documentos\TEC\Bases de Datos\StraviaTEC\StraviaTec\BackEnd\APIStraviaTEC\APIStraviaTEC\bin\Debug\netcoreapp3.1\appsettings.Development.json
@@ -234,9 +231,6 @@ C:\Users\danie\OneDrive\Documentos\TEC\Bases de Datos\StraviaTEC\StraviaTec\Back
 C:\Users\danie\OneDrive\Documentos\TEC\Bases de Datos\StraviaTEC\StraviaTec\BackEnd\APIStraviaTEC\APIStraviaTEC\obj\Debug\netcoreapp3.1\APIStraviaTEC.csproj.CoreCompileInputs.cache
 C:\Users\danie\OneDrive\Documentos\TEC\Bases de Datos\StraviaTEC\StraviaTec\BackEnd\APIStraviaTEC\APIStraviaTEC\obj\Debug\netcoreapp3.1\APIStraviaTEC.MvcApplicationPartsAssemblyInfo.cache
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes

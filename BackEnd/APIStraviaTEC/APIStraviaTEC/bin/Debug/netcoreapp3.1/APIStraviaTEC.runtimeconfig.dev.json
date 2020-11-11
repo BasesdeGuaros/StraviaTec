@@ -3,13 +3,8 @@
     "additionalProbingPaths": [
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
       "C:\\Users\\garza\\.dotnet\\store\\|arch|\\|tfm|",
       "C:\\Users\\garza\\.nuget\\packages"
-=======
-      "C:\\Users\\danie\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\danie\\.nuget\\packages"
->>>>>>> Stashed changes
 =======
       "C:\\Users\\danie\\.dotnet\\store\\|arch|\\|tfm|",
       "C:\\Users\\danie\\.nuget\\packages"
