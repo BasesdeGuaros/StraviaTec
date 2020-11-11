@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\danie\\OneDrive\\Documentos\\TEC\\Bases de Datos\\StraviaTEC\\StraviaTec\\BackEnd\\APIStraviaTEC\\APIStraviaTEC\\APIStraviaTEC.csproj": {}
+    "C:\\Users\\garza\\Desktop\\IIS2020\\Bases de Datos\\Proyecto1\\Code\\StraviaTec\\BackEnd\\APIStraviaTEC\\APIStraviaTEC\\APIStraviaTEC.csproj": {}
   },
   "projects": {
-    "C:\\Users\\danie\\OneDrive\\Documentos\\TEC\\Bases de Datos\\StraviaTEC\\StraviaTec\\BackEnd\\APIStraviaTEC\\APIStraviaTEC\\APIStraviaTEC.csproj": {
+    "C:\\Users\\garza\\Desktop\\IIS2020\\Bases de Datos\\Proyecto1\\Code\\StraviaTec\\BackEnd\\APIStraviaTEC\\APIStraviaTEC\\APIStraviaTEC.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\danie\\OneDrive\\Documentos\\TEC\\Bases de Datos\\StraviaTEC\\StraviaTec\\BackEnd\\APIStraviaTEC\\APIStraviaTEC\\APIStraviaTEC.csproj",
+        "projectUniqueName": "C:\\Users\\garza\\Desktop\\IIS2020\\Bases de Datos\\Proyecto1\\Code\\StraviaTec\\BackEnd\\APIStraviaTEC\\APIStraviaTEC\\APIStraviaTEC.csproj",
         "projectName": "APIStraviaTEC",
-        "projectPath": "C:\\Users\\danie\\OneDrive\\Documentos\\TEC\\Bases de Datos\\StraviaTEC\\StraviaTec\\BackEnd\\APIStraviaTEC\\APIStraviaTEC\\APIStraviaTEC.csproj",
-        "packagesPath": "C:\\Users\\danie\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\danie\\OneDrive\\Documentos\\TEC\\Bases de Datos\\StraviaTEC\\StraviaTec\\BackEnd\\APIStraviaTEC\\APIStraviaTEC\\obj\\",
+        "projectPath": "C:\\Users\\garza\\Desktop\\IIS2020\\Bases de Datos\\Proyecto1\\Code\\StraviaTec\\BackEnd\\APIStraviaTEC\\APIStraviaTEC\\APIStraviaTEC.csproj",
+        "packagesPath": "C:\\Users\\garza\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\garza\\Desktop\\IIS2020\\Bases de Datos\\Proyecto1\\Code\\StraviaTec\\BackEnd\\APIStraviaTEC\\APIStraviaTEC\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\danie\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\garza\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -38,6 +38,15 @@
       "frameworks": {
         "netcoreapp3.1": {
           "dependencies": {
+            "Devart.Data.PostgreSql.EFCore": {
+              "target": "Package",
+              "version": "[7.19.1759, )"
+            },
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+=======
+>>>>>>> Stashed changes
             "EntityFramework": {
               "target": "Package",
               "version": "[6.4.4, )"
@@ -64,10 +73,28 @@
               "target": "Package",
               "version": "[3.1.9, )"
             },
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+              "version": "[5.0.0, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[3.1.4, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL.Design": {
+              "target": "Package",
+              "version": "[1.1.0, )"
+=======
+=======
+>>>>>>> Stashed changes
               "version": "[3.1.9, )"
             },
             "Microsoft.NETCore.App": {
@@ -93,6 +120,10 @@
             "Pomelo.EntityFrameworkCore.MySql": {
               "target": "Package",
               "version": "[3.2.4, )"
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
             }
           },
           "imports": [
