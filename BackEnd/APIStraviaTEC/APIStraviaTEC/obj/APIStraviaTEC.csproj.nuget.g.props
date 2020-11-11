@@ -18,11 +18,14 @@
   <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     <Import Project="$(NuGetPackageRoot)microsoft.entityframeworkcore.design\5.0.0\build\netcoreapp3.0\Microsoft.EntityFrameworkCore.Design.props" Condition="Exists('$(NuGetPackageRoot)microsoft.entityframeworkcore.design\5.0.0\build\netcoreapp3.0\Microsoft.EntityFrameworkCore.Design.props')" />
   </ImportGroup>
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <PkgMicrosoft_EntityFrameworkCore_Tools Condition=" '$(PkgMicrosoft_EntityFrameworkCore_Tools)' == '' ">C:\Users\garza\.nuget\packages\microsoft.entityframeworkcore.tools\5.0.0</PkgMicrosoft_EntityFrameworkCore_Tools>
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
     <Import Project="$(NuGetPackageRoot)microsoft.netcore.app\2.2.8\build\netcoreapp2.2\Microsoft.NETCore.App.props" Condition="Exists('$(NuGetPackageRoot)microsoft.netcore.app\2.2.8\build\netcoreapp2.2\Microsoft.NETCore.App.props')" />
@@ -34,6 +37,9 @@
     <PkgMicrosoft_EntityFrameworkCore_Tools Condition=" '$(PkgMicrosoft_EntityFrameworkCore_Tools)' == '' ">C:\Users\danie\.nuget\packages\microsoft.entityframeworkcore.tools\3.1.9</PkgMicrosoft_EntityFrameworkCore_Tools>
     <PkgEntityFramework Condition=" '$(PkgEntityFramework)' == '' ">C:\Users\danie\.nuget\packages\entityframework\6.4.4</PkgEntityFramework>
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
