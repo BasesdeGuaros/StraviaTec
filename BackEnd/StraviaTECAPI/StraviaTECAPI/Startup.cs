@@ -20,6 +20,8 @@ namespace StraviaTECAPI
     //Scaffold-DbContext "host=localhost;database=Stravia;user id=postgres; port=5433; password=admin" Npgsql.EntityFrameworkCore.PostgreSQL -OutputDir Models -context StraviaContext -force
     public class Startup
     {
+        readonly string myCors = "myCors";
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -30,12 +32,27 @@ namespace StraviaTECAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            //permitir el acceso de Web Services
+            services.AddCors(options =>
+            {
+                options.AddPolicy(name: myCors,
+                    builder =>
+                    {
+                        builder.WithHeaders("*"); // aceptar metodo post
+                        builder.WithOrigins("*"); // * => a cualquier dominio
+                        builder.WithMethods("*"); // permite todos los metodos
+                    });
+            });
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+            //anadir, configurar cors
+            app.UseCors(myCors);
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
