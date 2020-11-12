@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "fqRT6kFw/3Qq5yVx04E31bp4+gWU6sTe/1kscJrG3lRZLYpgFTyEfsMn8mwSaFotDf+YXgoV4acjPslYSjlHuA==",
+  "dgSpecHash": "OnJMDiPXOFkGsp4kpu+roqco2emV4LNR1ST29Zih4oTbjOeIPy0JehfY/gTI1g/Pq7ynXr85tuqy96mLWwt+Aw==",
   "success": true,
   "projectFilePath": "C:\\Users\\danie\\OneDrive\\Documentos\\TEC\\Bases de Datos\\StraviaTEC\\StraviaTec\\BackEnd\\StraviaTECAPI\\StraviaTECAPI\\StraviaTECAPI.csproj",
   "expectedPackageFiles": [
@@ -174,6 +174,7 @@
     "C:\\Users\\danie\\.nuget\\packages\\newtonsoft.json\\11.0.2\\newtonsoft.json.11.0.2.nupkg.sha512",
     "C:\\Users\\danie\\.nuget\\packages\\newtonsoft.json.bson\\1.0.1\\newtonsoft.json.bson.1.0.1.nupkg.sha512",
     "C:\\Users\\danie\\.nuget\\packages\\npgsql\\4.1.5\\npgsql.4.1.5.nupkg.sha512",
+    "C:\\Users\\danie\\.nuget\\packages\\npgsql.entityframeworkcore.postgresql\\2.1.1\\npgsql.entityframeworkcore.postgresql.2.1.1.nupkg.sha512",
     "C:\\Users\\danie\\.nuget\\packages\\remotion.linq\\2.2.0\\remotion.linq.2.2.0.nupkg.sha512",
     "C:\\Users\\danie\\.nuget\\packages\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "C:\\Users\\danie\\.nuget\\packages\\runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",

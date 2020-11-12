@@ -13,6 +13,11 @@ using Microsoft.Extensions.Options;
 
 namespace StraviaTECAPI
 {
+    //Create conexion
+    //Scaffold-DbContext "host=localhost;database=Stravia;user id=postgres; port=5433; password=admin" Npgsql.EntityFrameworkCore.PostgreSQL -OutputDir Models
+
+    //Update dataBaser
+    //Scaffold-DbContext "host=localhost;database=Stravia;user id=postgres; port=5433; password=admin" Npgsql.EntityFrameworkCore.PostgreSQL -OutputDir Models -context StraviaContext -force
     public class Startup
     {
         public Startup(IConfiguration configuration)

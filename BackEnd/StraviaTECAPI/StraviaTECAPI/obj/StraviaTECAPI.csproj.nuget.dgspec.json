@@ -68,6 +68,10 @@
             "Npgsql": {
               "target": "Package",
               "version": "[4.1.5, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[2.1.1, )"
             }
           },
           "imports": [

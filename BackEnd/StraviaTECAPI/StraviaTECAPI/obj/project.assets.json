@@ -2664,6 +2664,21 @@
           "lib/netstandard2.0/Npgsql.dll": {}
         }
       },
+      "Npgsql.EntityFrameworkCore.PostgreSQL/2.1.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "2.1.1",
+          "Microsoft.EntityFrameworkCore.Abstractions": "2.1.1",
+          "Microsoft.EntityFrameworkCore.Relational": "2.1.1",
+          "Npgsql": "4.0.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/Npgsql.EntityFrameworkCore.PostgreSQL.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Npgsql.EntityFrameworkCore.PostgreSQL.dll": {}
+        }
+      },
       "Remotion.Linq/2.2.0": {
         "type": "package",
         "dependencies": {
@@ -7194,6 +7209,19 @@
         "npgsql.4.1.5.nupkg.sha512",
         "npgsql.nuspec",
         "postgresql.png"
+      ]
+    },
+    "Npgsql.EntityFrameworkCore.PostgreSQL/2.1.1": {
+      "sha512": "2STWVXSP+r5i7222202+a4jMjGNSO55eRFb8MYwO/B1UUduQX25HHcw/sfH5TIPIxRVHCb1RCee491R7chtCWg==",
+      "type": "package",
+      "path": "npgsql.entityframeworkcore.postgresql/2.1.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/Npgsql.EntityFrameworkCore.PostgreSQL.dll",
+        "lib/netstandard2.0/Npgsql.EntityFrameworkCore.PostgreSQL.pdb",
+        "npgsql.entityframeworkcore.postgresql.2.1.1.nupkg.sha512",
+        "npgsql.entityframeworkcore.postgresql.nuspec"
       ]
     },
     "Remotion.Linq/2.2.0": {
@@ -12000,7 +12028,8 @@
       "Microsoft.EntityFrameworkCore >= 2.1.14",
       "Microsoft.EntityFrameworkCore.Tools >= 2.1.14",
       "Microsoft.NETCore.App >= 2.1.0",
-      "Npgsql >= 4.1.5"
+      "Npgsql >= 4.1.5",
+      "Npgsql.EntityFrameworkCore.PostgreSQL >= 2.1.1"
     ]
   },
   "packageFolders": {
@@ -12070,6 +12099,10 @@
           "Npgsql": {
             "target": "Package",
             "version": "[4.1.5, )"
+          },
+          "Npgsql.EntityFrameworkCore.PostgreSQL": {
+            "target": "Package",
+            "version": "[2.1.1, )"
           }
         },
         "imports": [

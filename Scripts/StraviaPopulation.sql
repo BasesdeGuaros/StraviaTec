@@ -1,10 +1,10 @@
 INSERT INTO USUARIO(Cedula,Nombre,Apellido,Nombre_Usuario,Contraseña,Nacionalidad,Fecha_Nacimiento,Foto) 
 VALUES(117460001,'Daniel','Garcia Fallas','garza','hola1234','Costarricense','1999-06-11',
-       pg_read_binary_file('C:\Users\garza\Desktop\IIS2020\Bases de Datos\Proyecto1\Code\StraviaTec\Resources\default_profile.bin'));
+       pg_read_binary_file('C:\Users\danie\OneDrive\Documentos\TEC\Bases de Datos\StraviaTEC\StraviaTec\Resources\default_profile.bin'));
 
 INSERT INTO USUARIO(Cedula,Nombre,Apellido,Nombre_Usuario,Contraseña,Nacionalidad,Fecha_Nacimiento,Foto) 
 VALUES(305130462,'Elias','Arce Mendez','delias','12345678','Costarricense','1998-10-27',
-       pg_read_binary_file('C:\Users\garza\Desktop\IIS2020\Bases de Datos\Proyecto1\Code\StraviaTec\Resources\default_profile.bin'));
+       pg_read_binary_file('C:\Users\danie\OneDrive\Documentos\TEC\Bases de Datos\StraviaTEC\StraviaTec\Resources\default_profile.bin'));
 	  
 INSERT INTO ROL(Id, Nombre)
 VALUES (1,'Deportista');
@@ -66,7 +66,7 @@ VALUES(2,117360001, 0);
 
 INSERT INTO PATROCINADOR(Id,Logo,Nombre,Numero,Representante) 
 VALUES(1,
-pg_read_binary_file('C:\Users\garza\Desktop\IIS2020\Bases de Datos\Proyecto1\Code\StraviaTec\Resources\default_profile.bin'),
+pg_read_binary_file('C:\Users\danie\OneDrive\Documentos\TEC\Bases de Datos\StraviaTEC\StraviaTec\Resources\default_profile.bin'),
 'Cacique',88568822,'Daniel Sing');
 
 
@@ -113,7 +113,7 @@ VALUES(1,'Super Maratón',305130462,'.gpx','1-xxxx-0000-9999',4,20000,1,2,'2020-
 INSERT INTO EVENTO(Id,Nombre,Fecha,Id_Admin,Recorrido,Cuenta,Categoria,Costo,Privado,Id_Deporte,Kilometraje,
 				  Elevacion,Fecha_Inicial,Fecha_Final,Fondo_Altitud,Foto) 
 VALUES(2,'Reto CE','2020-11-11',117460001,'recorrido1','0',1,0,0,1,1,5,'2020-11-11','2020-11-11',1,
-	  pg_read_binary_file('C:\Users\garza\Desktop\IIS2020\Bases de Datos\Proyecto1\Code\StraviaTec\Resources\default_profile.bin'));
+	  pg_read_binary_file('C:\Users\danie\OneDrive\Documentos\TEC\Bases de Datos\StraviaTEC\StraviaTec\Resources\default_profile.bin'));
 
 INSERT INTO EVENTO_PATROCINADO_PATROCINADOR(Id_Evento,Id_Patrocinador)
 VALUES(1,1);
@@ -140,13 +140,12 @@ INSERT INTO EVENTO_TIENE_TIPO(Id_Evento,Id_Tipo_Evento)
 VALUES(2,2);
 
 INSERT INTO ACTIVIDAD(Id,Id_Usuario,Recorrido)
-VALUES(1,305130462,'.gpx')
+VALUES(1,305130462,'.gpx');
 
 INSERT INTO ACTIVIDAD_PERTENECE_EVENTO(Id_Actividad,Id_Evento) VALUES(1,1);
 
-INSERT INTO TABLE ACTIVIDAD_CLASIFICA_DEPORTE(Id_Actividad,Id_Deporte) VALUES(1,1);
+INSERT INTO ACTIVIDAD_CLASIFICA_DEPORTE(Id_Actividad,Id_Deporte) VALUES(1,1);
 
-
-
-
-
+GRANT SELECT ON USUARIO TO PUBLIC;
+GRANT SELECT ON PATROCINADOR TO PUBLIC;
+GRANT SELECT ON EVENTO TO PUBLIC;
