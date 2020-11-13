@@ -21,7 +21,6 @@ export class SignupComponent implements OnInit {
   optionsSelect: Array<any>;
   ngOnInit() {
 
-      this.getUsuario();
 
     this.optionsSelect = [
       { value: 'Feedback', label: 'Feedback' },
@@ -31,41 +30,6 @@ export class SignupComponent implements OnInit {
     ];
   }
 
-    getUsuario(){
-      this.apiusuarioRol.getUser().subscribe(reply => {
-          console.log(reply);
-          this.listUsuarios = reply.data;
-      });
-  }
-
-  add()
-  {
-      const UsuarioRol: UsurioRol = {
-
-        IdUsuario: 1,
-        IdRol: 1,
-
-        IdRolNavigation: {
-            Id: 1,
-            Nombre: 'Deportista'
-        },
-        IdUsuarioNavigation: {
-            cedula: 1,
-            nombre: 'Marco',
-            apellido: 'Rivera',
-            nombreUsuario: 'mrivera',
-            contraseña: 'marco',
-            nacionalidad: 'tico',
-            fechaNacimiento: '1980-06-11',
-    }
-      };
-
-
-      this.apiusuarioRol.add(UsuarioRol).subscribe(reply => {
-          console.log(reply);
-          console.log(reply.message);
-      })
-  }
 
 }
 

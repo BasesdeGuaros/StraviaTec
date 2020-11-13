@@ -40,7 +40,7 @@ import { ActivityComponent } from './activity/activity.component';
     MisCarrerasRetosComponent,
     ActivityComponent
   ],
-  
+
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -54,7 +54,7 @@ import { ActivityComponent } from './activity/activity.component';
     RouterModule.forRoot([
       { path: '', component: LoginComponent, pathMatch: 'full' },
       { path: 'signup', component: SignupComponent},
-      { path: 'lobby', component: LobbyComponent},
+      { path: 'lobby/:username', component: LobbyComponent},
       { path: 'friends', component: AmigosComponent},
       { path: 'race', component: RacingComponent},
       { path: "challenge", component: ChallengingComponent},

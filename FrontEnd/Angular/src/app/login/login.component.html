@@ -30,16 +30,16 @@
                     <!--Body-->
                     <div class="md-form">
                       <mdb-icon fas icon="user" class="text-black active"></mdb-icon>
-                      <input type="text" id="form3" class="text-black form-control" mdbInput>
+                      <input type="text" id="form3" class="text-black form-control" [(ngModel)]=model.name mdbInput>
                       <label for="form3" class="text-white">Nombre de usuario</label>
                     </div>
                     <div class="md-form">
                       <mdb-icon fas icon="lock" class="text-black active"></mdb-icon>
-                      <input type="password" id="form4" class="text-black form-control" mdbInput>
+                      <input type="password" id="form4" class="text-black form-control" [(ngModel)]=model.password mdbInput>
                       <label for="form4" class="text-white">Contraseña</label>
                     </div>
                     <div class="text-center mt-4">
-                      <button mdbBtn color="indigo" [routerLink]="['/lobby']" mdbWavesEffect>Iniciar Sesion</button>
+                      <button mdbBtn color="indigo" (click)="validation()" mdbWavesEffect>Iniciar Sesion</button>
                       <hr class="hr-light mb-3 mt-4">
                       <div class="inline-ul text-center d-flex justify-content-center">
                         <button mdbBtn color="red" [routerLink]="['/signup']" mdbWavesEffect>Crear Cuenta</button>
