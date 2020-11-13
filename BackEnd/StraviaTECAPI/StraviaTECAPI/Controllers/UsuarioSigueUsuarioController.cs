@@ -12,7 +12,7 @@ namespace StraviaTECAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class UsuarioRolController : ControllerBase
+    public class UsuarioSigueUsuarioController : ControllerBase
     {
         /**
        *  Protocolo get
@@ -29,7 +29,7 @@ namespace StraviaTECAPI.Controllers
                 //codigo que se ejecuta una vez
                 using (StraviaContext db = new StraviaContext())
                 {
-                    var list = db.UsuarioRol
+                    var list = db.UsuarioSigueUsuario
                         .ToList();
                     reply.conexionSuccess = 1;
                     reply.data = list;
@@ -46,7 +46,7 @@ namespace StraviaTECAPI.Controllers
          * Protocolo Post
          */
         [HttpPost]
-        public IActionResult Post(UsuarioRolRequest request)
+        public IActionResult Post(UsuarioSigueUsuarioRequest request)
         {
             MyReply reply = new MyReply();
 
@@ -54,17 +54,24 @@ namespace StraviaTECAPI.Controllers
             {
                 using (StraviaContext db = new StraviaContext())
                 {
-                    UsuarioRol usuariorol = new UsuarioRol();
+                    UsuarioSigueUsuario usuariosigue = new UsuarioSigueUsuario();
 
-                    usuariorol.IdUsuario = request.IdUsuario;
-                    usuariorol.IdRol = request.IdRol;
 
-                    usuariorol.IdUsuarioNavigation = request.IdUsuarioNavigation;
 
-                    db.UsuarioRol.Add(usuariorol);
+                    usuariosigue.IdSeguido = request.IdSeguido;
+                    usuariosigue.IdSeguidor = request.IdSeguidor;
+
+
+                    usuariosigue.IdSeguidoNavigation = request.IdSeguidoNavigation;
+                    usuariosigue.IdSeguidorNavigation = request.IdSeguidorNavigation;
+
+
+
+
+                    db.UsuarioSigueUsuario.Add(usuariosigue);
                     db.SaveChanges();
                     reply.conexionSuccess = 1;
-                    reply.message = "Usuario Agregado";
+                    reply.message = "Usuario Seguir Agregado";
                 }
             }
             catch (Exception ex)
@@ -79,7 +86,7 @@ namespace StraviaTECAPI.Controllers
          * Protocolo Put
          */
         [HttpPut]
-        public IActionResult Put(UsuarioRolRequest request)
+        public IActionResult Put(UsuarioSigueUsuarioRequest request)
         {
             MyReply reply = new MyReply();
 
@@ -87,18 +94,19 @@ namespace StraviaTECAPI.Controllers
             {
                 using (StraviaContext db = new StraviaContext())
                 {
-                    UsuarioRol usuariorol = new UsuarioRol();
+                    UsuarioSigueUsuario usuariosigue = new UsuarioSigueUsuario();
 
-                    usuariorol.IdUsuario = request.IdUsuario;
-                    usuariorol.IdRol = request.IdRol;
+                    usuariosigue.IdSeguido = request.IdSeguido;
+                    usuariosigue.IdSeguidor = request.IdSeguidor;
 
-                    usuariorol.IdUsuarioNavigation = request.IdUsuarioNavigation;
+                    usuariosigue.IdSeguidoNavigation = request.IdSeguidoNavigation;
+                    usuariosigue.IdSeguidorNavigation = request.IdSeguidorNavigation;
 
-                    db.Entry(usuariorol).State = Microsoft.EntityFrameworkCore.EntityState.Modified; //le dice a la base de datos que se ha modificado  
+                    db.Entry(usuariosigue).State = Microsoft.EntityFrameworkCore.EntityState.Modified; //le dice a la base de datos que se ha modificado  
                     db.SaveChanges();
 
                     reply.conexionSuccess = 1;
-                    reply.message = "Usuario Editado";
+                    reply.message = "Usuario Seguir Editado";
                 }
             }
             catch (Exception ex)
@@ -121,8 +129,8 @@ namespace StraviaTECAPI.Controllers
             {
                 using (StraviaContext db = new StraviaContext())
                 {
-                    UsuarioRol usuariorol = db.UsuarioRol.Find(cedula); //Eliminar el Usuario y no la tabla relacion
-                    db.Remove(usuariorol);
+                    Usuario usuario = db.Usuario.Find(cedula); //Cambiar para borrar la condicion de seguidor
+                    db.Remove(usuario);
                     db.SaveChanges();
 
                     reply.conexionSuccess = 1;

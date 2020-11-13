@@ -12,13 +12,13 @@ namespace StraviaTECAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class UsuarioRolController : ControllerBase
+    public class ActividadPerteneceEventoController : ControllerBase
     {
         /**
-       *  Protocolo get
-       *  IActionResult es una inteface
-       *  Retorna una lista si la conexion fue extiosa, sino devuelve un mesanje de error
-       */
+      *  Protocolo get
+      *  IActionResult es una inteface
+      *  Retorna una lista si la conexion fue extiosa, sino devuelve un mesanje de error
+      */
 
         [HttpGet]
         public IActionResult Get()
@@ -29,8 +29,10 @@ namespace StraviaTECAPI.Controllers
                 //codigo que se ejecuta una vez
                 using (StraviaContext db = new StraviaContext())
                 {
-                    var list = db.UsuarioRol
+                    var list = db.ActividadPerteneceEvento
                         .ToList();
+                    // .Where(a => a.Rol == "producer") para hacerlo dentro del query
+                    // .Include(a => a.Producers)
                     reply.conexionSuccess = 1;
                     reply.data = list;
                 }
@@ -46,7 +48,7 @@ namespace StraviaTECAPI.Controllers
          * Protocolo Post
          */
         [HttpPost]
-        public IActionResult Post(UsuarioRolRequest request)
+        public IActionResult Post(ActividadPerteneceEventoRequest request)
         {
             MyReply reply = new MyReply();
 
@@ -54,17 +56,18 @@ namespace StraviaTECAPI.Controllers
             {
                 using (StraviaContext db = new StraviaContext())
                 {
-                    UsuarioRol usuariorol = new UsuarioRol();
+                    ActividadPerteneceEvento actividadPerteneceEvento = new ActividadPerteneceEvento();
 
-                    usuariorol.IdUsuario = request.IdUsuario;
-                    usuariorol.IdRol = request.IdRol;
+                    actividadPerteneceEvento.IdEvento = request.IdEvento;
+                    actividadPerteneceEvento.IdActividad = request.IdActividad;
 
-                    usuariorol.IdUsuarioNavigation = request.IdUsuarioNavigation;
+                    actividadPerteneceEvento.IdActividadNavigation = request.IdActividadNavigation;
+                    actividadPerteneceEvento.IdEventoNavigation = request.IdEventoNavigation;
 
-                    db.UsuarioRol.Add(usuariorol);
+                    db.ActividadPerteneceEvento.Add(actividadPerteneceEvento);
                     db.SaveChanges();
                     reply.conexionSuccess = 1;
-                    reply.message = "Usuario Agregado";
+                    reply.message = "Actividad Pertenece Agregado";
                 }
             }
             catch (Exception ex)
@@ -79,7 +82,7 @@ namespace StraviaTECAPI.Controllers
          * Protocolo Put
          */
         [HttpPut]
-        public IActionResult Put(UsuarioRolRequest request)
+        public IActionResult Put(ActividadPerteneceEventoRequest request)
         {
             MyReply reply = new MyReply();
 
@@ -87,18 +90,19 @@ namespace StraviaTECAPI.Controllers
             {
                 using (StraviaContext db = new StraviaContext())
                 {
-                    UsuarioRol usuariorol = new UsuarioRol();
+                    ActividadPerteneceEvento actividadPerteneceEvento = new ActividadPerteneceEvento();
 
-                    usuariorol.IdUsuario = request.IdUsuario;
-                    usuariorol.IdRol = request.IdRol;
+                    actividadPerteneceEvento.IdEvento = request.IdEvento;
+                    actividadPerteneceEvento.IdActividad = request.IdActividad;
 
-                    usuariorol.IdUsuarioNavigation = request.IdUsuarioNavigation;
+                    actividadPerteneceEvento.IdActividadNavigation = request.IdActividadNavigation;
+                    actividadPerteneceEvento.IdEventoNavigation = request.IdEventoNavigation;
 
-                    db.Entry(usuariorol).State = Microsoft.EntityFrameworkCore.EntityState.Modified; //le dice a la base de datos que se ha modificado  
+                    db.Entry(actividadPerteneceEvento).State = Microsoft.EntityFrameworkCore.EntityState.Modified; //le dice a la base de datos que se ha modificado  
                     db.SaveChanges();
 
                     reply.conexionSuccess = 1;
-                    reply.message = "Usuario Editado";
+                    reply.message = "Actividad Pertenece Editado";
                 }
             }
             catch (Exception ex)
@@ -121,8 +125,8 @@ namespace StraviaTECAPI.Controllers
             {
                 using (StraviaContext db = new StraviaContext())
                 {
-                    UsuarioRol usuariorol = db.UsuarioRol.Find(cedula); //Eliminar el Usuario y no la tabla relacion
-                    db.Remove(usuariorol);
+                    Usuario usuario = db.Usuario.Find(cedula); //Cambiar para borrar la condicion de seguidor
+                    db.Remove(usuario);
                     db.SaveChanges();
 
                     reply.conexionSuccess = 1;
