@@ -23,7 +23,7 @@ const httpOption = {
 * */
 export class ApiusuarioService {
 
-  url: string = "https://localhost:44372/api/usuario";
+  url: string = "https://localhost:44385/api/Usuario";
 
   constructor(private _http: HttpClient) { }
   

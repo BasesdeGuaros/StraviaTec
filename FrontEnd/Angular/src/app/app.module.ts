@@ -3,8 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {ConnectionServiceModule} from 'ng-connection-service';
-
-
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
@@ -41,6 +40,7 @@ import { ActivityComponent } from './activity/activity.component';
     MisCarrerasRetosComponent,
     ActivityComponent
   ],
+  
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -48,6 +48,7 @@ import { ActivityComponent } from './activity/activity.component';
     FormsModule,
     ConnectionServiceModule,
     FormsModule,
+    HttpClientModule,
     ReactiveFormsModule,
 
     RouterModule.forRoot([
