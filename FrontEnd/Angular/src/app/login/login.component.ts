@@ -27,12 +27,16 @@ export class LoginComponent implements OnInit {
           console.log(reply);
           this.listUsuario = reply.data;
           console.log(this.listUsuario)
-          if(this,this.listUsuario[0]==undefined){
+          if(this,this.listUsuario[0] == undefined){
               alert("Usuario o contrasena incorrectas")
               //cambiarlo por un modal
           }else{
-              if(this.listUsuario[0].nombreUsuario == this.model.name && this.listUsuario[0].contraseña == this.model.password){
-              this.router.navigate(['/lobby', this.model.name]);
+              if(this.listUsuario[0].idUsuarioNavigation.nombreUsuario == this.model.name && this.listUsuario[0].idUsuarioNavigation.contraseña == this.model.password){
+                  if(this.listUsuario[0].idRol){
+                      this.router.navigate(['/lobby', this.model.name]);
+                  }else{
+                      //llevarlo al de administrador
+                  }
               }
           }
       });

@@ -33,11 +33,17 @@ namespace StraviaTECAPI.Controllers
                 //codigo que se ejecuta una vez
                 using (StraviaContext db = new StraviaContext())
                 {
-                    var list = db.Usuario
-                        //.Include(a => a.IdRolNavigation)
-                        .Where(a => a.NombreUsuario == username)
+
+                    var list = db.UsuarioRol
+
+                        .Where(a => a.IdUsuarioNavigation.NombreUsuario == username)
                         
+                        .Include(a => a.IdUsuarioNavigation)
+
+
                         .ToList();
+
+
                     reply.conexionSuccess = 1;
                     reply.data = list;
                 }
