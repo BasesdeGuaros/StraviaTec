@@ -19,14 +19,12 @@ export class LoginComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-      this.getUsuario();
   }
 
   validation(){
       this.apiusuarioRol.getUser(this.model.name).subscribe(reply => {
           console.log(reply);
           this.listUsuario = reply.data;
-          console.log(this.listUsuario)
           if(this,this.listUsuario[0] == undefined){
               alert("Usuario o contrasena incorrectas")
               //cambiarlo por un modal
@@ -35,16 +33,13 @@ export class LoginComponent implements OnInit {
                   if(this.listUsuario[0].idRol){
                       this.router.navigate(['/lobby', this.model.name]);
                   }else{
-                      //llevarlo al de administrador
+                      this.router.navigate(['/organizer']);
                   }
               }
           }
       });
   }
 
-  getUsuario(){
-      
-  }
   
 
 

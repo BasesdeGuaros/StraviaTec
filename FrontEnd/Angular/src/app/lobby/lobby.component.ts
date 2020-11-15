@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
-
+import { ActivatedRoute, Router } from '@angular/router';
+import { ApiusuariorolService } from '../services/apiusuariorol.service';
+import { ApiusuariosigueusuarioService} from '../services/apiusuariosigueusuario.service';
 
 @Component({
   selector: 'app-lobby',
@@ -9,6 +11,7 @@ import {FormControl, FormGroup, Validators} from "@angular/forms";
 })
 export class LobbyComponent implements OnInit {
   validatingForm: FormGroup;
+  public listfollowers = [];
 
   groupsList = [
     {"name":"Sing","admin":"Sing","number":982},
@@ -29,19 +32,27 @@ export class LobbyComponent implements OnInit {
     {"name":"Elias Arce", "seguidores":0, "seguidos":235,"actividades":0}
   ];
 
-
-  
-
-  constructor() { }
+  constructor(
+      private apiusuarioRol: ApiusuariorolService,
+      private apiusuariosigueusuario: ApiusuariosigueusuarioService,
+      private router: Router,
+      private route: ActivatedRoute
+  ) { }
   
   ngOnInit(): void {
-
     this.validatingForm = new FormGroup({
       signupFormModalName: new FormControl('', Validators.required),
       signupFormModalEmail: new FormControl('', Validators.email),
       signupFormModalPassword: new FormControl('', Validators.required),
     });
     
+  }
+
+  getFollowers(){
+      this.apiusuariosigueusuario.getUser(this.route.snapshot.paramMap.get('username')).subscribe(reply => {
+          console.log(reply);
+          this.listfollowers = reply.data;
+    });
   }
  
   get signupFormModalName() {

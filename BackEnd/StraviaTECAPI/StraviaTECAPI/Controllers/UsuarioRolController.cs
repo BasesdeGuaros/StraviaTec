@@ -35,12 +35,8 @@ namespace StraviaTECAPI.Controllers
                 {
 
                     var list = db.UsuarioRol
-
                         .Where(a => a.IdUsuarioNavigation.NombreUsuario == username)
-                        
                         .Include(a => a.IdUsuarioNavigation)
-
-
                         .ToList();
 
 

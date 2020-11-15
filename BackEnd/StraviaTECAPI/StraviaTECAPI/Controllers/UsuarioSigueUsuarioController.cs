@@ -4,13 +4,14 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using StraviaTECAPI.Models;
 using StraviaTECAPI.Models.Reply;
 using StraviaTECAPI.Models.Request;
 
 namespace StraviaTECAPI.Controllers
 {
-    [Route("api/[controller]")]
+    
     [ApiController]
     public class UsuarioSigueUsuarioController : ControllerBase
     {
@@ -21,7 +22,8 @@ namespace StraviaTECAPI.Controllers
        */
 
         [HttpGet]
-        public IActionResult Get()
+        [Route("api/[controller]/{username}")]
+        public IActionResult Get(string username)
         {
             MyReply reply = new MyReply();
             try
@@ -30,6 +32,9 @@ namespace StraviaTECAPI.Controllers
                 using (StraviaContext db = new StraviaContext())
                 {
                     var list = db.UsuarioSigueUsuario
+                        .Where(a => a.IdSeguidoNavigation.NombreUsuario == username)
+                        .Include(a => a.IdSeguidorNavigation)
+                        .Include(a => a.IdSeguidoNavigation)
                         .ToList();
                     reply.conexionSuccess = 1;
                     reply.data = list;
@@ -46,6 +51,7 @@ namespace StraviaTECAPI.Controllers
          * Protocolo Post
          */
         [HttpPost]
+        [Route("api/[controller]")]
         public IActionResult Post(UsuarioSigueUsuarioRequest request)
         {
             MyReply reply = new MyReply();
@@ -86,6 +92,7 @@ namespace StraviaTECAPI.Controllers
          * Protocolo Put
          */
         [HttpPut]
+        [Route("api/[controller]")]
         public IActionResult Put(UsuarioSigueUsuarioRequest request)
         {
             MyReply reply = new MyReply();
@@ -121,6 +128,8 @@ namespace StraviaTECAPI.Controllers
          * Protocolo Delete
          */
         [HttpDelete]
+        [Route("api/[controller]")]
+
         public IActionResult Delete(int cedula)
         {
             MyReply reply = new MyReply();

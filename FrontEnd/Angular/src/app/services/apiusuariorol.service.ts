@@ -23,7 +23,7 @@ export class ApiusuariorolService {
     return this._http.get<Reply>(`${this.url}/${username}`);
   }
 
-  add(usuariorol: usuariorol): Observable<Reply> {
+  addUser(usuariorol: usuariorol): Observable<Reply> {
     return this._http.post<Reply>(this.url, usuariorol, httpOption)
   }
 }
