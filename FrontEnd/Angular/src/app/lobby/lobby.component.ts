@@ -12,6 +12,7 @@ import { ApiusuariosigueusuarioService} from '../services/apiusuariosigueusuario
 export class LobbyComponent implements OnInit {
   validatingForm: FormGroup;
   public listfollowers = [];
+  public listUser = [];
 
   groupsList = [
     {"name":"Sing","admin":"Sing","number":982},
@@ -40,12 +41,24 @@ export class LobbyComponent implements OnInit {
   ) { }
   
   ngOnInit(): void {
-    this.validatingForm = new FormGroup({
+      
+      this.getUser();
+      this.getFollowers();
+      this.validatingForm = new FormGroup({
       signupFormModalName: new FormControl('', Validators.required),
       signupFormModalEmail: new FormControl('', Validators.email),
       signupFormModalPassword: new FormControl('', Validators.required),
     });
     
+  }
+
+
+  getUser(){
+       this.apiusuarioRol.getUser(this.route.snapshot.paramMap.get('username')).subscribe(reply => {
+          console.log(reply);
+          this.listUser = reply.data;
+    });
+
   }
 
   getFollowers(){
@@ -67,7 +80,6 @@ export class LobbyComponent implements OnInit {
     return this.validatingForm.get('signupFormModalPassword');
   }
 
-  
 
 }
 
