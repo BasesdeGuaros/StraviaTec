@@ -15,12 +15,14 @@ const httpOption = {
 })
 
 export class ApiusuariorolService {
+    
   url: string = "https://localhost:44385/api/UsuarioRol";
 
   constructor(private _http: HttpClient) { }
+  
 
-  getUser(username: string): Observable<Reply> {
-    return this._http.get<Reply>(`${this.url}/${username}`);
+  getUser(username: string, rol: string): Observable<Reply> {
+    return this._http.get<Reply>(`${this.url}/${username}/${rol}`);
   }
 
   addUser(usuariorol: usuariorol): Observable<Reply> {

@@ -59,11 +59,11 @@ import { ActivityComponent } from './activity/activity.component';
       { path: 'race', component: RacingComponent},
       { path: "challenge", component: ChallengingComponent},
       { path: 'groups', component: GroupsComponent},
-      { path: 'organizer', component: OrganizerComponent},
-      { path: 'organizerRace', component: OrganizerRaceComponent},
+      { path: 'organizer/:username', component: OrganizerComponent},
+      { path: 'organizerRace/:cedula', component: OrganizerRaceComponent},
       { path: 'organizerChallenge', component: OrganizerChallengeComponent},
       { path: 'organizerGroup', component: OrganizerGroupComponent},
-      { path: 'miscarrerasretos', component: MisCarrerasRetosComponent},
+      { path: 'miscarrerasretos/:cedula', component: MisCarrerasRetosComponent},
       { path: 'activity', component: ActivityComponent}
     
       

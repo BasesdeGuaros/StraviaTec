@@ -16,7 +16,7 @@
     
     <!-- Card -->
     <div class="myborder">
-      <mdb-card *ngFor="let challenge of challenges; let i = index">
+      <mdb-card *ngFor="let challenge of listChallange; let i = index">
         <div class="view overlay waves-light" mdbWavesEffect>
           <!-- Card img -->
           <!---- MAPA QUE NO SIRVE XD
@@ -36,7 +36,7 @@
         <mdb-card-body class="myborderdown">
           <!--Title-->
           <mdb-card-title>
-            <h4>{{challenge.name}}</h4>
+            <h4>{{challenge.idEventoNavigation.nombre}}</h4>
           </mdb-card-title>
     
           <!--Text-->
