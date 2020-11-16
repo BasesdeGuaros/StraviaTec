@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using StraviaTECAPI.Models;
 using StraviaTECAPI.Models.Reply;
 using StraviaTECAPI.Models.Request;
@@ -30,6 +31,7 @@ namespace StraviaTECAPI.Controllers
                 using (StraviaContext db = new StraviaContext())
                 {
                     var list = db.ParticipacionUsuarioGrupo
+                        .Include(a => a.IdGrupoNavigation)
                         .ToList();
                     // .Where(a => a.Rol == "producer") para hacerlo dentro del query
                     // .Include(a => a.Producers)

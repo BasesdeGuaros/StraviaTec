@@ -22,10 +22,10 @@ namespace StraviaTECAPI.Controllers
        */
 
         [HttpGet]
-        [Route("api/[controller]/{username}")]
+        [Route("api/[controller]/{username}/{rol}")]
         //[Route("api/[controller]username")]
 
-        public IActionResult Get(string username)
+        public IActionResult Get(string username, string rol)
         {
             MyReply reply = new MyReply();
             try
@@ -36,6 +36,7 @@ namespace StraviaTECAPI.Controllers
 
                     var list = db.UsuarioRol
                         .Where(a => a.IdUsuarioNavigation.NombreUsuario == username)
+                        .Where(a => a.IdRol == int.Parse(rol))
                         .Include(a => a.IdUsuarioNavigation)
                         .ToList();
 

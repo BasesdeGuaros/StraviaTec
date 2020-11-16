@@ -43,8 +43,8 @@
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let group of groupsList">
-              <td class="white-text">{{group.name}}</td>
+            <tr *ngFor="let group of listGroup">
+              <td class="white-text">{{group.idGrupoNavigation.nombre}}</td>
               <td class="white-text">{{group.admin}}</td>
               <td class="white-text">{{group.number}}</td>
               <td><button class="btn aqua-gradient btn-rounded btn-sm my-0 " (click)="confirmationModal.show()"> Ingresar</button></td>

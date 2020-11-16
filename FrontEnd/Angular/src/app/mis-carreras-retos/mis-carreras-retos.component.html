@@ -36,7 +36,7 @@
     
           <!-- Cards of challenges-->
           <div>
-            <mdb-card *ngFor="let race of races; let i = index" class="myborder">
+            <mdb-card *ngFor="let race of listRaces; let i = index" class="myborder">
                 <div class="view overlay waves-light" mdbWavesEffect>
                   <!-- Card img -->
                   <!---- MAPA QUE NO SIRVE XD
@@ -56,7 +56,7 @@
                 <mdb-card-body >
                   <!--Title-->
                   <mdb-card-title>
-                    <h4>{{race.name}}</h4>
+                    <h4>{{race.idEventoNavigation.nombre}}</h4>
                   </mdb-card-title>
             
                   <!--Text-->
@@ -78,7 +78,7 @@
     
           <!-- Cards of challenges-->
           <div>
-            <mdb-card *ngFor="let challenge of challenges; let i = index" class="myborder">
+            <mdb-card *ngFor="let challenge of listChallenges; let i = index" class="myborder">
                 <div class="view overlay waves-light" mdbWavesEffect>
                   <!-- Card img -->
                   <!---- MAPA QUE NO SIRVE XD
@@ -100,7 +100,7 @@
                   <div class="col-md-4">
                     <!--Title-->
                     <mdb-card-title>
-                      <h4>{{challenge.name}}</h4>
+                      <h4>{{challenge.idEventoNavigation.nombre}}</h4>
                     </mdb-card-title>
 
                     <!--Text-->

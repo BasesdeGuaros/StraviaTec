@@ -15,7 +15,7 @@
     <div class="card-deck-scrollable col-md-6 center">
       <!-- Card -->
       <div class="myborder">
-        <mdb-card *ngFor="let race of races; let i = index"> 
+        <mdb-card *ngFor="let race of listRace; let i = index"> 
           <div class="view overlay waves-light" mdbWavesEffect>
             <!-- Card img -->
             <!---- MAPA QUE NO SIRVE XD
@@ -35,7 +35,7 @@
           <mdb-card-body class="myborderdown">
             <!--Title-->
             <mdb-card-title>
-              <h4>{{race.name}}</h4>
+              <h4>{{race.idEventoNavigation.nombre}}</h4>
             </mdb-card-title>
     
             <!--Text-->

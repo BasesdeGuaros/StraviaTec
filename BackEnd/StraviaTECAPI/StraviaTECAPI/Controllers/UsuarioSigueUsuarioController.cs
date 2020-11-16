@@ -34,7 +34,6 @@ namespace StraviaTECAPI.Controllers
                     var list = db.UsuarioSigueUsuario
                         .Where(a => a.IdSeguidoNavigation.NombreUsuario == username)
                         .Include(a => a.IdSeguidorNavigation)
-                        .Include(a => a.IdSeguidoNavigation)
                         .ToList();
                     reply.conexionSuccess = 1;
                     reply.data = list;

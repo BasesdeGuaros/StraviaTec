@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ApiusuariorolService } from '../services/apiusuariorol.service';
 import { ApiusuariosigueusuarioService} from '../services/apiusuariosigueusuario.service';
 
+
 @Component({
   selector: 'app-lobby',
   templateUrl: './lobby.component.html',
@@ -11,6 +12,8 @@ import { ApiusuariosigueusuarioService} from '../services/apiusuariosigueusuario
 })
 export class LobbyComponent implements OnInit {
   validatingForm: FormGroup;
+  public username = '';
+  public cedula = 0;
   public listfollowers = [];
   public listUser = [];
 
@@ -42,9 +45,11 @@ export class LobbyComponent implements OnInit {
   ) { }
   
   ngOnInit(): void {
-      
+      this. username = this.route.snapshot.paramMap.get('username')
       this.getUser();
       this.getFollowers();
+
+
       this.validatingForm = new FormGroup({
       signupFormModalName: new FormControl('', Validators.required),
       signupFormModalEmail: new FormControl('', Validators.email),
@@ -60,15 +65,20 @@ export class LobbyComponent implements OnInit {
 
 
   getUser(){
-       this.apiusuarioRol.getUser(this.route.snapshot.paramMap.get('username')).subscribe(reply => {
+       this.apiusuarioRol.getUser(this.username, "2").subscribe(reply => {
           console.log(reply);
           this.listUser = reply.data;
+          this.cedula = this.listUser[0].idUsuarioNavigation.cedula;
+          
+          
+          document.getElementById("foto").setAttribute("src","data:image/png;base64," + this.listUser[0].idUsuarioNavigation.foto);
+
     });
 
   }
 
   getFollowers(){
-      this.apiusuariosigueusuario.getUser(this.route.snapshot.paramMap.get('username')).subscribe(reply => {
+      this.apiusuariosigueusuario.getUser(this.username).subscribe(reply => {
           console.log(reply);
           this.listfollowers = reply.data;
     });

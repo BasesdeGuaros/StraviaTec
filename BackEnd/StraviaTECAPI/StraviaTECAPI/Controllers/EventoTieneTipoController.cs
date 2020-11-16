@@ -4,13 +4,14 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using StraviaTECAPI.Models;
 using StraviaTECAPI.Models.Reply;
 using StraviaTECAPI.Models.Request;
 
 namespace StraviaTECAPI.Controllers
 {
-    [Route("api/[controller]")]
+    
     [ApiController]
     public class EventoTieneTipoController : ControllerBase
     {
@@ -21,7 +22,8 @@ namespace StraviaTECAPI.Controllers
       */
 
         [HttpGet]
-        public IActionResult Get()
+        [Route("api/[controller]/{type}")]
+        public IActionResult Get(string type)
         {
             MyReply reply = new MyReply();
             try
@@ -30,6 +32,8 @@ namespace StraviaTECAPI.Controllers
                 using (StraviaContext db = new StraviaContext())
                 {
                     var list = db.EventoTieneTipo
+                        .Where(a => a.IdTipoEvento == int.Parse(type)) //carrera
+                        .Include(a => a.IdEventoNavigation)
                         .ToList();
                     // .Where(a => a.Rol == "producer") para hacerlo dentro del query
                     // .Include(a => a.Producers)
@@ -48,6 +52,7 @@ namespace StraviaTECAPI.Controllers
          * Protocolo Post
          */
         [HttpPost]
+        [Route("api/[controller]")]
         public IActionResult Post(EventoTieneTipoRequest request)
         {
             MyReply reply = new MyReply();
@@ -82,6 +87,7 @@ namespace StraviaTECAPI.Controllers
          * Protocolo Put
          */
         [HttpPut]
+        [Route("api/[controller]")]
         public IActionResult Put(EventoTieneTipoRequest request)
         {
             MyReply reply = new MyReply();
@@ -117,6 +123,7 @@ namespace StraviaTECAPI.Controllers
          * Protocolo Delete
          */
         [HttpDelete]
+        [Route("api/[controller]")]
         public IActionResult Delete(int cedula)
         {
             MyReply reply = new MyReply();

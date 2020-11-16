@@ -30,7 +30,7 @@
         <li class="nav-item">
           <a
             class="nav-link"
-            [routerLink]="['/miscarrerasretos']"
+            [routerLink]="['/miscarrerasretos', cedula]"
             data-offset="90"
             >Mis carreras/retos</a
           >
@@ -81,11 +81,11 @@
                       <div class="media align-items-end profile-head">
                         <div class="profile mr-3">
                           <img
-                            src=""
+                            
                             alt="..."
                             width="130"
                             class="rounded mb-2 img-thumbnail"
-                            id = "photo"
+                            id="foto"
                           />
 
                           <button
@@ -168,7 +168,7 @@
                         style="vertical-align: middle; margin: 0px 5px"
                       />
                       <div class="media-body mb-4 text-white">
-                        <h4 class="mt-0 mb-0">{{ element.idSeguidorNavigation.nombre }}</h4>
+                        <h4 class="mt-0 mb-0">{{ element.idSeguidorNavigation.nombre }} {{ element.idSeguidorNavigation.apellido }}</h4>
                       </div>
                     </div>
                   </div>
