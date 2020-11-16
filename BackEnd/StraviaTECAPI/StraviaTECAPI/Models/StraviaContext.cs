@@ -38,7 +38,7 @@ namespace StraviaTECAPI.Models
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseNpgsql("host=localhost;database=Stravia;user id=postgres; port=5433; password=admin");
+                optionsBuilder.UseNpgsql("host=localhost;database=Stravia;user id=postgres; port=5432; password=woopo..09ll9");
             }
         }
 
