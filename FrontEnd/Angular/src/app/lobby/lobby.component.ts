@@ -17,6 +17,7 @@ export class LobbyComponent implements OnInit {
   public listfollowers = [];
   public listUser = [];
 
+
   groupsList = [
     {"name":"Sing","admin":"Sing","number":982},
     {"name":"Garza","admin":"Garza","number":12314},
@@ -54,8 +55,13 @@ export class LobbyComponent implements OnInit {
       signupFormModalEmail: new FormControl('', Validators.email),
       signupFormModalPassword: new FormControl('', Validators.required),
     });
+
+    document.getElementById("photo").setAttribute("src", "https://i.pinimg.com/originals/e2/b8/2a/e2b82aded815e80351b929a77519adaa.jpg");
+
     
   }
+
+  
 
 
   getUser(){

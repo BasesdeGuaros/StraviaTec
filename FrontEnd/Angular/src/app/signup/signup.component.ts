@@ -29,6 +29,13 @@ export class SignupComponent implements OnInit {
       { value: 'Other stuff', label: 'Other stuff' },
     ];
   }
+  model: any = {};
+
+   function() {
+       console.log(this.model.data);
+       console.log(document.getElementById("picture").nodeValue);
+      
+  }
 
 
 }
