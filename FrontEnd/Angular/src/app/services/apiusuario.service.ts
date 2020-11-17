@@ -26,6 +26,11 @@ export class ApiusuarioService {
   url: string = "https://localhost:44385/api/Usuario";
 
   constructor(private _http: HttpClient) { }
+
+
+  getFriend(friendname: string): Observable<Reply> {
+    return this._http.get<Reply>(`${this.url}/${friendname}`);
+  }
   
   getUser(): Observable<Reply> {
     return this._http.get<Reply>(this.url);

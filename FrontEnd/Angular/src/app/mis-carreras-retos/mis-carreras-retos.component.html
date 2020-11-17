@@ -56,12 +56,13 @@
                 <mdb-card-body >
                   <!--Title-->
                   <mdb-card-title>
-                    <h4>{{race.idEventoNavigation.nombre}}</h4>
+                    <h6>{{race.idEventoNavigation.nombre}}</h6>
                   </mdb-card-title>
             
                   <!--Text-->
               
-                  <a class="btn aqua-gradient btn-rounded btn-sm my-0 " mdbWavesEffect >Ver </a>
+                  <a class="btn aqua-gradient btn-rounded btn-sm my-0 " mdbWavesEffect 
+                  (click)="frameRace.show()" >Ver </a>
                 </mdb-card-body>
               </mdb-card>
     
@@ -100,12 +101,13 @@
                   <div class="col-md-4">
                     <!--Title-->
                     <mdb-card-title>
-                      <h4>{{challenge.idEventoNavigation.nombre}}</h4>
+                      <h6>{{challenge.idEventoNavigation.nombre}}</h6>
                     </mdb-card-title>
 
                     <!--Text-->
                     
-                    <a class="btn aqua-gradient btn-rounded btn-sm my-0 " mdbWavesEffect >Ver </a>
+                    <a class="btn aqua-gradient btn-rounded btn-sm my-0 " mdbWavesEffect 
+                    (click) = "frameChallenge.show()">Ver </a>
                   </div>
 
                   <div class="col-md-8">
@@ -237,6 +239,87 @@
     
     </header>
 
+
+<div
+        mdbModal
+        #frameRace="mdbModal"
+        class="modal fade left"
+        id="frameModalTop"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="myModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header text-center">
+              <h4 class="modal-title w-100 font-weight-bold">
+                Información de la carrera
+              </h4>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+                (click)="frameRace.hide()"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body mx-3">
+
+              INFORMACION CARRERA
+
+            </div>
+            <div class="modal-footer d-flex justify-content-center">
+              <button mdbBtn color="default" class="waves-light" mdbWavesEffect (click)="frameRace.hide()">
+                Listo
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+<div
+        mdbModal
+        #frameChallenge="mdbModal"
+        class="modal fade left"
+        id="frameModalTop"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="myModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header text-center">
+              <h4 class="modal-title w-100 font-weight-bold">
+                Información del reto
+              </h4>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+                (click)="frameChallenge.hide()"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body mx-3">
+
+              INFORMACION RETO
+
+            </div>
+            <div class="modal-footer d-flex justify-content-center">
+              <button mdbBtn color="default" class="waves-light" mdbWavesEffect (click)="frameChallenge.hide()">
+                Listo
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
 
 
 

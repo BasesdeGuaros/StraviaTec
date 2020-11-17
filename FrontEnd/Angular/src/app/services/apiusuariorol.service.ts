@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { Reply } from '../Models/reply'
 import { usuariorol } from '../Models/usuario';
 
+
 const httpOption = {
   headers: new HttpHeaders({
     'Contend-Type': 'appliacation/json'
@@ -25,7 +26,15 @@ export class ApiusuariorolService {
     return this._http.get<Reply>(`${this.url}/${username}/${rol}`);
   }
 
+
   addUser(usuariorol: usuariorol): Observable<Reply> {
     return this._http.post<Reply>(this.url, usuariorol, httpOption)
   }
+
+  edit(usuario: usuariorol): Observable<Reply> {
+        return this._http.put<Reply>(this.url, usuario, httpOption)
+    }
+
+    
+
 }
