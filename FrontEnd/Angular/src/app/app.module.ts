@@ -65,8 +65,7 @@ import { ActivityComponent } from './activity/activity.component';
       { path: 'organizerGroup', component: OrganizerGroupComponent},
       { path: 'miscarrerasretos/:cedula', component: MisCarrerasRetosComponent},
       { path: 'activity', component: ActivityComponent}
-    
-      
+
     ])
   ],
   providers: [],
