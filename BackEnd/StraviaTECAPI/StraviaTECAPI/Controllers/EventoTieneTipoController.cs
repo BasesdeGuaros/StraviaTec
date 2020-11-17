@@ -83,8 +83,8 @@ namespace StraviaTECAPI.Controllers
          * Protocolo Post
          */
         [HttpPost]
-        [Route("api/[controller]")]
-        public IActionResult Post(EventoRequest request)
+        [Route("api/[controller]/{type}")]
+        public IActionResult Post(int type, EventoRequest request)
         {
             MyReply reply = new MyReply();
 
@@ -118,7 +118,7 @@ namespace StraviaTECAPI.Controllers
 
                     EventoTieneTipo eventoTieneTipo = new EventoTieneTipo();
                     eventoTieneTipo.IdEvento = evento.Id; ;
-                    eventoTieneTipo.IdTipoEvento = 1;
+                    eventoTieneTipo.IdTipoEvento = type;
 
 
         db.EventoTieneTipo.Add(eventoTieneTipo);
@@ -159,7 +159,6 @@ namespace StraviaTECAPI.Controllers
                     eventoTieneTipo.IdEventoNavigation = request.IdEventoNavigation;
 
                     db.Update(eventoTieneTipo);
-                    db.Entry(eventoTieneTipo).State = Microsoft.EntityFrameworkCore.EntityState.Modified; //le dice a la base de datos que se ha modificado  
                     db.SaveChanges();
 
                     reply.conexionSuccess = 1;

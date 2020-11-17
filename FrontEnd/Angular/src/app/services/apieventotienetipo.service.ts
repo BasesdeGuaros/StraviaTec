@@ -27,8 +27,8 @@ export class ApieventotienetipoService {
         return this._http.get<Reply>(`${this.url}/${type}`);
     }
     
-    add(evento: evento): Observable<Reply> {
-        return this._http.post<Reply>(this.url, evento, httpOption)
+    add(evento: evento, type:string): Observable<Reply> {
+        return this._http.post<Reply>(`${this.url}/${type}`, evento, httpOption)
     }
 
     edit(evento: evento): Observable<Reply> {

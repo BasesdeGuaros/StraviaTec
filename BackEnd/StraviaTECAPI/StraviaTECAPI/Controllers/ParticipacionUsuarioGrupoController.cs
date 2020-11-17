@@ -11,7 +11,6 @@ using StraviaTECAPI.Models.Request;
 
 namespace StraviaTECAPI.Controllers
 {
-    [Route("api/[controller]")]
     [ApiController]
     public class ParticipacionUsuarioGrupoController : ControllerBase
     {
@@ -22,7 +21,8 @@ namespace StraviaTECAPI.Controllers
       */
 
         [HttpGet]
-        public IActionResult Get()
+        [Route("api/[controller]/{cedula}")]
+        public IActionResult Get(int cedula)
         {
             MyReply reply = new MyReply();
             try
@@ -31,6 +31,8 @@ namespace StraviaTECAPI.Controllers
                 using (StraviaContext db = new StraviaContext())
                 {
                     var list = db.ParticipacionUsuarioGrupo
+                        .Where(a => a.Rol == 1)
+                        .Where(a => a.IdUsuario == cedula)
                         .Include(a => a.IdGrupoNavigation)
                         .ToList();
                     // .Where(a => a.Rol == "producer") para hacerlo dentro del query
@@ -50,7 +52,9 @@ namespace StraviaTECAPI.Controllers
          * Protocolo Post
          */
         [HttpPost]
-        public IActionResult Post(ParticipacionUsuarioGrupoRequest request)
+        [Route("api/[controller]/{rol}/{cedula}")]
+
+        public IActionResult Post(int rol, int cedula, GrupoRequest request)
         {
             MyReply reply = new MyReply();
 
@@ -58,17 +62,22 @@ namespace StraviaTECAPI.Controllers
             {
                 using (StraviaContext db = new StraviaContext())
                 {
+                    Grupo grupo = new Grupo();
+                    grupo.Id = request.Id;
+                    grupo.Nombre = request.Nombre;
+
+                    db.Grupo.Add(grupo);
+                    db.SaveChanges();
+
+
                     ParticipacionUsuarioGrupo participacionUsuarioGrupo = new ParticipacionUsuarioGrupo();
-
-                    participacionUsuarioGrupo.IdGrupo = request.IdGrupo;
-                    participacionUsuarioGrupo.IdUsuario = request.IdUsuario;
-                    participacionUsuarioGrupo.Rol = request.Rol;
-
-                    participacionUsuarioGrupo.IdGrupoNavigation = request.IdGrupoNavigation;
-                    participacionUsuarioGrupo.IdUsuarioNavigation = request.IdUsuarioNavigation;
+                    participacionUsuarioGrupo.IdGrupo = grupo.Id;
+                    participacionUsuarioGrupo.IdUsuario = cedula;
+                    participacionUsuarioGrupo.Rol = rol;
 
                     db.ParticipacionUsuarioGrupo.Add(participacionUsuarioGrupo);
                     db.SaveChanges();
+
                     reply.conexionSuccess = 1;
                     reply.message = "Participacion Usuario Agregado";
                 }
@@ -85,6 +94,8 @@ namespace StraviaTECAPI.Controllers
          * Protocolo Put
          */
         [HttpPut]
+        [Route("api/[controller]")]
+
         public IActionResult Put(ParticipacionUsuarioGrupoRequest request)
         {
             MyReply reply = new MyReply();
@@ -102,7 +113,7 @@ namespace StraviaTECAPI.Controllers
                     participacionUsuarioGrupo.IdGrupoNavigation = request.IdGrupoNavigation;
                     participacionUsuarioGrupo.IdUsuarioNavigation = request.IdUsuarioNavigation;
 
-                    db.Entry(participacionUsuarioGrupo).State = Microsoft.EntityFrameworkCore.EntityState.Modified; //le dice a la base de datos que se ha modificado  
+                    db.Update(participacionUsuarioGrupo);
                     db.SaveChanges();
 
                     reply.conexionSuccess = 1;
@@ -121,7 +132,9 @@ namespace StraviaTECAPI.Controllers
          * Protocolo Delete
          */
         [HttpDelete]
-        public IActionResult Delete(int cedula)
+        [Route("api/[controller]/{idGrupo}/{idUsuario}")]
+
+        public IActionResult Delete(int idGrupo, int idUsuario)
         {
             MyReply reply = new MyReply();
 
@@ -129,8 +142,13 @@ namespace StraviaTECAPI.Controllers
             {
                 using (StraviaContext db = new StraviaContext())
                 {
-                    Usuario usuario = db.Usuario.Find(cedula); //Cambiar para borrar la condicion de seguidor
-                    db.Remove(usuario);
+                    Grupo grupo = db.Grupo.Find(idGrupo);
+                    db.Remove(grupo);
+
+                    ParticipacionUsuarioGrupo participacion = db.ParticipacionUsuarioGrupo.Find(idGrupo, idUsuario);
+                    db.Remove(participacion);
+
+
                     db.SaveChanges();
 
                     reply.conexionSuccess = 1;

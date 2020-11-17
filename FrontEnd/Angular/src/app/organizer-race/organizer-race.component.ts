@@ -16,8 +16,8 @@ export class OrganizerRaceComponent implements OnInit {
     public modal;
 
 
-  editField: string;
-  validatingForm: FormGroup;
+    editField: string;
+    validatingForm: FormGroup;
 
   personList: Array<any> = [
     { id: 1, name: 'Aurelia Vega', age: 30, companyName: 'Deepends', country: 'Spain', city: 'Madrid' },
@@ -34,6 +34,7 @@ export class OrganizerRaceComponent implements OnInit {
     { id: 9, name: 'Anastasia John', age: 21, companyName: 'Ajo', country: 'Brazil', city: 'Rio' },
     { id: 10, name: 'John Maklowicz', age: 36, companyName: 'Mako', country: 'Poland', city: 'Bialystok' },
   ];
+
 
   constructor(
       private apievento: ApieventotienetipoService,
@@ -85,7 +86,7 @@ export class OrganizerRaceComponent implements OnInit {
             Foto: null //falta
     };
 
-        this.apievento.add(evento).subscribe(reply => {
+        this.apievento.add(evento, "1").subscribe(reply => {
           console.log(reply);
         });
     }

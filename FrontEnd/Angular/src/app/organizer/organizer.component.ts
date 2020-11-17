@@ -30,11 +30,11 @@ export class OrganizerComponent implements OnInit {
   }
 
   gotoChallenges(){
-
+      this.router.navigate(['/organizerChallenge', this.cedula]);
   }
 
   gotoGroup(){
-
+      this.router.navigate(['/organizerGroup', this.cedula]);
   }
 
   getUser(){
