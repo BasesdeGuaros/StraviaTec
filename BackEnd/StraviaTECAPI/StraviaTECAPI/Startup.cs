@@ -18,6 +18,9 @@ namespace StraviaTECAPI
 
     //Update dataBaser
     //Scaffold-DbContext "host=localhost;database=Stravia;user id=postgres; port=5433; password=admin" Npgsql.EntityFrameworkCore.PostgreSQL -OutputDir Models -context StraviaContext -force
+
+    //garza
+    //Scaffold-DbContext "host=localhost;database=Stravia;user id=postgres; port=5432; password=" Npgsql.EntityFrameworkCore.PostgreSQL -OutputDir Models -context StraviaContext -force
     public class Startup
     {
         readonly string myCors = "myCors";

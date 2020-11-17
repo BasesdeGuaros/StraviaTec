@@ -74,7 +74,7 @@ namespace StraviaTECAPI.Models
 
                 entity.Property(e => e.Recorrido)
                     .HasColumnName("recorrido")
-                    .HasColumnType("character varying(100)");
+                    .HasColumnType("character varying");
 
                 entity.HasOne(d => d.IdUsuarioNavigation)
                     .WithMany(p => p.Actividad)
@@ -209,7 +209,7 @@ namespace StraviaTECAPI.Models
                 entity.Property(e => e.Nombre)
                     .IsRequired()
                     .HasColumnName("nombre")
-                    .HasColumnType("character varying(15)");
+                    .HasColumnType("character varying(50)");
 
                 entity.Property(e => e.Privado)
                     .HasColumnName("privado")
@@ -217,7 +217,7 @@ namespace StraviaTECAPI.Models
 
                 entity.Property(e => e.Recorrido)
                     .HasColumnName("recorrido")
-                    .HasColumnType("character varying(100)");
+                    .HasColumnType("character varying");
 
                 entity.HasOne(d => d.CategoriaNavigation)
                     .WithMany(p => p.Evento)

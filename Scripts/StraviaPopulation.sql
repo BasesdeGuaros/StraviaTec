@@ -5,6 +5,10 @@ VALUES(117460001,'Daniel','Garcia Fallas','garza','hola1234','Costarricense','19
 INSERT INTO USUARIO(Cedula,Nombre,Apellido,Nombre_Usuario,Contraseña,Nacionalidad,Fecha_Nacimiento,Foto) 
 VALUES(305130462,'Elias','Arce Mendez','delias','12345678','Costarricense','1998-10-27',
        pg_read_binary_file('C:\Users\garza\Desktop\IIS2020\Bases de Datos\Proyecto1\Code\StraviaTec\Resources\default_profile.bin'));
+
+INSERT INTO USUARIO(Cedula,Nombre,Apellido,Nombre_Usuario,Contraseña,Nacionalidad,Fecha_Nacimiento,Foto) 
+VALUES(304999227,'Daniel','Sing Chamorro','macabro','sing','Costarricense','1996-12-17',
+       pg_read_binary_file('C:\Users\garza\Desktop\IIS2020\Bases de Datos\Proyecto1\Code\StraviaTec\Resources\default_profile.bin'));
 	  
 INSERT INTO ROL(Id, Nombre)
 VALUES (1,'Deportista');
@@ -14,6 +18,9 @@ VALUES (2,'Administrador');
 
 INSERT INTO USUARIO_ROL(Id_Usuario,Id_Rol)
 VALUES (305130462,1);
+
+INSERT INTO USUARIO_ROL(Id_Usuario,Id_Rol)
+VALUES (304999227,1);
 
 INSERT INTO USUARIO_ROL(Id_Usuario,Id_Rol)
 VALUES (117460001,1);
@@ -102,12 +109,13 @@ INSERT INTO DEPORTE(Id,Nombre) VALUES(4,'Senderismo');
 INSERT INTO DEPORTE(Id,Nombre) VALUES(5,'Kayak');
 INSERT INTO DEPORTE(Id,Nombre) VALUES(6,'Caminata');
 
-INSERT INTO EVENTO(Id,Nombre,Id_Admin,Recorrido,Cuenta,Categoria,Costo,Privado,Id_Deporte,Fecha_Inicial,Fecha_Final)
-VALUES(1,'Super Maratón',305130462,'.gpx','1-xxxx-0000-9999',4,20000,1,2,'2020-12-12','2020-12-23');
+INSERT INTO EVENTO(Id,Nombre,Id_Admin,Recorrido,Cuenta,Categoria,Costo,Privado,Id_Deporte,Fecha_Inicial,Fecha_Final,Foto)
+VALUES(1,'Carrera Electronica',305130462,pg_read_file('C:\Users\garza\Desktop\IIS2020\Bases de Datos\Proyecto1\Code\StraviaTec\Resources\GPXFILES\route1.gpx'),'1-xxxx-0000-9999',4,20000,1,2,'2020-12-12','2020-12-23',
+	  pg_read_binary_file('C:\Users\garza\Desktop\IIS2020\Bases de Datos\Proyecto1\Code\StraviaTec\Resources\default_profile.bin'));
 
 INSERT INTO EVENTO(Id,Nombre,Fecha,Id_Admin,Recorrido,Cuenta,Categoria,Costo,Privado,Id_Deporte,Kilometraje,
 				  Elevación,Fecha_Inicial,Fecha_Final,Fondo_altitud,Foto) 
-VALUES(2,'Reto CE','2020-11-11',117460001,'recorrido1','0',1,0,0,1,1,5,'2020-11-11','2020-11-11',1,
+VALUES(2,'Reto mil metros','2020-11-11',117460001,pg_read_file('C:\Users\garza\Desktop\IIS2020\Bases de Datos\Proyecto1\Code\StraviaTec\Resources\GPXFILES\route1.gpx'),'0',1,0,0,1,1,5,'2020-11-11','2020-11-11',1,
 	  pg_read_binary_file('C:\Users\garza\Desktop\IIS2020\Bases de Datos\Proyecto1\Code\StraviaTec\Resources\default_profile.bin'));
 
 INSERT INTO EVENTO_PATROCINADO_PATROCINADOR(Id_Evento,Id_Patrocinador)
@@ -140,7 +148,3 @@ VALUES(1,305130462,'.gpx');
 INSERT INTO ACTIVIDAD_PERTENECE_EVENTO(Id_Actividad,Id_Evento) VALUES(1,1);
 
 INSERT INTO ACTIVIDAD_CLASIFICA_DEPORTE(Id_Actividad,Id_Deporte) VALUES(1,1);
-
-GRANT SELECT ON USUARIO TO PUBLIC;
-GRANT SELECT ON PATROCINADOR TO PUBLIC;
-GRANT SELECT ON EVENTO TO PUBLIC;

@@ -10,6 +10,7 @@ import { ApiusuariorolService } from '../services/apiusuariorol.service';
 export class LoginComponent implements OnInit {
     public listUsuario = [];
     model: any = {};
+    public account = "";
 
 
   constructor(
@@ -22,7 +23,14 @@ export class LoginComponent implements OnInit {
   }
 
   validation(){
-      this.apiusuarioRol.getUser(this.model.name).subscribe(reply => {
+
+      if(this.account==""){
+          alert("Debe ingresar un ROL");
+      }else if (this.account  == "1"){
+
+          console.log(this.account);
+          
+          this.apiusuarioRol.getUser(this.model.name,"1").subscribe(reply => {
           console.log(reply);
           this.listUsuario = reply.data;
           if(this,this.listUsuario[0] == undefined){
@@ -30,16 +38,39 @@ export class LoginComponent implements OnInit {
               //cambiarlo por un modal
           }else{
               if(this.listUsuario[0].idUsuarioNavigation.nombreUsuario == this.model.name && this.listUsuario[0].idUsuarioNavigation.contraseña == this.model.password){
-                  if(this.listUsuario[0].idRol){
                       this.router.navigate(['/lobby', this.model.name]);
-                  }else{
-                      this.router.navigate(['/organizer']);
-                  }
               }
           }
       });
+
+      }else{
+          this.apiusuarioRol.getUser(this.model.name,"2").subscribe(reply => {
+          console.log(reply);
+          this.listUsuario = reply.data;
+          if(this,this.listUsuario[0] == undefined){
+              alert("Usuario o contrasena incorrectas")
+              //cambiarlo por un modal
+          }else{
+              if(this.listUsuario[0].idUsuarioNavigation.nombreUsuario == this.model.name && this.listUsuario[0].idUsuarioNavigation.contraseña == this.model.password){
+                      this.router.navigate(['/organizer']);
+              }
+          }
+      });
+      }
+
+      
+  }
+  
+  functionDeportista(){
+      
+      this.account = "1";
+      console.log(this.account);
   }
 
+  functionAdministrador(){
+      this.account = "2";
+      console.log(this.account);
+  }
   
 
 
