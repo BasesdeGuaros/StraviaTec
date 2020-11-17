@@ -1,21 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
+using System.Linq;
+using System.Threading.Tasks;
 
-
-namespace StraviaTECAPI.Models
+namespace StraviaTECAPI.Models.Request
 {
-    public partial class Evento
+    public class EventoRequest
     {
-        public Evento()
-        {
-            ActividadPerteneceEvento = new HashSet<ActividadPerteneceEvento>();
-            EventoPatrocinadoPatrocinador = new HashSet<EventoPatrocinadoPatrocinador>();
-            EventoTieneTipo = new HashSet<EventoTieneTipo>();
-            Subscripciones = new HashSet<Subscripciones>();
-        }
-
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         public string Nombre { get; set; }
         public DateTime? Fecha { get; set; }

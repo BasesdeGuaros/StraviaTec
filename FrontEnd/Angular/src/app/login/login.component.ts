@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
   }
 
   validation(){
-      this.apiusuarioRol.getUser(this.model.name).subscribe(reply => {
+      this.apiusuarioRol.getUser(this.model.name1, "1").subscribe(reply => {
           console.log(reply);
           this.listUsuario = reply.data;
           if(this,this.listUsuario[0] == undefined){

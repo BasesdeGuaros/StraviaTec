@@ -21,29 +21,30 @@
           <th class="text-center">Inscripciones</th>
           <th class="text-center">Eliminar</th>
         </tr>
-        <tr *ngFor="let person of personList; let id = index"> <!--ng for de la lista de la base de datos--->
+        <tr *ngFor="let event of listEvent; let id = index"> <!--ng for de la lista de la base de datos--->
           <td>
-            <span (keyup)="changeValue(id, 'name', $event)" (blur)="updateList(id, 'name', $event)" contenteditable="true">{{person.name}}</span>
+            <span (keyup)="changeValue(id, 'nombre', $event)" (blur)="updateList(id, 'idEventoNavigation','nombre', $event)" contenteditable="true">{{event.idEventoNavigation.nombre}}</span>
           </td>
           <td>
-            <span contenteditable="true" (keyup)="changeValue(id, 'age', $event)" (blur)="updateList(id, 'age', $event)">{{person.age}}</span>
+            <span contenteditable="true" (keyup)="changeValue(id, 'age', $event)" (blur)="updateList(id,'idEventoNavigation', 'age', $event)">{{event.idEventoNavigation.fecha}}</span>
           </td>
           <td>
-            <span contenteditable="true" (keyup)="changeValue(id, 'companyName', $event)" (blur)="updateList(id, 'companyName', $event)">{{person.companyName}}</span>
+            <span contenteditable="true" (keyup)="changeValue(id, 'companyName', $event)" (blur)="updateList(id, 'idEventoNavigation', 'companyName', $event)">{{event.idEventoNavigation.recorrido}}</span>
           </td>
           <td>
-            <span contenteditable="true" (keyup)="changeValue(id, 'country', $event)" (blur)="updateList(id, 'country', $event)">{{person.country}}</span>
+            <span contenteditable="true" (keyup)="changeValue(id, 'country', $event)" (blur)="updateList(id, 'idEventoNavigation', 'country', $event)">{{event.idEventoNavigation}}</span>
           </td>
           <td>
-            <span contenteditable="true" (keyup)="changeValue(id, 'city', $event)" (blur)="updateList(id, 'city', $event)">{{person.city}}</span>
+            <span contenteditable="true" (keyup)="changeValue(id, 'city', $event)" (blur)="updateList(id, 'idEventoNavigation', 'city', $event)">{{event.idEventoNavigation.privado}}</span>
           </td>
           <td>
-              <span contenteditable="true" (keyup)="changeValue(id, 'city', $event)" (blur)="updateList(id, 'city', $event)">{{person.city}}</span>
+              <span contenteditable="true" (keyup)="changeValue(id, 'city', $event)" (blur)="updateList(id, 'idEventoNavigation', 'city', $event)">{{event.idEventoNavigation.cuenta}}</span>
           </td>
           <td>
-              <span contenteditable="true" (keyup)="changeValue(id, 'city', $event)" (blur)="updateList(id, 'city', $event)">{{person.city}}</span>
+              <span contenteditable="true" (keyup)="changeValue(id, 'city', $event)" (blur)="updateList(id, 'idEventoNavigation', 'city', $event)">{{event.idEventoNavigation.categoria}}</span>
           </td>
           <td>
+
             <span class="table-remove">
               <button type="button" mdbBtn color="blue" rounded="true" size="sm" class="my-0" (click)="basicModal.show()">Ver lista</button>
             </span>
@@ -126,8 +127,8 @@
       <div class="md-form mb-5">          
         <select class="browser-default custom-select col-sm-12" [formControl]="contactFormModalActivity">
             <option value="" disabled>Tipo de Actividad</option>
-            <option value="1">Correr</option>
-            <option value="2">Nadar</option>
+            <option value="1">Atletismo</option>
+            <option value="2">Natacion</option>
             <option value="3">Ciclismo</option>
             <option value="4">Senderismo</option>
             <option value="5">Kayak</option>
@@ -184,10 +185,11 @@
               <option value="" disabled>Escoger una Categoria</option>
               <option value="1" selected>Junior</option>
               <option value="2">Sub-23</option>
-              <option value="2">Elite,</option>
-              <option value="2">Master A</option>
-              <option value="2">Master B</option>
-              <option value="2">Master C</option>
+              <option value="3">Elite</option>
+              <option value="4">Open</option>
+              <option value="5">Master A</option>
+              <option value="6">Master B</option>
+              <option value="7">Master C</option>
           </select>
 
           <mdb-error
@@ -215,7 +217,7 @@
         </div>
     </div>
     <div class="modal-footer d-flex justify-content-center">
-      <button mdbBtn color="unique" class="waves-light" mdbWavesEffect>Enviar
+      <button mdbBtn color="unique" class="waves-light" mdbWavesEffect (click)="addEvent()">Enviar
         <mdb-icon far icon="paper-plane" class="ml-1"></mdb-icon>
       </button>
     </div>
