@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ApiusuariorolService } from '../services/apiusuariorol.service';
 
 @Component({
@@ -14,8 +14,8 @@ export class OrganizerComponent implements OnInit {
 
   constructor(
       private apiusuarioRol: ApiusuariorolService,
-      private route: ActivatedRoute
-
+      private route: ActivatedRoute,
+      private router: Router,
 
   ) { }
 
@@ -25,13 +25,24 @@ export class OrganizerComponent implements OnInit {
       this.getUser();
   }
 
+  gotoRun(){
+      this.router.navigate(['/organizerRace', this.cedula]);
+  }
+
+  gotoChallenges(){
+
+  }
+
+  gotoGroup(){
+
+  }
+
   getUser(){
        this.apiusuarioRol.getUser(this.username, "1").subscribe(reply => {
           console.log(reply);
           this.listUser = reply.data;
           this.cedula = this.listUser[0].idUsuarioNavigation.cedula;
     });
-
   }
 
 }
