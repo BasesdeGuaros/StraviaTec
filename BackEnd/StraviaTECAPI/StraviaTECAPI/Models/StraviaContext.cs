@@ -38,7 +38,7 @@ namespace StraviaTECAPI.Models
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseNpgsql("host=localhost;database=Stravia;user id=postgres; port=5432; password=woopo..09ll9");
+                optionsBuilder.UseNpgsql("host=localhost;database=Stravia;user id=postgres; port=5433; password=admin");
             }
         }
 
@@ -72,9 +72,7 @@ namespace StraviaTECAPI.Models
                     .HasColumnName("kilometraje")
                     .HasDefaultValueSql("1.1");
 
-                entity.Property(e => e.Recorrido)
-                    .HasColumnName("recorrido")
-                    .HasColumnType("character varying(100)");
+                entity.Property(e => e.Recorrido).HasColumnName("recorrido");
 
                 entity.HasOne(d => d.IdUsuarioNavigation)
                     .WithMany(p => p.Actividad)
@@ -167,7 +165,7 @@ namespace StraviaTECAPI.Models
 
                 entity.Property(e => e.Id)
                     .HasColumnName("id")
-                    .ValueGeneratedNever();
+                    .UseNpgsqlIdentityByDefaultColumn();
 
                 entity.Property(e => e.Categoria).HasColumnName("categoria");
 
@@ -215,9 +213,7 @@ namespace StraviaTECAPI.Models
                     .HasColumnName("privado")
                     .HasDefaultValueSql("0");
 
-                entity.Property(e => e.Recorrido)
-                    .HasColumnName("recorrido")
-                    .HasColumnType("character varying(100)");
+                entity.Property(e => e.Recorrido).HasColumnName("recorrido");
 
                 entity.HasOne(d => d.CategoriaNavigation)
                     .WithMany(p => p.Evento)
