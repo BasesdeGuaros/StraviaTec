@@ -27,8 +27,6 @@ export class LoginComponent implements OnInit {
       if(this.account==""){
           alert("Debe ingresar un ROL");
       }else if (this.account  == "1"){
-
-          console.log(this.account);
           
           this.apiusuarioRol.getUser(this.model.name,"1").subscribe(reply => {
           console.log(reply);
@@ -57,19 +55,14 @@ export class LoginComponent implements OnInit {
           }
       });
       }
-
-      
   }
   
   functionDeportista(){
-      
       this.account = "1";
-      console.log(this.account);
   }
 
   functionAdministrador(){
       this.account = "2";
-      console.log(this.account);
   }
   
 

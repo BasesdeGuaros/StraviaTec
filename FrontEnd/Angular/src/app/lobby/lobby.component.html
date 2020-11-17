@@ -38,6 +38,7 @@
       </ul>
       <form class="form-inline md-form mr-auto mb-4">
         <input
+          id = "friendInput"
           class="form-control mr-sm-2"
           type="text"
           placeholder="Buscar "
@@ -48,12 +49,20 @@
             font-weight: bold;
             font-size: 12px;
           "
+          [(ngModel)]=modelScan.name
         />
+        <!--label for="friendInput">{{fname}}</label-->
+
+        <!-- preguntar como llamar otra funcion a parte del modal-->
+        <!-- cambiar boton por frame.show()-->
+
         <button
           class="btn aqua-gradient btn-rounded btn-sm my-0"
           type="submit"
-          (click)="frame.show()"
+          
+          (click)="getFriends()"
         >
+        
           Buscar amigos
         </button>
       </form>
@@ -81,7 +90,7 @@
                       <div class="media align-items-end profile-head">
                         <div class="profile mr-3">
                           <img
-                            
+                            src=""
                             alt="..."
                             width="130"
                             class="rounded mb-2 img-thumbnail"
@@ -94,14 +103,15 @@
                             color="default"
                             rounded="true"
                             data-toggle="modal"
-                            data-target="#basicExample"
+                            data-target="#mbdModalEditar"
                             (click)="mbdModalEditar.show()"
                             mdbWavesEffect
                           >
                             Editar Perfil
                           </button>
 
-                          <button
+                         <!--
+                        <button
                             type="button"
                             mdbBtn
                             color="red"
@@ -113,12 +123,18 @@
                           >
                             Iniciar Actividad
                           </button>
+                         --> 
+
                         </div>
                         <div class="media-body mb-5 text-white">
-                          <h4 class="mt-0 mb-3">{{listUser[0]?.idUsuarioNavigation.nombre}} {{listUser[0]?.idUsuarioNavigation.apellido}}</h4>
+                          <h4 class="mt-0 mb-3">{{listUser[0]?.idUsuarioNavigation.nombre}} {{listUser[0]?.idUsuarioNavigation.apellido}} </h4>
                           <p class="small mb-4">
                             <i class="fas fa-map-marker-alt mr-2"></i>Desampra
                           </p>
+                         <p class="small mb-4">
+                            <i class="fas fa-heart mr-2"></i>{{edad}} años
+                          </p>
+                          
                         </div>
                       </div>
                     </div>
@@ -158,10 +174,11 @@
                   class="bg-white shadow rounded overflow-hidden margin navbar"
                   *ngFor="let element of listfollowers"
                 >
-                  <div class="px-5 pt-2 pb-2 cover">
+                  <div class="px-5 pt-2 pb-2 cover2">
                     <div class="media align-items-center">
                       <img
-                        
+                        src = "https://images-na.ssl-images-amazon.com/images/I/71qvuOvBRfL._AC_SL1500_.jpg"
+                        id = "fotoSeguidor"
                         alt="..."
                         width="50"
                         class="rounded mb-2 img-thumbnail"
@@ -177,9 +194,9 @@
                     class="bg-light p-4 d-flex justify-content-center text-center "
                   >
                     <!-- Card -->
-                    <mdb-card>
+                    <mdb-card class="px-5">
                       <div
-                        class="view rgba-white-slight waves-light"
+                        class="view rgba-white-slight waves-light "
                         mdbWavesEffect
                       >
                         <!-- Card img ACA TIENE QUE IR EL .GPX-->
@@ -294,8 +311,8 @@
   <div
     mdbModal
     #mbdModalEditar="mdbModal"
-    class="modal fade left"
-    id="frameModalTop"
+    class="modal fade center px-5"
+    id="editModal"
     tabindex="-1"
     role="dialog"
     aria-labelledby="myModalLabel"
@@ -333,8 +350,9 @@
                   [formControl]="signupFormModalName"
                   mdbInput
                   mdbValidate
+                  [(ngModel)]=modelUser.name
                 />
-                <label for="orangeForm-name">Nombre</label>
+                <label for="orangeForm-name">{{listUser[0]?.idUsuarioNavigation.nombre}}</label>
 
                 <mdb-error
                   *ngIf="
@@ -363,24 +381,25 @@
                 ></mdb-icon>
                 <input
                   type="text"
-                  id="orangeForm-email"
+                  id="orangeForm-last"
                   class="form-control"
-                  [formControl]="signupFormModalEmail"
+                  [formControl]="signupFormModalLast"
                   mdbInput
                   mdbValidate
+                 [(ngModel)]=modelUser.lastName
                 />
-                <label for="orangeForm-email">Apellidos</label>
+                <label for="orangeForm-last">{{listUser[0]?.idUsuarioNavigation.apellido}}</label>
                 <mdb-error
                   *ngIf="
-                    signupFormModalEmail.invalid &&
-                    (signupFormModalEmail.dirty || signupFormModalEmail.touched)
+                    signupFormModalLast.invalid &&
+                    (signupFormModalLast.dirty || signupFormModalLast.touched)
                   "
                   >Input invalid
                 </mdb-error>
                 <mdb-success
                   *ngIf="
-                    signupFormModalEmail.valid &&
-                    (signupFormModalEmail.dirty || signupFormModalEmail.touched)
+                    signupFormModalLast.valid &&
+                    (signupFormModalLast.dirty || signupFormModalLast.touched)
                   "
                   >Input valid
                 </mdb-success>
@@ -399,25 +418,26 @@
 
                 <input
                   type="text"
-                  id="orangeForm-name"
+                  id="orangeForm-birth"
                   class="form-control"
-                  [formControl]="signupFormModalName"
+                  [formControl]="signupFormModalBirth"
                   mdbInput
                   mdbValidate
+                  [(ngModel)]=modelUser.birth
                 />
-                <label for="orangeForm-name">Nacimiento</label>
+                <label for="orangeForm-birth">{{listUser[0]?.idUsuarioNavigation.fechaNacimiento}}</label>
                 <mdb-error
                   *ngIf="
-                    signupFormModalName.invalid &&
-                    (signupFormModalName.dirty || signupFormModalName.touched)
+                    signupFormModalBirth.invalid &&
+                    (signupFormModalBirth.dirty || signupFormModalBirth.touched)
                   "
                 >
                   Input invalid
                 </mdb-error>
                 <mdb-success
                   *ngIf="
-                    signupFormModalName.valid &&
-                    (signupFormModalName.dirty || signupFormModalName.touched)
+                    signupFormModalBirth.valid &&
+                    (signupFormModalBirth.dirty || signupFormModalBirth.touched)
                   "
                 >
                   Input valid
@@ -433,24 +453,25 @@
                 ></mdb-icon>
                 <input
                   type="text"
-                  id="orangeForm-email"
+                  id="orangeForm-nat"
                   class="form-control"
-                  [formControl]="signupFormModalEmail"
+                  [formControl]="signupFormModalNat"
                   mdbInput
                   mdbValidate
+                  [(ngModel)]=modelUser.nat
                 />
-                <label for="orangeForm-email">Nacionalidad</label>
+                <label for="orangeForm-nat">{{listUser[0]?.idUsuarioNavigation.nacionalidad}}</label>
                 <mdb-error
                   *ngIf="
-                    signupFormModalEmail.invalid &&
-                    (signupFormModalEmail.dirty || signupFormModalEmail.touched)
+                    signupFormModalNat.invalid &&
+                    (signupFormModalNat.dirty || signupFormModalNat.touched)
                   "
                   >Input invalid
                 </mdb-error>
                 <mdb-success
                   *ngIf="
-                    signupFormModalEmail.valid &&
-                    (signupFormModalEmail.dirty || signupFormModalEmail.touched)
+                    signupFormModalNat.valid &&
+                    (signupFormModalNat.dirty || signupFormModalNat.touched)
                   "
                   >Input valid
                 </mdb-success>
@@ -464,25 +485,27 @@
 
                 <input
                   type="text"
-                  id="orangeForm-name"
+                  id="orangeForm-photo"
                   class="form-control"
-                  [formControl]="signupFormModalName"
+                  [formControl]="signupFormModalPhoto"
                   mdbInput
                   mdbValidate
+                  [(ngModel)]=modelUser.photo
+                  
                 />
-                <label for="orangeForm-name">Foto</label>
+                <label for="orangeForm-photo">{{listUser[0]?.idUsuarioNavigation.foto}}</label>
                 <mdb-error
                   *ngIf="
-                    signupFormModalName.invalid &&
-                    (signupFormModalName.dirty || signupFormModalName.touched)
+                    signupFormModalPhoto.invalid &&
+                    (signupFormModalPhoto.dirty || signupFormModalPhoto.touched)
                   "
                 >
                   Input invalid
                 </mdb-error>
                 <mdb-success
                   *ngIf="
-                    signupFormModalName.valid &&
-                    (signupFormModalName.dirty || signupFormModalName.touched)
+                    signupFormModalPhoto.valid &&
+                    (signupFormModalPhoto.dirty || signupFormModalPhoto.touched)
                   "
                 >
                   Input valid
@@ -494,24 +517,25 @@
                 <mdb-icon fas icon="user" class="prefix grey-text"></mdb-icon>
                 <input
                   type="text"
-                  id="orangeForm-email"
+                  id="orangeForm-user"
                   class="form-control"
-                  [formControl]="signupFormModalEmail"
+                  [formControl]="signupFormModalUser"
                   mdbInput
                   mdbValidate
+                  [(ngModel)]=modelUser.userName
                 />
-                <label for="orangeForm-email">Nombre de Usuario</label>
+                <label for="orangeForm-user">{{listUser[0]?.idUsuarioNavigation.nombreUsuario}}</label>
                 <mdb-error
                   *ngIf="
-                    signupFormModalEmail.invalid &&
-                    (signupFormModalEmail.dirty || signupFormModalEmail.touched)
+                    signupFormModalUser.invalid &&
+                    (signupFormModalUser.dirty || signupFormModalUser.touched)
                   "
                   >Input invalid
                 </mdb-error>
                 <mdb-success
                   *ngIf="
-                    signupFormModalEmail.valid &&
-                    (signupFormModalEmail.dirty || signupFormModalEmail.touched)
+                    signupFormModalUser.valid &&
+                    (signupFormModalUser.dirty || signupFormModalUser.touched)
                   "
                   >Input valid
                 </mdb-success>
@@ -525,13 +549,14 @@
                 <mdb-icon fas icon="lock" class="prefix grey-text"></mdb-icon>
                 <input
                   type="password"
-                  id="orangeForm-pass"
+                  id="orangeForm-password"
                   class="form-control"
                   [formControl]="signupFormModalPassword"
                   mdbInput
                   mdbValidate
+                  [(ngModel)]=modelUser.password
                 />
-                <label for="orangeForm-pass">Your password</label>
+                <label for="orangeForm-password">contraseña</label>
                 <mdb-error
                   *ngIf="
                     signupFormModalPassword.invalid &&
@@ -555,8 +580,14 @@
           </div>
         </div>
         <div class="modal-footer d-flex justify-content-center">
-          <button mdbBtn color="deep-orange" class="waves-light" mdbWavesEffect>
-            Sign up
+          <button mdbBtn color="blue" class="waves-light" mdbWavesEffect  
+          (click)="updateList()" >
+            Realizar Cambios
+          </button>
+
+          <button mdbBtn color="default" class="waves-light" mdbWavesEffect  
+          (click)="mbdModalEditar.hide()" >
+            Cerrar
           </button>
         </div>
       </div>

@@ -10,7 +10,7 @@ using StraviaTECAPI.Models.Request;
 
 namespace StraviaTECAPI.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/[controller]/{friendname}")]
     [ApiController]
     public class UsuarioController : ControllerBase
     {
@@ -21,7 +21,7 @@ namespace StraviaTECAPI.Controllers
          */
 
         [HttpGet]
-        public IActionResult Get()
+        public IActionResult Get(string friendname)
         {
             MyReply reply = new MyReply();
             try
@@ -29,8 +29,7 @@ namespace StraviaTECAPI.Controllers
                 //codigo que se ejecuta una vez
                 using (StraviaContext db = new StraviaContext())
                 {
-                    var list = db.Usuario
-                        .ToList();
+                    var list = db.Usuario.Where(a => a.Nombre == friendname).ToList();
                     reply.conexionSuccess = 1;
                     reply.data = list;
                 }
