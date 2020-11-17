@@ -65,7 +65,7 @@ export class LobbyComponent implements OnInit {
 
 
   getUser(){
-       this.apiusuarioRol.getUser(this.username, "2").subscribe(reply => {
+       this.apiusuarioRol.getUser(this.username, "1").subscribe(reply => {
           console.log(reply);
           this.listUser = reply.data;
           this.cedula = this.listUser[0].idUsuarioNavigation.cedula;

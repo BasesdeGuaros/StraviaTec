@@ -40,6 +40,25 @@
                     </div>
                     <div class="text-center mt-4">
                       <button mdbBtn color="indigo" (click)="validation()" mdbWavesEffect>Iniciar Sesion</button>
+                     <hr class="hr-light mb-3 mt-4">
+                      <!--begin-->
+                      <div class="wrap">
+                            <form action="" class="formulario">
+                                <div class="radio row">
+                                    <div class="col 2" (click) = "functionDeportista()">
+                                    <input type="radio" name="tipocuenta" id="deportista">
+                                    <label for="hombre">Deportista</label>
+                                    </div>
+                                    
+                                    <div class="col 2" (click) = "functionAdministrador()">
+                                    <input type="radio" name="tipocuenta" id="administrador">
+                                    <label for="mujer">Administrador</label>
+                                    </div>
+                                    
+                                </div>
+                            </form>
+                        </div>
+                      <!--end-->
                       <hr class="hr-light mb-3 mt-4">
                       <div class="inline-ul text-center d-flex justify-content-center">
                         <button mdbBtn color="red" [routerLink]="['/signup']" mdbWavesEffect>Crear Cuenta</button>
@@ -54,6 +73,8 @@
         </div>
       </div>
     </section>
+
+    
 
   </header>
   <!--Main Navigation-->

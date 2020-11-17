@@ -48,43 +48,12 @@ namespace StraviaTECAPI.Controllers
             }
             return Ok(reply);
         }
-
-        [HttpGet]
-        [Route("api/[controller]/{cedula}/{type}")]
-        public IActionResult Get(string cedula, string type)
-        {
-            MyReply reply = new MyReply();
-            try
-            {
-                //codigo que se ejecuta una vez
-                using (StraviaContext db = new StraviaContext())
-                {
-                    
-                    var list = db.EventoTieneTipo
-                        .Where(a => a.IdTipoEvento == int.Parse(type))
-                        .Where(a => a.IdEventoNavigation.IdAdmin == int.Parse(cedula)) //carrera
-                        .Include(a => a.IdEventoNavigation)
-                        .ToList();
-                    // .Where(a => a.Rol == "producer") para hacerlo dentro del query
-                    // .Include(a => a.Producers)
-                    reply.conexionSuccess = 1;
-                    reply.data = list;
-                }
-            }
-            catch (Exception ex)
-            {
-                reply.conexionSuccess = 0;
-                reply.message = ex.Message;
-            }
-            return Ok(reply);
-        }
-
         /**
          * Protocolo Post
          */
         [HttpPost]
         [Route("api/[controller]")]
-        public IActionResult Post(EventoRequest request)
+        public IActionResult Post(EventoTieneTipoRequest request)
         {
             MyReply reply = new MyReply();
 
@@ -92,39 +61,16 @@ namespace StraviaTECAPI.Controllers
             {
                 using (StraviaContext db = new StraviaContext())
                 {
-                
-                    Evento evento = new Evento();
-                    evento.Id = 4; //tiene que haber un autoincremento en la base de datos
-                    evento.Nombre = request.Nombre;
-                    evento.Fecha = request.Fecha;
-                    evento.IdAdmin = request.IdAdmin;
-                    evento.Recorrido = request.Recorrido;
-                    evento.Cuenta = request.Cuenta;
-                    evento.Categoria = request.Categoria;
-                    evento.Costo = request.Costo;
-                    evento.Privado = request.Privado;
-                    evento.IdDeporte = request.IdDeporte;
-                    evento.Kilometraje = request.Kilometraje;
-                    evento.Elevación = request.Elevación;
-                    evento.FechaInicial = request.FechaInicial;
-                    evento.FechaFinal = request.FechaFinal;
-                    evento.FondoAltitud = request.FondoAltitud;
-                    evento.Foto = request.Foto;
-
-                    db.Evento.Add(evento);
-
-                    db.SaveChanges();
-
-
                     EventoTieneTipo eventoTieneTipo = new EventoTieneTipo();
-                    eventoTieneTipo.IdEvento = evento.Id; ;
-                    eventoTieneTipo.IdTipoEvento = 1;
 
+                    eventoTieneTipo.IdEvento = request.IdEvento;
+                    eventoTieneTipo.IdTipoEvento = request.IdTipoEvento;
 
-        db.EventoTieneTipo.Add(eventoTieneTipo);
+                    eventoTieneTipo.IdTipoEventoNavigation = request.IdTipoEventoNavigation;
+                    eventoTieneTipo.IdEventoNavigation = request.IdEventoNavigation;
 
-        
-        db.SaveChanges();
+                    db.EventoTieneTipo.Add(eventoTieneTipo);
+                    db.SaveChanges();
                     reply.conexionSuccess = 1;
                     reply.message = "Evento Tiene Agregado";
                 }
@@ -158,7 +104,6 @@ namespace StraviaTECAPI.Controllers
                     eventoTieneTipo.IdTipoEventoNavigation = request.IdTipoEventoNavigation;
                     eventoTieneTipo.IdEventoNavigation = request.IdEventoNavigation;
 
-                    db.Update(eventoTieneTipo);
                     db.Entry(eventoTieneTipo).State = Microsoft.EntityFrameworkCore.EntityState.Modified; //le dice a la base de datos que se ha modificado  
                     db.SaveChanges();
 
@@ -178,8 +123,8 @@ namespace StraviaTECAPI.Controllers
          * Protocolo Delete
          */
         [HttpDelete]
-        [Route("api/[controller]/{IdEvento}/{IdTipoEvento}")]
-        public IActionResult Delete(int IdEvento, int IdTipoEvento)
+        [Route("api/[controller]")]
+        public IActionResult Delete(int cedula)
         {
             MyReply reply = new MyReply();
 
@@ -187,14 +132,8 @@ namespace StraviaTECAPI.Controllers
             {
                 using (StraviaContext db = new StraviaContext())
                 {
-
-                    EventoTieneTipo eventoTieneTipo = db.EventoTieneTipo.Find(IdEvento, IdTipoEvento);
-                    db.Remove(eventoTieneTipo);
-
-                    Evento evento = db.Evento.Find(IdEvento);
-                    db.Remove(evento);
-
-
+                    Usuario usuario = db.Usuario.Find(cedula); //Cambiar para borrar la condicion de seguidor
+                    db.Remove(usuario);
                     db.SaveChanges();
 
                     reply.conexionSuccess = 1;
