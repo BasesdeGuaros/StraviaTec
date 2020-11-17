@@ -1,9 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators, FormGroup } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
-import { ApieventotienetipoService } from '../services/apieventotienetipo.service';
-import { Evento } from '../Models/Evento'
-
 
 @Component({
   selector: 'app-organizer-race',
@@ -11,11 +7,6 @@ import { Evento } from '../Models/Evento'
   styleUrls: ['./organizer-race.component.scss']
 })
 export class OrganizerRaceComponent implements OnInit {
-    public cedula = '';
-    public listEvent = [];
-    public modal;
-
-
   editField: string;
   validatingForm: FormGroup;
 
@@ -35,18 +26,10 @@ export class OrganizerRaceComponent implements OnInit {
     { id: 10, name: 'John Maklowicz', age: 36, companyName: 'Mako', country: 'Poland', city: 'Bialystok' },
   ];
 
-  constructor(
-      private apievento: ApieventotienetipoService,
-      private route: ActivatedRoute
-
-  ) { }
+  constructor() { }
 
   ngOnInit(): void {
-      this.cedula = this.route.snapshot.paramMap.get('cedula');
-      this.getEvent();
-      
-      //Validacion del form
-      this.validatingForm = new FormGroup({
+    this.validatingForm = new FormGroup({
       contactFormModalName: new FormControl('', Validators.required),
       contactFormModalDate: new FormControl('', Validators.required),
       contactFormModalRoute: new FormControl('', Validators.required),
@@ -58,61 +41,14 @@ export class OrganizerRaceComponent implements OnInit {
     });
   }
 
-    getEvent(){
-       this.apievento.getEventType(this.cedula,"1").subscribe(reply => {
-          console.log(reply);
-          this.listEvent = reply.data;
-        });
-    }
-
-    addEvent(){
-
-        const evento: Evento  = {
-            Nombre: this.contactFormModalName.value,
-            Fecha: this.contactFormModalDate.value,
-            IdAdmin: this.cedula,
-            Recorrido:  "no tiene", //this.contactFormModalRoute.value, FALTA
-            Cuenta: this.contactFormModalBankAccount.value,
-            Categoria: this.contactFormModalCategory.value,
-            Costo: 0, //falta
-            Privado: this.contactFormModalPrivacy.value,
-            IdDeporte: this.contactFormModalActivity.value,
-            Kilometraje: 0, //falta
-            Elevación: 0, //falta
-            FechaFinal: this.contactFormModalDate.value,
-            FechaInicial: this.contactFormModalDate.value,
-            FondoAltitud: Number,
-            Foto: null //falta
-    };
-
-        this.apievento.add(evento).subscribe(reply => {
-          console.log(reply);
-        });
-    }
-
-    /**
-     * Acciones con la tabla
-     */
-    updateList(id: number, direc: string, property: string, event: any) {
+    updateList(id: number, property: string, event: any) {
       const editField = event.target.textContent;
-      this.listEvent[id][direc][property] = editField;
-
-      this.apievento.edit(this.listEvent[id]).subscribe(reply => {
-          console.log(reply);
-        });
-
-      console.log(this.listEvent[id]);
+      this.personList[id][property] = editField;
     }
 
     remove(id: any) {
-        console.log(this.listEvent[id]);
-        this.apievento.delete(this.listEvent[id].idEvento, this.listEvent[id].idTipoEvento).subscribe(reply => {
-          console.log(reply);
-        });
-
-
-      //this.awaitingPersonList.push(this.personList[id]);
-      //this.personList.splice(id, 1);
+      this.awaitingPersonList.push(this.personList[id]);
+      this.personList.splice(id, 1);
     }
 
     add() {

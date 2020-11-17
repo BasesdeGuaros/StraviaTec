@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
-
 
 namespace StraviaTECAPI.Models
 {
@@ -15,7 +13,6 @@ namespace StraviaTECAPI.Models
             Subscripciones = new HashSet<Subscripciones>();
         }
 
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         public string Nombre { get; set; }
         public DateTime? Fecha { get; set; }

@@ -6,5 +6,5 @@ export interface Usuario{
     contrasena: String;
     nacionalidad: String;
     fechaNacimiento: String;
-    Foto: byte; //no se si esto esta bien
+    Foto: ByteLengthChunk; //no se si esto esta bien
 }
