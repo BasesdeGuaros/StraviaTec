@@ -34,3 +34,4 @@ C:\Users\garza\Desktop\IIS2020\Bases de Datos\Proyecto1\Code\StraviaTec\BackEnd\
 C:\Users\garza\Desktop\IIS2020\Bases de Datos\Proyecto1\Code\StraviaTec\BackEnd\StraviaTECAPI\StraviaTECAPI\obj\Debug\netcoreapp2.1\StraviaTECAPI.pdb
 C:\Users\garza\Desktop\IIS2020\Bases de Datos\Proyecto1\Code\StraviaTec\BackEnd\StraviaTECAPI\StraviaTECAPI\obj\Debug\netcoreapp2.1\StraviaTECAPI.genruntimeconfig.cache
 C:\Users\garza\Desktop\IIS2020\Bases de Datos\Proyecto1\Code\StraviaTec\BackEnd\StraviaTECAPI\StraviaTECAPI\obj\Debug\netcoreapp2.1\StraviaTECAPI.csproj.CoreCompileInputs.cache
+C:\Users\danie\OneDrive\Documentos\TEC\Bases de Datos\StraviaTEC\StraviaTec\BackEnd\StraviaTECAPI\StraviaTECAPI\obj\Debug\netcoreapp2.1\UserSecretsAssemblyInfo.cs
