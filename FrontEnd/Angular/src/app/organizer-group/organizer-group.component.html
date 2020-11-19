@@ -10,20 +10,20 @@
         </span>
         <table class="table table-bordered table-responsive-md table-striped text-center">
           <tr>
-            <th class="text-center">Nombre de Carrrera</th>
+            <th class="text-center">Nombre del Grupo</th>
             <th class="text-center">Administrador</th>
             <th class="text-center">Numero de Integrantes</th>
             <th class="text-center">Eliminar</th>
           </tr>
-          <tr *ngFor="let person of personList; let id = index"> <!--ng for de la lista de la base de datos--->
+          <tr *ngFor="let group of listGroup; let id = index"> <!--ng for de la lista de la base de datos--->
             <td>
-              <span (keyup)="changeValue(id, 'name', $event)" (blur)="updateList(id, 'name', $event)" contenteditable="true">{{person.name}}</span>
+              <span (keyup)="changeValue(id, 'name', $event)" (blur)="updateList(id, 'idGrupoNavigation', 'nombre', $event)" contenteditable="true">{{group.idGrupoNavigation.nombre}}</span>
             </td>
             <td>
-              <span contenteditable="true" (keyup)="changeValue(id, 'age', $event)" (blur)="updateList(id, 'age', $event)">{{person.age}}</span>
+              <span contenteditable="true" (keyup)="changeValue(id, 'age', $event)" (blur)="updateList(id, 'idGrupoNavigation', 'age', $event)">{{group.idUsuario}}</span>
             </td>
             <td>
-              <span contenteditable="true" (keyup)="changeValue(id, 'companyName', $event)" (blur)="updateList(id, 'companyName', $event)">{{person.companyName}}</span>
+              <span contenteditable="true" (keyup)="changeValue(id, 'companyName', $event)" (blur)="updateList(id, 'idGrupoNavigation', 'companyName', $event)">{{group}}</span>
             </td>
             <td>
               <span class="table-remove">
@@ -81,7 +81,7 @@
 
       </div>
       <div class="modal-footer d-flex justify-content-center">
-        <button mdbBtn color="indigo" class="waves-light" mdbWavesEffect>Crear
+        <button mdbBtn color="indigo" class="waves-light" mdbWavesEffect (click)="addGruop()">Crear
           <mdb-icon far icon="paper-plane" class="ml-1"></mdb-icon>
         </button>
       </div>

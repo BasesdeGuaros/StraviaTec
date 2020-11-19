@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
+import { ActivatedRoute } from '@angular/router';
+import { ApiparticipacionusuariogrupoService } from '../services/apiparticipacionusuariogrupo.service';
+import { Grupo } from '../Models/Grupo'
+
 
 
 @Component({
@@ -8,8 +12,12 @@ import {FormControl, FormGroup, Validators} from "@angular/forms";
   styleUrls: ['./organizer-group.component.scss']
 })
 export class OrganizerGroupComponent implements OnInit {
-  editField: string;
-  validatingForm: FormGroup;
+    public cedula = '';
+    public listGroup = [];
+
+
+    editField: string;
+    validatingForm: FormGroup;
 
   personList: Array<any> = [
     { id: 1, name: 'Aurelia Vega', age: 30, companyName: 'Deepends', country: 'Spain', city: 'Madrid' },
@@ -28,25 +36,65 @@ export class OrganizerGroupComponent implements OnInit {
   ];
   
 
-  constructor() { }
+  constructor(
+      private apiGrupo: ApiparticipacionusuariogrupoService,
+      private route: ActivatedRoute
+  ) { }
 
   ngOnInit(): void {
+      this.cedula = this.route.snapshot.paramMap.get('cedula');
+      this.getGruop();
+
+
     this.validatingForm = new FormGroup({
       subscriptionFormModalName: new FormControl('', Validators.required),
-      subscriptionFormModalEmail: new FormControl('', Validators.email)
+      subscriptionFormModalEmail: new FormControl('', Validators.required)
     });
   }
+  
 
-  updateList(id: number, property: string, event: any) {
-    const editField = event.target.textContent;
-    this.personList[id][property] = editField;
-  }
+
+    getGruop(){
+       this.apiGrupo.getGroup(this.cedula).subscribe(reply => {
+          console.log(reply);
+          this.listGroup = reply.data;
+        });
+    }
+
+
+    addGruop(){
+
+        const grupo: Grupo  = {
+            Id: 5,
+            Nombre: this.subscriptionFormModalName.value
+    };
+
+
+        this.apiGrupo.add(grupo,"1",this.cedula).subscribe(reply => {
+          console.log(reply);
+        });
+    }
+    
+
+  updateList(id: number, direc: string, property: string, event: any) {
+      const editField = event.target.textContent;
+      this.listGroup[id][direc][property] = editField;
+
+      this.apiGrupo.edit(this.listGroup[id]).subscribe(reply => {
+          console.log(reply);
+        });
+    }
 
   remove(id: any) {
-    this.awaitingPersonList.push(this.personList[id]);
-    this.personList.splice(id, 1);
-  }
+        console.log(this.listGroup[id]);
+        this.apiGrupo.delete(this.listGroup[id].idGrupo, this.cedula).subscribe(reply => {
+          console.log(reply);
+        });
 
+
+      //this.awaitingPersonList.push(this.personList[id]);
+      //this.personList.splice(id, 1);
+    }
 
   add() {
     if (this.awaitingPersonList.length > 0) {

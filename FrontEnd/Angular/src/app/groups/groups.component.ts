@@ -26,16 +26,6 @@ export class GroupsComponent implements OnInit {
 
 
   ngOnInit(): void {
-      this.getGroup();
-  }
-
-  getGroup(){
-      this.apiGroup.getGroup().subscribe(reply => { 
-          console.log(reply);
-          this.listGroup = reply.data;
-          console.log(this.listGroup.length);
-      });
-      
   }
 
 

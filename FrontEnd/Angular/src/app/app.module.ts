@@ -61,8 +61,8 @@ import { ActivityComponent } from './activity/activity.component';
       { path: 'groups', component: GroupsComponent},
       { path: 'organizer/:username', component: OrganizerComponent},
       { path: 'organizerRace/:cedula', component: OrganizerRaceComponent},
-      { path: 'organizerChallenge', component: OrganizerChallengeComponent},
-      { path: 'organizerGroup', component: OrganizerGroupComponent},
+      { path: 'organizerChallenge/:cedula', component: OrganizerChallengeComponent},
+      { path: 'organizerGroup/:cedula', component: OrganizerGroupComponent},
       { path: 'miscarrerasretos/:cedula', component: MisCarrerasRetosComponent},
       { path: 'activity', component: ActivityComponent}
 

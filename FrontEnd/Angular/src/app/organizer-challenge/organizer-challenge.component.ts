@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators, FormGroup } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
+import { ApieventotienetipoService } from '../services/apieventotienetipo.service';
+import { Evento } from '../Models/Evento'
+
 
 @Component({
   selector: 'app-organizer-challenge',
@@ -7,8 +11,12 @@ import { FormControl, Validators, FormGroup } from '@angular/forms';
   styleUrls: ['./organizer-challenge.component.scss']
 })
 export class OrganizerChallengeComponent implements OnInit {
-  editField: string;
-  validatingForm: FormGroup;
+    public cedula = '';
+    public listEvent = [];
+    public modal;
+
+    editField: string;
+    validatingForm: FormGroup;
 
   personList: Array<any> = [
     { id: 1, name: 'Aurelia Vega', age: 30, companyName: 'Deepends', country: 'Spain', city: 'Madrid' },
@@ -29,12 +37,19 @@ export class OrganizerChallengeComponent implements OnInit {
     { id: 10, name: 'John Maklowicz', age: 36, companyName: 'Mako', country: 'Poland', city: 'Bialystok' },
   ];
 
-  constructor() { }
+  constructor(
+      private apievento: ApieventotienetipoService,
+      private route: ActivatedRoute
+      ) { }
 
   ngOnInit(): void {
+      this.cedula = this.route.snapshot.paramMap.get('cedula');
+      this.getEvent();
+
     this.validatingForm = new FormGroup({
       contactFormModalName: new FormControl('', Validators.required),
-      contactFormModalDate: new FormControl('', Validators.required),
+      contactFormModalDateI: new FormControl('', Validators.required),
+      contactFormModalDateF: new FormControl('', Validators.required),
       contactFormModalType: new FormControl('', Validators.required), //de fondo o profundidad
       contactFormModalActivity: new FormControl('', Validators.required),
       contactFormModalPrivacy: new FormControl('', Validators.required),
@@ -42,14 +57,57 @@ export class OrganizerChallengeComponent implements OnInit {
     });
   }
 
-  updateList(id: number, property: string, event: any) {
-    const editField = event.target.textContent;
-    this.personList[id][property] = editField;
-  }
+  getEvent(){
+       this.apievento.getEventType(this.cedula,"2").subscribe(reply => {
+          console.log(reply);
+          this.listEvent = reply.data;
+        });
+    }
+
+    addEvent(){
+
+        const evento: Evento  = {
+            Nombre: this.contactFormModalName.value,
+            Fecha: this.contactFormModalDateI.value,
+            IdAdmin: this.cedula,
+            Recorrido:  "no tiene", //this.contactFormModalRoute.value, FALTA
+            Cuenta: null,
+            Categoria: null,
+            Costo: 0, //falta
+            Privado: this.contactFormModalPrivacy.value,
+            IdDeporte: this.contactFormModalActivity.value,
+            Kilometraje: 0, //falta
+            Elevación: 0, //falta
+            FechaFinal: this.contactFormModalDateI.value,
+            FechaInicial: this.contactFormModalDateF.value,
+            FondoAltitud: this.contactFormModalType.value,
+            Foto: null //falta
+    };
+
+        this.apievento.add(evento,"2").subscribe(reply => {
+          console.log(reply);
+        });
+    }
+
+  updateList(id: number, direc: string, property: string, event: any) {
+      const editField = event.target.textContent;
+      this.listEvent[id][direc][property] = editField;
+
+      this.apievento.edit(this.listEvent[id]).subscribe(reply => {
+          console.log(reply);
+        });
+
+      console.log(this.listEvent[id]);
+    }
 
   remove(id: any) {
-    this.awaitingPersonList.push(this.personList[id]);
-    this.personList.splice(id, 1);
+        console.log(this.listEvent[id]);
+        this.apievento.delete(this.listEvent[id].idEvento, this.listEvent[id].idTipoEvento).subscribe(reply => {
+          console.log(reply);
+        });
+
+        //this.awaitingPersonList.push(this.personList[id]);
+        //this.personList.splice(id, 1);
   }
 
 
@@ -69,9 +127,14 @@ export class OrganizerChallengeComponent implements OnInit {
     return this.validatingForm.get('contactFormModalName');
   }
 
-  get contactFormModalDate() {
-    return this.validatingForm.get('contactFormModalDate');
+  get contactFormModalDateI() {
+    return this.validatingForm.get('contactFormModalDateI');
   }
+
+  get contactFormModalDateF() {
+    return this.validatingForm.get('contactFormModalDateI');
+  }
+
 
   get contactFormModalType() {
     return this.validatingForm.get('contactFormModalType');

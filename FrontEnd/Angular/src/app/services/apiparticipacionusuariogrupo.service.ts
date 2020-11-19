@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Reply } from '../Models/reply'
+import { Grupo } from '../Models/Grupo'
+
 
 const httpOption = {
   headers: new HttpHeaders({
@@ -19,11 +21,19 @@ export class ApiparticipacionusuariogrupoService {
 
     constructor(private _http: HttpClient) { }
 
-    getGroup(): Observable<Reply> {
-        return this._http.get<Reply>(this.url);
+    getGroup(cedula: string): Observable<Reply> {
+        return this._http.get<Reply>(`${this.url}/${cedula}`);
     }
 
-    /*addEvent(actividad: actividadPerteneceEvento): Observable<Reply> {
-        return this._http.post<Reply>(this.url, actividad, httpOption)
-    }*/
+    add(grupo: Grupo, rol: string, cedula: string): Observable<Reply> {
+        return this._http.post<Reply>(`${this.url}/${rol}/${cedula}`, grupo, httpOption)
+    }
+
+    edit(grupo: Grupo): Observable<Reply> {
+        return this._http.put<Reply>(this.url, grupo, httpOption)
+    }
+
+    delete(idGrupo: string, cedula: string): Observable<Reply> {
+        return this._http.delete<Reply>(`${this.url}/${idGrupo}/${cedula}`)
+    }
 }

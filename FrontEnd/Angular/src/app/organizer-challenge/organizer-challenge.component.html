@@ -18,24 +18,24 @@
           <th class="text-center">Lista de Patrocinadores</th>
           <th class="text-center">Eliminar</th>
         </tr>
-        <tr *ngFor="let person of personList; let id = index"> <!--ng for de la lista de la base de datos--->
+        <tr *ngFor="let event of listEvent; let id = index"> <!--ng for de la lista de la base de datos--->
           <td>
-            <span (keyup)="changeValue(id, 'name', $event)" (blur)="updateList(id, 'name', $event)" contenteditable="true">{{person.name}}</span>
+            <span (keyup)="changeValue(id, 'name', $event)" (blur)="updateList(id, 'idEventoNavigation', 'nombre', $event)" contenteditable="true">{{event.idEventoNavigation.nombre}}</span>
           </td>
           <td>
-            <span contenteditable="true" (keyup)="changeValue(id, 'age', $event)" (blur)="updateList(id, 'age', $event)">{{person.age}}</span>
+            <span contenteditable="true" (keyup)="changeValue(id, 'age', $event)" (blur)="updateList(id, 'idEventoNavigation', 'age', $event)">{{event.idEventoNavigation.age}}</span>
           </td>
           <td>
-            <span contenteditable="true" (keyup)="changeValue(id, 'companyName', $event)" (blur)="updateList(id, 'companyName', $event)">{{person.companyName}}</span>
+            <span contenteditable="true" (keyup)="changeValue(id, 'companyName', $event)" (blur)="updateList(id, 'idEventoNavigation', 'companyName', $event)">{{event.idEventoNavigation.companyName}}</span>
           </td>
           <td>
-            <span contenteditable="true" (keyup)="changeValue(id, 'country', $event)" (blur)="updateList(id, 'country', $event)">{{person.country}}</span>
+            <span contenteditable="true" (keyup)="changeValue(id, 'country', $event)" (blur)="updateList(id, 'idEventoNavigation', 'country', $event)">{{event.idEventoNavigation.privado}}</span>
           </td>
           <td>
-            <span contenteditable="true" (keyup)="changeValue(id, 'city', $event)" (blur)="updateList(id, 'city', $event)">{{person.city}}</span>
+            <span contenteditable="true" (keyup)="changeValue(id, 'city', $event)" (blur)="updateList(id, 'idEventoNavigation', 'city', $event)">{{event.idEventoNavigation.fondoAltitud}}</span>
           </td>
           <td>
-              <span contenteditable="true" (keyup)="changeValue(id, 'city', $event)" (blur)="updateList(id, 'city', $event)">{{person.city}}</span>
+              <span contenteditable="true" (keyup)="changeValue(id, 'city', $event)" (blur)="updateList(id, 'idEventoNavigation', 'city', $event)">{{event.idEventoNavigation.subscripciones}}</span>
           </td>
           <td>
             <span class="table-remove">
@@ -79,14 +79,14 @@
       <mdb-icon fas icon="calendar-alt" class="prefix grey-text"></mdb-icon>
       <label for="form29">Periodo del Reto</label>
       <div class="md-form mb-5">
-        <input type="date" id="dateInit" class="form-control" mdbInput mdbValidate [formControl]="contactFormModalDate">
-        <input type="date" id="dateLast" class="form-control" mdbInput mdbValidate [formControl]="contactFormModalDate">
+        <input type="date" id="dateInit" class="form-control" mdbInput mdbValidate [formControl]="contactFormModalDateI">
+        <input type="date" id="dateLast" class="form-control" mdbInput mdbValidate [formControl]="contactFormModalDateF">
         <mdb-error
-          *ngIf="contactFormModalDate.invalid && (contactFormModalDate.dirty || contactFormModalDate.touched)">
+          *ngIf="contactFormModalDateI.invalid && (contactFormModalDateI.dirty || contactFormModalDateI.touched)">
           Input invalid
         </mdb-error>
         <mdb-success
-          *ngIf="contactFormModalDate.valid && (contactFormModalDate.dirty || contactFormModalDate.touched)">Input
+          *ngIf="contactFormModalDateF.valid && (contactFormModalDateF.dirty || contactFormModalDateF.touched)">Input
           valid
         </mdb-success>
       </div>
@@ -94,13 +94,13 @@
       <mdb-icon fas icon="bicycle" class="prefix grey-text"></mdb-icon>
       <div class="md-form mb-5">
           <select class="browser-default custom-select" [formControl]="contactFormModalActivity">
-              <option value="" disabled>Tipo de Actividad</option>
-              <option value="1">Correr</option>
-              <option value="2">Nadar</option>
-              <option value="3">Ciclismo</option>
-              <option value="4">Senderismo</option>
-              <option value="5">Kayak</option>
-              <option value="6">Caminata</option>
+             <option value="" disabled>Tipo de Actividad</option>
+            <option value="1">Atletismo</option>
+            <option value="2">Natacion</option>
+            <option value="3">Ciclismo</option>
+            <option value="4">Senderismo</option>
+            <option value="5">Kayak</option>
+            <option value="6">Caminata</option>
           </select>
 
           <mdb-error
@@ -151,8 +151,8 @@
 
         <div class="md-form mb-5">
           <mdb-icon fas icon="user" class="prefix grey-text"></mdb-icon>
-          <input type="text" id="form34" class="form-control" mdbInput mdbValidate [formControl]="contactFormModalSponsors">
-          <label for="form34">Lista de Patrocinadores</label>
+          <input type="text" id="form35" class="form-control" mdbInput mdbValidate [formControl]="contactFormModalSponsors">
+          <label for="form35">Lista de Patrocinadores</label>
           <mdb-error
             *ngIf="contactFormModalSponsors.invalid && (contactFormModalSponsors.dirty || contactFormModalSponsors.touched)">Input
             invalid
@@ -164,7 +164,7 @@
         </div>
     </div>
     <div class="modal-footer d-flex justify-content-center">
-      <button mdbBtn color="unique" class="waves-light" mdbWavesEffect>Enviar
+      <button mdbBtn color="unique" class="waves-light" mdbWavesEffect (click)="addEvent()">Enviar
         <mdb-icon far icon="paper-plane" class="ml-1"></mdb-icon>
       </button>
     </div>
