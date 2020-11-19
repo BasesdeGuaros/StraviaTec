@@ -52,6 +52,37 @@ namespace StraviaTECAPI.Controllers
             }
             return Ok(reply);
         }
+        [HttpGet]
+        [Route("api/[controller]/{friendname}")]
+        //[Route("api/[controller]username")]
+
+        public IActionResult Get(string friendname)
+        {
+            MyReply reply = new MyReply();
+            try
+            {
+                //codigo que se ejecuta una vez
+                using (StraviaContext db = new StraviaContext())
+                {
+                 
+                    var list = db.UsuarioRol
+                        .Where(a => a.IdUsuarioNavigation.Nombre == friendname)
+                        .Where(a => a.IdRol == 1)
+                        .Include(a => a.IdUsuarioNavigation)
+                        .ToList();
+
+
+                    reply.conexionSuccess = 1;
+                    reply.data = list;
+                }
+            }
+            catch (Exception ex)
+            {
+                reply.conexionSuccess = 0;
+                reply.message = ex.Message;
+            }
+            return Ok(reply);
+        }
         /**
          * Protocolo Post
          */
@@ -106,7 +137,7 @@ namespace StraviaTECAPI.Controllers
 
                     usuariorol.IdUsuarioNavigation = request.IdUsuarioNavigation;
 
-                    db.Entry(usuariorol).State = Microsoft.EntityFrameworkCore.EntityState.Modified; //le dice a la base de datos que se ha modificado  
+                    db.Update(usuariorol); //le dice a la base de datos que se ha modificado  
                     db.SaveChanges();
 
                     reply.conexionSuccess = 1;

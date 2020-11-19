@@ -49,8 +49,8 @@
             font-weight: bold;
             font-size: 12px;
           "
-          [(ngModel)]=modelScan.name
-        />
+          [formControl]="friendModel"
+        >
         <!--label for="friendInput">{{fname}}</label-->
 
         <!-- preguntar como llamar otra funcion a parte del modal-->
@@ -417,7 +417,7 @@
                 ></mdb-icon>
 
                 <input
-                  type="text"
+                  type="date"
                   id="orangeForm-birth"
                   class="form-control"
                   [formControl]="signupFormModalBirth"
@@ -597,7 +597,6 @@
 
 
 
-
 <div
   mdbModal
   #frame="mdbModal"
@@ -634,7 +633,7 @@
               <!-- Profile widget -->
               <div
                 class="bg-white shadow rounded overflow-hidden margin"
-                *ngFor="let friend of friendsList; let i = index"
+                *ngFor="let friend of listFriends; let i = index"
               >
                 <div class="px-2 pt-0 pb-5 cover">
                   <div class="media align-items-end profile-head">
@@ -655,7 +654,8 @@
                       >
                     </div>
                     <div class="media-body mb-5 text-white">
-                      <h4 class="mt-0 mb-0">{{ friend.name }}</h4>
+                      <h4 class="mt-0 mb-0">{{ friend.idUsuarioNavigation.nombre }} 
+                          {{ friend.idUsuarioNavigation.apellido }}</h4>
                       <p class="small mb-4">
                         <i class="fas fa-map-marker-alt mr-2"></i>Desampra
                       </p>

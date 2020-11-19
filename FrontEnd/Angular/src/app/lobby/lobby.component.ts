@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import { ActivatedRoute, Router } from '@angular/router';
 import { ApiusuariorolService } from '../services/apiusuariorol.service';
 import { ApiusuariosigueusuarioService} from '../services/apiusuariosigueusuario.service';
 import { ApiusuarioService} from '../services/apiusuario.service';
+import { ModalDirective } from 'angular-bootstrap-md';
 
 
 @Component({
@@ -12,6 +13,9 @@ import { ApiusuarioService} from '../services/apiusuario.service';
   styleUrls: ['./lobby.component.scss']
 })
 export class LobbyComponent implements OnInit {
+
+  @ViewChild('frame') public basicModal: ModalDirective;
+
   validatingForm: FormGroup;
   public username = '';
   public cedula = 0;
@@ -19,7 +23,6 @@ export class LobbyComponent implements OnInit {
   modelUser:any = {};
   modelScan:any = {};
   public fname = "";
-  
   public listfollowers = [];
   public listUser = [];
   public listFriends = [];
@@ -67,7 +70,8 @@ export class LobbyComponent implements OnInit {
       signupFormModalBirth: new FormControl('', Validators.required),
       signupFormModalPhoto: new FormControl('', Validators.required),
       signupFormModalUser: new FormControl('', Validators.required),
-      signupFormModalPassword: new FormControl('', Validators.required)
+      signupFormModalPassword: new FormControl('', Validators.required),
+      friendModel: new FormControl('', Validators.required)
 
     });
     this.modelScan.name = this.fname;
@@ -75,6 +79,8 @@ export class LobbyComponent implements OnInit {
 
     
   }
+
+  
 
   getUser(){
         this.apiusuarioRol.getUser(this.username, "1").subscribe(reply => {
@@ -122,27 +128,32 @@ updateList() {
       this.listUser[0].idUsuarioNavigation.nombreUsuario = this.modelUser.userName;
       this.listUser[0].idUsuarioNavigation.contraseña = this.modelUser.password;
 
-      console.log(this.listUser);
+      console.log(this.listUser[0]);
       
 
-      this.apiusuarioRol.edit(this.listUser).subscribe(reply => {
+      this.apiusuarioRol.edit(this.listUser[0]).subscribe(reply => {
           console.log(reply);
         });
 
-      console.log(this.listUser); 
+      console.log(this.listUser[0]); 
     }
 
     getFriends(){
         console.log("FRIENDS LIST");
-        console.log("FOR " + this.listUser[0].idUsuarioNavigation.nombre);
+        console.log("FOR " + this.friendModel.value);
         
         //console.log("FOR " + this.modelScan.name);
 
-      this.apiusuario.getFriend(this.fname).subscribe(reply => {
+      this.apiusuarioRol.getFriend(this.friendModel.value).subscribe(reply => {
           console.log(reply);
           this.listFriends = reply.data;
     });
+
+        this.basicModal.show();
   }
+
+  
+    
 
  
   get signupFormModalName() {
@@ -173,6 +184,11 @@ updateList() {
   get signupFormModalPassword() {
     return this.validatingForm.get('signupFormModalPassword');
   }
+
+  get friendModel() {
+    return this.validatingForm.get('friendModel');
+  }
+
 
 calcEdad(){
 

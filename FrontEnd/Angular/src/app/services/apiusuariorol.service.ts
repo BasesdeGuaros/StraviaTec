@@ -26,6 +26,10 @@ export class ApiusuariorolService {
     return this._http.get<Reply>(`${this.url}/${username}/${rol}`);
   }
 
+  getFriend(friendname: string): Observable<Reply> {
+    return this._http.get<Reply>(`${this.url}/${friendname}`);
+  }
+
 
   addUser(usuariorol: usuariorol): Observable<Reply> {
     return this._http.post<Reply>(this.url, usuariorol, httpOption)
