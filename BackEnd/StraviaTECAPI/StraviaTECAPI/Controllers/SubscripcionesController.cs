@@ -49,6 +49,40 @@ namespace StraviaTECAPI.Controllers
             }
             return Ok(reply);
         }
+
+        /**
+     *  Protocolo get
+     *  IActionResult es una inteface
+     *  Retorna una lista si la conexion fue extiosa, sino devuelve un mesanje de error
+     */
+
+        [HttpGet]
+        [Route("api/[controller]/{cedula}")]
+        public IActionResult Get(string cedula)
+        {
+            MyReply reply = new MyReply();
+            try
+            {
+                //codigo que se ejecuta una vez
+                using (StraviaContext db = new StraviaContext())
+                {
+                    var list = db.Subscripciones
+                        .Where(a => a.IdUsuario == int.Parse(cedula))
+                        .Include(a => a.IdEventoNavigation)
+                        .Include(a => a.IdEventoNavigation.EventoTieneTipo)
+                        .ToList();
+
+                    reply.conexionSuccess = 1;
+                    reply.data = list;
+                }
+            }
+            catch (Exception ex)
+            {
+                reply.conexionSuccess = 0;
+                reply.message = ex.Message;
+            }
+            return Ok(reply);
+        }
         /**
          * Protocolo Post
          */
