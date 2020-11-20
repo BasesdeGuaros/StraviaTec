@@ -45,7 +45,7 @@ export class MisCarrerasRetosComponent implements OnInit {
   }
 
   getSubs(){
-      this.apisubs.getSubs(this.cedula).subscribe(reply => {
+      this.apisubs.getSubs2(this.cedula).subscribe(reply => {
           console.log("SUBS");
           console.log(reply);
           this.listEvents = reply.data;

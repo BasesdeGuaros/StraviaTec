@@ -23,6 +23,10 @@ export class ApisubscripcionesService {
         return this._http.get<Reply>(`${this.url}/${cedula}/${idEvento}`);
     }
 
+    getSubs2(cedula: string): Observable<Reply> {
+        return this._http.get<Reply>(`${this.url}/${cedula}`);
+    }
+
     addSubs(subs: Subscripciones): Observable<Reply> {
         return this._http.post<Reply>(this.url, subs, httpOption)
     }
