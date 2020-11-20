@@ -50,7 +50,7 @@ export class LoginComponent implements OnInit {
               //cambiarlo por un modal
           }else{
               if(this.listUsuario[0].idUsuarioNavigation.nombreUsuario == this.model.name && this.listUsuario[0].idUsuarioNavigation.contraseña == this.model.password){
-                      this.router.navigate(['/organizer']);
+                      this.router.navigate(['/organizer', this.model.name]);
               }
           }
       });
