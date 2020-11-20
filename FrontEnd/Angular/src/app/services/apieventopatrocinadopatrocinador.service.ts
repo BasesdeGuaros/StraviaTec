@@ -15,12 +15,12 @@ const httpOption = {
 })
 export class ApieventopatrocinadopatrocinadorService {
 
-    url: string = "https://localhost:44385/api/Subscripciones";
+    url: string = "https://localhost:44385/api/EventoPatrocinadoPatrocinador";
 
     constructor(private _http: HttpClient) { }
 
-    getSponsor(cedula: string, idEvento: string): Observable<Reply> {
-        return this._http.get<Reply>(`${this.url}/${cedula}/${idEvento}`);
+    getSponsor(idEvento: string): Observable<Reply> {
+        return this._http.get<Reply>(`${this.url}/${idEvento}`);
     }
 
     addSponsor(sponsor: Patrocinador): Observable<Reply> {

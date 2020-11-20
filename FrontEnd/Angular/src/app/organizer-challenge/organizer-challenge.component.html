@@ -20,19 +20,19 @@
         </tr>
         <tr *ngFor="let event of listEvent; let id = index"> <!--ng for de la lista de la base de datos--->
           <td>
-            <span (keyup)="changeValue(id, 'name', $event)" (blur)="updateList(id, 'idEventoNavigation', 'nombre', $event)" contenteditable="true">{{event.idEventoNavigation.nombre}}</span>
+            <span  (blur)="updateList(id, 'idEventoNavigation', 'nombre', $event)" contenteditable="true">{{event.idEventoNavigation.nombre}}</span>
           </td>
           <td>
-            <span contenteditable="true" (keyup)="changeValue(id, 'age', $event)" (blur)="updateList(id, 'idEventoNavigation', 'age', $event)">{{event.idEventoNavigation.age}}</span>
+            <span contenteditable="true" (blur)="updateList(id, 'idEventoNavigation', 'age', $event)">{{event.idEventoNavigation.age}}</span>
           </td>
           <td>
-            <span contenteditable="true" (keyup)="changeValue(id, 'companyName', $event)" (blur)="updateList(id, 'idEventoNavigation', 'companyName', $event)">{{event.idEventoNavigation.idDeporte}}</span>
+            <span contenteditable="true"  (blur)="updateList(id, 'idEventoNavigation', 'companyName', $event)">{{listSport[id]}}</span>
           </td>
           <td>
-            <span contenteditable="true" (keyup)="changeValue(id, 'country', $event)" (blur)="updateList(id, 'idEventoNavigation', 'country', $event)">{{event.idEventoNavigation.privado}}</span>
+            <span contenteditable="true" (blur)="updateList(id, 'idEventoNavigation', 'country', $event)">{{listPrivacy[id]}}</span>
           </td>
           <td>
-            <span contenteditable="true" (keyup)="changeValue(id, 'city', $event)" (blur)="updateList(id, 'idEventoNavigation', 'city', $event)">{{event.idEventoNavigation.fondoAltitud}}</span>
+            <span contenteditable="true"(blur)="updateList(id, 'idEventoNavigation', 'city', $event)">{{event.idEventoNavigation.fondoAltitud}}</span>
           </td>
           <td>
 
@@ -154,8 +154,7 @@
 
         <div class="md-form mb-5">
           <mdb-icon fas icon="user" class="prefix grey-text"></mdb-icon>
-          <input type="text" id="form35" class="form-control" mdbInput mdbValidate [formControl]="contactFormModalSponsors">
-          <label for="form35">Lista de Patrocinadores</label>
+          <button type="button" mdbBtn color="blue" rounded="true" size="sm" class="my-0" (click)="AddSponsorModal.show()">Añadir Patrocinadores</button>          
           <mdb-error
             *ngIf="contactFormModalSponsors.invalid && (contactFormModalSponsors.dirty || contactFormModalSponsors.touched)">Input
             invalid
@@ -198,6 +197,89 @@ aria-hidden="true">
     <div class="modal-footer">
       <button type="button" mdbBtn color="secondary" class="waves-light" aria-label="Close" (click)="SponsorModal.hide()" mdbWavesEffect>Close</button>
       <button type="button" mdbBtn color="primary" class="relative waves-light" mdbWavesEffect>Save!</button>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- Add Sponsor Modal -->
+<div mdbModal #AddSponsorModal="mdbModal" class="modal fade left" id="frameModalTop" tabindex="-1" role="dialog"
+   aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal-dialog modal-dialog-scrollable" role="document">
+  <div class="modal-content">
+    <div class="modal-header text-center">
+      <h4 class="modal-title w-100 font-weight-bold">Patrocinador</h4>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="AddSponsorModal.hide()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+
+    <div class="modal-body mx-3">
+
+      <div class="md-form mb-5">
+        <mdb-icon fas icon="user" class="prefix grey-text"></mdb-icon>
+        <input type="text" id="Racename" class="form-control" mdbInput mdbValidate [formControl]="contactFormModalSponsorName">
+        <label for="form34">Nombre del Patrocinador</label>
+        <mdb-error
+          *ngIf="contactFormModalSponsorName.invalid && (contactFormModalSponsorName.dirty || contactFormModalSponsorName.touched)">Input
+          invalid
+        </mdb-error>
+        <mdb-success
+          *ngIf="contactFormModalSponsorName.valid && (contactFormModalSponsorName.dirty || contactFormModalSponsorName.touched)">Input
+          valid
+        </mdb-success>
+      </div>
+
+      <div class="md-form mb-5">
+        <mdb-icon fas icon="phone" class="prefix grey-text"></mdb-icon>
+        <input type="number" id="price" class="form-control" mdbInput mdbValidate [formControl]="contactFormModalSponsorNumber">
+        <label for="form30">Numero de telefono</label>
+        <mdb-error
+          *ngIf="contactFormModalSponsorNumber.invalid && (contactFormModalSponsorNumber.dirty || contactFormModalSponsorNumber.touched)">
+          Input invalid
+        </mdb-error>
+        <mdb-success
+          *ngIf="contactFormModalSponsorNumber.valid && (contactFormModalSponsorNumber.dirty || contactFormModalSponsorNumber.touched)">Input
+          valid
+        </mdb-success>
+      </div>
+
+      <div class="md-form mb-5">
+        <mdb-icon fas icon="file-alt" class="prefix grey-text"></mdb-icon>
+        .................Logo
+
+        <input type="file" id="routeRace" class="form-control-file" mdbInput mdbValidate [formControl]="contactFormModalSponsorLogo">
+        <mdb-error
+          *ngIf="contactFormModalSponsorLogo.invalid && (contactFormModalSponsorLogo.dirty || contactFormModalSponsorLogo.touched)">
+          Input invalid
+        </mdb-error>
+        <mdb-success
+          *ngIf="contactFormModalSponsorLogo.valid && (contactFormModalSponsorLogo.dirty || contactFormModalSponsorLogo.touched)">
+          Input valid
+        </mdb-success>
+      </div>
+
+
+        <div class="md-form mb-5">
+          <mdb-icon fas icon="money-check-alt" class="prefix grey-text"></mdb-icon>
+          <input type="text" id="form35" class="form-control" mdbInput mdbValidate [formControl]="contactFormModalSponsorRepresentative">
+          <label for="form35">Representante</label>
+          <mdb-error
+            *ngIf="contactFormModalSponsorRepresentative.invalid && (contactFormModalSponsorRepresentative.dirty || contactFormModalSponsorRepresentative.touched)">Input
+            invalid
+          </mdb-error>
+          <mdb-success
+            *ngIf="contactFormModalSponsorRepresentative.valid && (contactFormModalSponsorRepresentative.dirty || contactFormModalSponsorRepresentative.touched)">Input
+            valid
+          </mdb-success>
+        </div>
+
+
+    </div>
+    <div class="modal-footer d-flex justify-content-center">
+      <button mdbBtn color="unique" class="waves-light" mdbWavesEffect (click)="AddSponsorModal.hide()">Enviar
+        <mdb-icon far icon="paper-plane" class="ml-1"></mdb-icon>
+      </button>
     </div>
   </div>
 </div>
