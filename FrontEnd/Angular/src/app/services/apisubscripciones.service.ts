@@ -14,14 +14,13 @@ const httpOption = {
   providedIn: 'root'
 })
 export class ApisubscripcionesService {
-
     
     url: string = "https://localhost:44385/api/Subscripciones";
 
     constructor(private _http: HttpClient) { }
 
-    getSubs(cedula: string): Observable<Reply> {
-        return this._http.get<Reply>(`${this.url}/${cedula}`);
+    getSubs(cedula: string, idEvento: string): Observable<Reply> {
+        return this._http.get<Reply>(`${this.url}/${cedula}/${idEvento}`);
     }
 
     addSubs(subs: Subscripciones): Observable<Reply> {

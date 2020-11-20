@@ -10,7 +10,7 @@ using StraviaTECAPI.Models.Request;
 
 namespace StraviaTECAPI.Controllers
 {
-    [Route("api/[controller]")]
+    
     [ApiController]
     public class EventoPatrocinadoPatrocinadorController : ControllerBase
     {
@@ -21,7 +21,8 @@ namespace StraviaTECAPI.Controllers
       */
 
         [HttpGet]
-        public IActionResult Get()
+        [Route("api/[controller]/{idEvento}")]  
+        public IActionResult Get(int idEvento)
         {
             MyReply reply = new MyReply();
             try
@@ -29,10 +30,9 @@ namespace StraviaTECAPI.Controllers
                 //codigo que se ejecuta una vez
                 using (StraviaContext db = new StraviaContext())
                 {
-                    var list = db.ParticipacionUsuarioGrupo
+                    var list = db.EventoPatrocinadoPatrocinador
+                        .Where(a => a.IdEvento == idEvento)
                         .ToList();
-                    // .Where(a => a.Rol == "producer") para hacerlo dentro del query
-                    // .Include(a => a.Producers)
                     reply.conexionSuccess = 1;
                     reply.data = list;
                 }
@@ -48,7 +48,8 @@ namespace StraviaTECAPI.Controllers
          * Protocolo Post
          */
         [HttpPost]
-        public IActionResult Post(EventoPatrocinadoPatrocinadorRequest request)
+        [Route("api/[controller]")]
+        public IActionResult Post(PatrocinadorRequest request)
         {
             MyReply reply = new MyReply();
 
@@ -56,21 +57,25 @@ namespace StraviaTECAPI.Controllers
             {
                 using (StraviaContext db = new StraviaContext())
                 {
+                    var countP = db.Patrocinador
+                        .Count();
+                    var coutE = db.Patrocinador
+                        .Count();
+
+                    Patrocinador patrocinador = new Patrocinador();
+                    patrocinador.Id = countP + 1;
+                    patrocinador.Nombre = request.Nombre;
+                    patrocinador.Numero = request.Numero;
+                    patrocinador.Logo = request.Logo;
+                    patrocinador.Representante = request.Representante;
+                    db.Patrocinador.Add(patrocinador);
+
                     EventoPatrocinadoPatrocinador eventoPatrocinadoPatrocinador = new EventoPatrocinadoPatrocinador();
-
-
-
-                    eventoPatrocinadoPatrocinador.IdEvento = request.IdEvento;
-                    eventoPatrocinadoPatrocinador.IdPatrocinador = request.IdPatrocinador;
-
-
-                    eventoPatrocinadoPatrocinador.IdEventoNavigation = request.IdEventoNavigation;
-                    eventoPatrocinadoPatrocinador.IdPatrocinadorNavigation = request.IdPatrocinadorNavigation;
-
-
-
+                    eventoPatrocinadoPatrocinador.IdEvento = coutE;
+                    eventoPatrocinadoPatrocinador.IdPatrocinador = patrocinador.Id;
 
                     db.EventoPatrocinadoPatrocinador.Add(eventoPatrocinadoPatrocinador);
+
                     db.SaveChanges();
                     reply.conexionSuccess = 1;
                     reply.message = "Evento Patrocinado Agregado";
@@ -88,6 +93,7 @@ namespace StraviaTECAPI.Controllers
          * Protocolo Put
          */
         [HttpPut]
+        [Route("api/[controller]")]
         public IActionResult Put(EventoPatrocinadoPatrocinadorRequest request)
         {
             MyReply reply = new MyReply();
@@ -124,6 +130,7 @@ namespace StraviaTECAPI.Controllers
          * Protocolo Delete
          */
         [HttpDelete]
+        [Route("api/[controller]")]
         public IActionResult Delete(int cedula)
         {
             MyReply reply = new MyReply();

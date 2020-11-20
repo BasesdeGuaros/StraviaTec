@@ -20,7 +20,6 @@ namespace StraviaTECAPI.Controllers
       *  IActionResult es una inteface
       *  Retorna una lista si la conexion fue extiosa, sino devuelve un mesanje de error
       */
-
         [HttpGet]
         [Route("api/[controller]/{type}")]
         public IActionResult Get(string type)
@@ -92,9 +91,11 @@ namespace StraviaTECAPI.Controllers
             {
                 using (StraviaContext db = new StraviaContext())
                 {
-                
+                    var list = db.Evento
+                        .Count();
+
                     Evento evento = new Evento();
-                    evento.Id = 4; //tiene que haber un autoincremento en la base de datos
+                    evento.Id = list+1;
                     evento.Nombre = request.Nombre;
                     evento.Fecha = request.Fecha;
                     evento.IdAdmin = request.IdAdmin;
@@ -193,6 +194,13 @@ namespace StraviaTECAPI.Controllers
                     Evento evento = db.Evento.Find(IdEvento);
                     db.Remove(evento);
 
+                    /*
+                    EventoPatrocinadoPatrocinador eventoPatrocinado = db.EventoPatrocinadoPatrocinador.Find(IdEvento, 1); //arreglar el error del patrocinador
+                    db.Remove(eventoPatrocinado);
+
+                    Subscripciones subs = db.Subscripciones.Find(evento.IdAdmin, IdEvento);
+                    db.Remove(subs);
+                    */
 
                     db.SaveChanges();
 
