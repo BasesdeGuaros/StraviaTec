@@ -25,6 +25,14 @@ export class ApiusuariosigueusuarioService {
         return this._http.get<Reply>(`${this.url}/${username}`);
     }
 
+    getActivities(cedula: number,other:string,other2:string): Observable<Reply> {
+        return this._http.get<Reply>(`${this.url}/${cedula}/${other}/${other2}`);
+    }
+
+    getUserCount(username: string,count: number): Observable<Reply> {
+        return this._http.get<Reply>(`${this.url}/${username}/${count}`);
+    }
+
     addUser(usuarioSigue: usuariosigueusuario): Observable<Reply> {
         return this._http.post<Reply>(this.url, usuarioSigue, httpOption)
     }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiparticipacionusuariogrupoService } from '../services/apiparticipacionusuariogrupo.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-groups',
@@ -7,6 +8,7 @@ import { ApiparticipacionusuariogrupoService } from '../services/apiparticipacio
   styleUrls: ['./groups.component.scss']
 })
 export class GroupsComponent implements OnInit {
+    public cedula = '';
     public listGroup = [];
 
   onOpen(event: any) {
@@ -14,19 +16,21 @@ export class GroupsComponent implements OnInit {
   }
 
   constructor(
-      private apiGroup: ApiparticipacionusuariogrupoService
+      private apiGroup: ApiparticipacionusuariogrupoService,
+      private route: ActivatedRoute
   ) { }
 
-
-  groupsList = [
-    {"name":"grupoSing","admin":"Sing","number":982},
-    {"name":"grupoGarza","admin":"Garza","number":12314},
-    {"name":"grupoElias","admin":"Elias","number":0}
-  ]
-
-
   ngOnInit(): void {
+
+      this.cedula = this.route.snapshot.paramMap.get('cedula');
   }
+
+  getGruop(){
+       this.apiGroup.getGroup(this.cedula).subscribe(reply => {
+          console.log(reply);
+          this.listGroup = reply.data;
+        });
+    }
 
 
 }

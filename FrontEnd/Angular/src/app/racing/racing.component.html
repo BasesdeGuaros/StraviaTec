@@ -40,7 +40,7 @@
     
             <!--Text-->
             <mdb-card-text> {{race.descript}} </mdb-card-text>
-            <a class="btn aqua-gradient btn-rounded btn-sm my-0 " mdbWavesEffect (click)="frame.show()">
+            <a class="btn aqua-gradient btn-rounded btn-sm my-0 " mdbWavesEffect (click)="showRaceInfo(i)">
               Información
             </a>
           </mdb-card-body>
@@ -77,6 +77,40 @@
               </button>
             </div>
             <div class="modal-body mx-3">
+
+              <div class="row">
+                    Nombre: {{infoNombre}}
+              </div>
+
+              <div class="row">
+                    Fecha de inicio: {{infoFinicial}}
+              </div>
+
+              <div class="row">
+                  Fecha de finalización: {{infoFfinal}}
+              </div>
+
+              <div class="row">
+                  Kilometraje: {{infoKilometraje}}
+              </div>
+
+              <div class="row">
+                  Costo: {{infoCosto}}
+              </div>
+
+              <div class="row">
+                  Numero de cuenta: {{infoCuenta}}
+              </div>
+
+              <div class="row" *ngIf="infoPrivado == 1; else notval">
+                  Privado: Si
+              </div>
+
+              <ng-template #notval>
+                Privado: No
+              </ng-template>
+
+              
               <div class="md-form mb-5">
                 <mdb-icon fas icon="file-alt" class="prefix grey-text"></mdb-icon>
                 <input

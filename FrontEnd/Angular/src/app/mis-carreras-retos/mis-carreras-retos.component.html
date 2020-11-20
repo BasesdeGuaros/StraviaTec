@@ -62,7 +62,7 @@
                   <!--Text-->
               
                   <a class="btn aqua-gradient btn-rounded btn-sm my-0 " mdbWavesEffect 
-                  (click)="frameRace.show()" >Ver </a>
+                  (click)="showRaceModalInfo(i)" >Ver </a>
                 </mdb-card-body>
               </mdb-card>
     
@@ -107,7 +107,7 @@
                     <!--Text-->
                     
                     <a class="btn aqua-gradient btn-rounded btn-sm my-0 " mdbWavesEffect 
-                    (click) = "frameChallenge.show()">Ver </a>
+                    (click) = "showChallengeModalInfo(i)">Ver </a>
                   </div>
 
                   <div class="col-md-8">
@@ -268,7 +268,21 @@
             </div>
             <div class="modal-body mx-3">
 
-              INFORMACION CARRERA
+              <div class="row">
+                    Nombre: {{infoNombre}}
+              </div>
+
+              <div class="row">
+                    Fecha de inicio: {{infoFinicial}}
+              </div>
+
+              <div class="row">
+                  Fecha de finalización: {{infoFfinal}}
+              </div>
+
+              <div class="row">
+                  Kilometraje: {{infoKilometraje}}
+              </div>
 
             </div>
             <div class="modal-footer d-flex justify-content-center">
@@ -309,7 +323,25 @@
             </div>
             <div class="modal-body mx-3">
 
-              INFORMACION RETO
+               <div class="row">
+                    Nombre: {{infoNombre}}
+              </div>
+
+              <div class="row">
+                    Fecha de inicio: {{infoFinicial}}
+              </div>
+
+              <div class="row">
+                  Fecha de finalización: {{infoFfinal}}
+              </div>
+
+              <div class="row">
+                  Kilometraje: {{infoKilometraje}}
+              </div>
+
+              <div class="row">
+                  Fondo altitud: {{infoFondoAltitud}}
+              </div>
 
             </div>
             <div class="modal-footer d-flex justify-content-center">

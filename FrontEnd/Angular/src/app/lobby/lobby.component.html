@@ -23,7 +23,7 @@
           >
         </li>
         <li class="nav-item">
-          <a class="nav-link" [routerLink]="['/groups']" data-offset="90"
+          <a class="nav-link" (click)="gotoGroup()" data-offset="90"
             >Grupos</a
           >
         </li>
@@ -89,6 +89,7 @@
                     <div class="px-4 pt-5 pb-4 cover">
                       <div class="media align-items-end profile-head">
                         <div class="profile mr-3">
+                            
                           <img
                             src=""
                             alt="..."
@@ -144,19 +145,19 @@
                     >
                       <ul class="list-inline mb-0">
                         <li class="list-inline-item">
-                          <h5 class="font-weight-bold mb-0 d-block">215</h5>
+                          <h5 class="font-weight-bold mb-0 d-block">{{actividades}}</h5>
                           <small class="text-muted">
                             <i class="fab fa-font-awesome mr-1"> </i>Actividades
                           </small>
                         </li>
                         <li class="list-inline-item">
-                          <h5 class="font-weight-bold mb-0 d-block">745</h5>
+                          <h5 class="font-weight-bold mb-0 d-block">{{seguidores}}</h5>
                           <small class="text-muted">
                             <i class="fas fa-user mr-1"></i>Seguidores</small
                           >
                         </li>
                         <li class="list-inline-item">
-                          <h5 class="font-weight-bold mb-0 d-block">340</h5>
+                          <h5 class="font-weight-bold mb-0 d-block">{{seguidos}}</h5>
                           <small class="text-muted">
                             <i class="fas fa-user mr-1"></i>Seguidos</small
                           >

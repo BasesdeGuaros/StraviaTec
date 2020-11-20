@@ -31,10 +31,92 @@ namespace StraviaTECAPI.Controllers
                 //codigo que se ejecuta una vez
                 using (StraviaContext db = new StraviaContext())
                 {
+                    
                     var list = db.UsuarioSigueUsuario
                         .Where(a => a.IdSeguidoNavigation.NombreUsuario == username)
                         .Include(a => a.IdSeguidorNavigation)
                         .ToList();
+                    reply.conexionSuccess = 1;
+                    reply.data = list;
+                }
+            }
+            catch (Exception ex)
+            {
+                reply.conexionSuccess = 0;
+                reply.message = ex.Message;
+            }
+            return Ok(reply);
+        }
+
+        [HttpGet]
+        [Route("api/[controller]/{username}/{count}")]
+        public IActionResult Get(string username,int count)
+        {
+            MyReply reply = new MyReply();
+            try
+            {
+                //codigo que se ejecuta una vez
+                using (StraviaContext db = new StraviaContext())
+                {
+                    var num1 = db.UsuarioSigueUsuario
+                        .Where(a => a.IdSeguidoNavigation.NombreUsuario == username)
+                        .Count();
+
+                    var num2 = db.UsuarioSigueUsuario
+                        .Where(a => a.IdSeguidorNavigation.NombreUsuario == username)
+                        .Count();
+
+                    //preguntar
+                    var num3 = db.Actividad
+                        .Where(a => a.IdUsuario == count)
+                        .Count();
+
+                    List<int> list = new List<int>();
+                    list.Add(num1);
+                    list.Add(num2);
+                    list.Add(num3);
+
+
+                    reply.conexionSuccess = 1;
+                    reply.data = list;
+                }
+            }
+            catch (Exception ex)
+            {
+                reply.conexionSuccess = 0;
+                reply.message = ex.Message;
+            }
+            return Ok(reply);
+        }
+
+        [HttpGet]
+        [Route("api/[controller]/{cedula}/{other}/{other2}")]
+        public IActionResult Get(int cedula, string other, string other2)
+        {
+            MyReply reply = new MyReply();
+            try
+            {
+                //codigo que se ejecuta una vez
+                using (StraviaContext db = new StraviaContext())
+                {
+
+
+                    /**var list = db.Actividad.Join(
+                        db.Evento,
+                        activitieID => activitieID.Id,
+                        eventID => eventID.Id,
+                        kilometro => kilometro.Kilometraje,
+                        (activitieID, eventID,kilometro)=> new
+                        {
+                             = eventID.Id
+                        })
+                        .Where(a => a.IdUsuario == cedula).ToList();**/
+                    var list = db.Actividad
+                        .Where(a => a.IdUsuario == cedula)
+                        .Include(a => a.ActividadPerteneceEvento)
+                        .ToList();
+
+
                     reply.conexionSuccess = 1;
                     reply.data = list;
                 }

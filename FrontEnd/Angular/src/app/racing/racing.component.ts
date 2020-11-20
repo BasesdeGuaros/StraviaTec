@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
+import { ModalDirective } from 'angular-bootstrap-md';
 import { ApieventotienetipoService } from '../services/apieventotienetipo.service';
 
 
@@ -10,8 +11,18 @@ import { ApieventotienetipoService } from '../services/apieventotienetipo.servic
   styleUrls: ['./racing.component.scss']
 })
 export class RacingComponent implements OnInit {
+  @ViewChild('frame') public frame: ModalDirective;
   validatingForm: FormGroup;
   public listRace = [];
+
+  infoNombre : string;
+  infoFinicial :string;
+  infoFfinal: string;
+  infoKilometraje: string;
+  infoCosto: string;
+  infoCuenta:string;
+  infoPrivado: string;
+  
 
   constructor(
       private apiEventoTieneTipo: ApieventotienetipoService
@@ -38,6 +49,18 @@ export class RacingComponent implements OnInit {
 
   get voucher() {
     return this.validatingForm.get('voucher');
+  }
+
+  showRaceInfo(i){
+    this.infoNombre= this.listRace[i].idEventoNavigation.nombre;
+    this.infoFinicial = this.listRace[i].idEventoNavigation.fechaInicial;
+    this.infoFfinal = this.listRace[i].idEventoNavigation.fechaFinal;
+    this.infoKilometraje = this.listRace[i].idEventoNavigation.kilometraje;
+    this.infoCosto = this.listRace[i].idEventoNavigation.actividadPerteneceEvento.costo;
+    this.infoCuenta = this.listRace[i].idEventoNavigation.actividadPerteneceEvento.cuenta;
+    this.infoPrivado = this.listRace[i].idEventoNavigation.privado;
+    
+      this.frame.show()
   }
 
   

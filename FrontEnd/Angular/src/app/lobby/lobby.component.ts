@@ -26,27 +26,13 @@ export class LobbyComponent implements OnInit {
   public listfollowers = [];
   public listUser = [];
   public listFriends = [];
+  public listCount = [];
+  infoImage:string;
+  seguidos:number;
+  seguidores:number;
+  actividades:number;
   
 
-
-  groupsList = [
-    {"name":"Sing","admin":"Sing","number":982},
-    {"name":"Garza","admin":"Garza","number":12314},
-    {"name":"Elias","admin":"Elias","number":0},
-    {"name":"Johnny","admin":"Elias","number":0},
-    {"name":"MARKO","admin":"Elias","number":0},
-    {"name":"Mierda","admin":"Elias","number":0},
-    {"name":"SQL","admin":"Elias","number":0},
-    {"name":"HOLA","admin":"Elias","number":0},
-    {"name":"ADIOS","admin":"Elias","number":0},
-    {"name":"F","admin":"Elias","number":0}
-  ]
-
-  public friendsList = [
-    {"name":"Daniel Garcia", "seguidores":244, "seguidos":312,"actividades":123},
-    {"name":"Daniel Sing", "seguidores":345, "seguidos":298,"actividades":235},
-    {"name":"Elias Arce", "seguidores":0, "seguidos":235,"actividades":0}
-  ];
 
   constructor(
       private apiusuarioRol: ApiusuariorolService,
@@ -87,6 +73,7 @@ export class LobbyComponent implements OnInit {
         console.log(reply);
         this.listUser = reply.data;
         this.cedula = this.listUser[0].idUsuarioNavigation.cedula;
+        console.log(this.cedula);
 
         this.modelUser.name = this.listUser[0].idUsuarioNavigation.nombre;
         this.modelUser.lastName = this.listUser[0].idUsuarioNavigation.apellido;
@@ -97,6 +84,21 @@ export class LobbyComponent implements OnInit {
         this.modelUser.password = this.listUser[0].idUsuarioNavigation.contraseña;
 
         this.calcEdad();
+        this.infoImage = this.listUser[0].idUsuarioNavigation.foto;
+
+
+
+        this.apiusuariosigueusuario.getUserCount(this.username,this.cedula).subscribe(reply => {
+          console.log(reply);
+          this.listCount = reply.data;
+          this.seguidos = this.listCount[0];
+          this.seguidores = this.listCount[1];
+          this.actividades = this.listCount[2];
+
+    });
+
+
+        //document.getElementById("foto").setAttribute("src", this.infoImage);
 
     
           //document.getElementById("foto").setAttribute("src","data:image/png;base64," + this.listUser[0].idUsuarioNavigation.foto);
@@ -111,9 +113,10 @@ export class LobbyComponent implements OnInit {
       this.apiusuariosigueusuario.getUser(this.username).subscribe(reply => {
           console.log(reply);
           this.listfollowers = reply.data;
+           
     });
-  }
 
+  }
 
 
 updateList() {
@@ -139,8 +142,6 @@ updateList() {
     }
 
     getFriends(){
-        console.log("FRIENDS LIST");
-        console.log("FOR " + this.friendModel.value);
         
         //console.log("FOR " + this.modelScan.name);
         if(this.friendModel.value != ""){
@@ -154,8 +155,8 @@ updateList() {
       
   }
 
-  
-    
+
+
 
  
   get signupFormModalName() {
@@ -204,6 +205,10 @@ calcEdad(){
 
         }
 }
+
+gotoGroup(){
+      this.router.navigate(['/groups', this.cedula]);
+  }
 
 }
 

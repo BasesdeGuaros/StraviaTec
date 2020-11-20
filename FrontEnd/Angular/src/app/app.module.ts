@@ -58,7 +58,7 @@ import { ActivityComponent } from './activity/activity.component';
       { path: 'friends', component: AmigosComponent},
       { path: 'race', component: RacingComponent},
       { path: "challenge", component: ChallengingComponent},
-      { path: 'groups', component: GroupsComponent},
+      { path: 'groups/:cedula', component: GroupsComponent},
       { path: 'organizer/:username', component: OrganizerComponent},
       { path: 'organizerRace/:cedula', component: OrganizerRaceComponent},
       { path: 'organizerChallenge/:cedula', component: OrganizerChallengeComponent},
