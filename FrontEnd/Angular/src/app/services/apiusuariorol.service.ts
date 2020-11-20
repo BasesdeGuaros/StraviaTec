@@ -32,7 +32,7 @@ export class ApiusuariorolService {
 
 
   addUser(usuariorol: usuariorol): Observable<Reply> {
-    return this._http.post<Reply>(this.url, usuariorol, httpOption)
+    return this._http.post<Reply>(this.url, usuariorol , httpOption)
   }
 
   edit(usuario: usuariorol): Observable<Reply> {

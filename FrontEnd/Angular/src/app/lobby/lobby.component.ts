@@ -143,13 +143,15 @@ updateList() {
         console.log("FOR " + this.friendModel.value);
         
         //console.log("FOR " + this.modelScan.name);
-
-      this.apiusuarioRol.getFriend(this.friendModel.value).subscribe(reply => {
+        if(this.friendModel.value != ""){
+            this.apiusuarioRol.getFriend(this.friendModel.value).subscribe(reply => {
           console.log(reply);
           this.listFriends = reply.data;
-    });
+        });
 
         this.basicModal.show();
+        }
+      
   }
 
   
