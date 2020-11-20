@@ -1,8 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormControl, Validators, FormGroup } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { ApieventotienetipoService } from '../services/apieventotienetipo.service';
 import { Evento } from '../Models/Evento'
+import { Patrocinador } from '../Models/Patrocinador'
+import { ApisubscripcionesService } from '../services/apisubscripciones.service';
+import { ModalDirective } from 'angular-bootstrap-md';
+import { ApieventopatrocinadopatrocinadorService } from '../services/apieventopatrocinadopatrocinador.service';
 
 
 @Component({
@@ -13,9 +17,13 @@ import { Evento } from '../Models/Evento'
 export class OrganizerRaceComponent implements OnInit {
     public cedula = '';
     public listEvent = [];
+    public listSubs = [];
+    public listSponsor = [];
     public modal;
-
-
+    public deporte = '';
+    @ViewChild('basicModal') public basicModal: ModalDirective;
+    @ViewChild('SponsorModal') public SponsorModal: ModalDirective;
+    
     editField: string;
     validatingForm: FormGroup;
 
@@ -27,6 +35,7 @@ export class OrganizerRaceComponent implements OnInit {
     { id: 5, name: 'Elisa Gallagher', age: 31, companyName: 'Portica', country: 'United Kingdom', city: 'London' },
   ];
 
+
   awaitingPersonList: Array<any> = [
     { id: 6, name: 'George Vega', age: 28, companyName: 'Classical', country: 'Russia', city: 'Moscow' },
     { id: 7, name: 'Mike Low', age: 22, companyName: 'Lou', country: 'USA', city: 'Los Angeles' },
@@ -36,8 +45,11 @@ export class OrganizerRaceComponent implements OnInit {
   ];
 
 
+
   constructor(
       private apievento: ApieventotienetipoService,
+      private apiSubscripciones: ApisubscripcionesService,
+      private apiPatrocinadores: ApieventopatrocinadopatrocinadorService,
       private route: ActivatedRoute
 
   ) { }
@@ -56,7 +68,51 @@ export class OrganizerRaceComponent implements OnInit {
       contactFormModalBankAccount: new FormControl('', Validators.required),
       contactFormModalCategory: new FormControl('', Validators.required),
       contactFormModalSponsors: new FormControl('', Validators.required),
+      contactFormModalPrice: new FormControl('', Validators.required),
+      contactFormModalDistance: new FormControl('', Validators.required),
     });
+  }
+
+  getSponsors(i){
+      this.apiPatrocinadores.getSponsor(this.cedula, this.listEvent[i].idEvento).subscribe(reply => {
+          console.log(reply);
+          this.listSponsor = reply.data;
+        });
+
+        if(this.listSponsor.length == 0){
+            alert("no hay patrocinadores para este evento")
+        }else{
+            this.SponsorModal.show();
+        }
+  }
+
+  addSponsor(){
+      const patrocinador: Patrocinador  = {
+          Id: Number,
+          Logo: null,
+          Nombre: String,
+          Numero: Number,
+          Representante: String
+      }
+
+
+      this.apiPatrocinadores.addSponsor(patrocinador).subscribe(reply => {
+          console.log(reply);
+          this.listSponsor = reply.data;
+        });
+  }
+  
+  getSubs(i){
+      this.apiSubscripciones.getSubs(this.cedula, this.listEvent[i].idEvento).subscribe(reply => {
+          console.log(reply);
+          this.listSubs = reply.data;
+        });
+
+        if(this.listSubs.length == 0){
+            alert("no hay subscripciones para este evento")
+        }else{
+            this.basicModal.show();
+        }
   }
 
     getEvent(){
@@ -65,6 +121,7 @@ export class OrganizerRaceComponent implements OnInit {
           this.listEvent = reply.data;
         });
     }
+
 
     addEvent(){
 
@@ -75,11 +132,11 @@ export class OrganizerRaceComponent implements OnInit {
             Recorrido:  "no tiene", //this.contactFormModalRoute.value, FALTA
             Cuenta: this.contactFormModalBankAccount.value,
             Categoria: this.contactFormModalCategory.value,
-            Costo: 0, //falta
+            Costo: this.contactFormModalPrice.value,
             Privado: this.contactFormModalPrivacy.value,
             IdDeporte: this.contactFormModalActivity.value,
-            Kilometraje: 0, //falta
-            Elevación: 0, //falta
+            Kilometraje: this.contactFormModalDistance.value, 
+            Elevación: Number, 
             FechaFinal: this.contactFormModalDate.value,
             FechaInicial: this.contactFormModalDate.value,
             FondoAltitud: Number,
@@ -90,6 +147,7 @@ export class OrganizerRaceComponent implements OnInit {
           console.log(reply);
         });
     }
+
 
     /**
      * Acciones con la tabla
@@ -110,10 +168,6 @@ export class OrganizerRaceComponent implements OnInit {
         this.apievento.delete(this.listEvent[id].idEvento, this.listEvent[id].idTipoEvento).subscribe(reply => {
           console.log(reply);
         });
-
-
-      //this.awaitingPersonList.push(this.personList[id]);
-      //this.personList.splice(id, 1);
     }
 
     add() {
@@ -162,6 +216,14 @@ export class OrganizerRaceComponent implements OnInit {
 
     get contactFormModalSponsors() {
       return this.validatingForm.get('contactFormModalSponsors');
+    }
+
+    get contactFormModalPrice() {
+      return this.validatingForm.get('contactFormModalPrice');
+    }
+
+    get contactFormModalDistance() {
+      return this.validatingForm.get('contactFormModalDistance');
     }
     
 }

@@ -92,9 +92,11 @@ namespace StraviaTECAPI.Controllers
             {
                 using (StraviaContext db = new StraviaContext())
                 {
-                
+                    var list = db.Evento
+                        .Count();
+
                     Evento evento = new Evento();
-                    evento.Id = 4; //tiene que haber un autoincremento en la base de datos
+                    evento.Id = list+1;
                     evento.Nombre = request.Nombre;
                     evento.Fecha = request.Fecha;
                     evento.IdAdmin = request.IdAdmin;

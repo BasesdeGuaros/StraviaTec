@@ -1,8 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormControl, Validators, FormGroup } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { ApieventotienetipoService } from '../services/apieventotienetipo.service';
 import { Evento } from '../Models/Evento'
+import { ModalDirective } from 'angular-bootstrap-md';
+import { ApieventopatrocinadopatrocinadorService } from '../services/apieventopatrocinadopatrocinador.service';
 
 
 @Component({
@@ -13,32 +15,16 @@ import { Evento } from '../Models/Evento'
 export class OrganizerChallengeComponent implements OnInit {
     public cedula = '';
     public listEvent = [];
+    public listSponsor = [];
     public modal;
-
+    public periodo;
+    @ViewChild('SponsorModal') public SponsorModal: ModalDirective;
     editField: string;
     validatingForm: FormGroup;
 
-  personList: Array<any> = [
-    { id: 1, name: 'Aurelia Vega', age: 30, companyName: 'Deepends', country: 'Spain', city: 'Madrid' },
-    { id: 2, name: 'Guerra Cortez', age: 45, companyName: 'Insectus', country: 'USA', city: 'San Francisco' },
-    { id: 3, name: 'Guadalupe House', age: 26, companyName: 'Isotronic', country: 'Germany', city: 'Frankfurt am Main' },
-    { id: 4, name: 'Aurelia Vega', age: 30, companyName: 'Deepends', country: 'Spain', city: 'Madrid' },
-    { id: 5, name: 'Elisa Gallagher', age: 31, companyName: 'Portica', country: 'United Kingdom', city: 'London' },
-  ];
-
-  
-
-  
-  awaitingPersonList: Array<any> = [
-    { id: 6, name: 'George Vega', age: 28, companyName: 'Classical', country: 'Russia', city: 'Moscow' },
-    { id: 7, name: 'Mike Low', age: 22, companyName: 'Lou', country: 'USA', city: 'Los Angeles' },
-    { id: 8, name: 'John Derp', age: 36, companyName: 'Derping', country: 'USA', city: 'Chicago' },
-    { id: 9, name: 'Anastasia John', age: 21, companyName: 'Ajo', country: 'Brazil', city: 'Rio' },
-    { id: 10, name: 'John Maklowicz', age: 36, companyName: 'Mako', country: 'Poland', city: 'Bialystok' },
-  ];
-
   constructor(
       private apievento: ApieventotienetipoService,
+      private apiPatrocinadores: ApieventopatrocinadopatrocinadorService,
       private route: ActivatedRoute
       ) { }
 
@@ -55,6 +41,19 @@ export class OrganizerChallengeComponent implements OnInit {
       contactFormModalPrivacy: new FormControl('', Validators.required),
       contactFormModalSponsors: new FormControl('', Validators.required),
     });
+  }
+
+  getSponsors(i){
+      this.apiPatrocinadores.getSponsor(this.cedula, this.listEvent[i].idEvento).subscribe(reply => {
+          console.log(reply);
+          this.listSponsor = reply.data;
+        });
+
+        if(this.listSponsor.length == 0){
+            alert("no hay patrocinadores para este evento")
+        }else{
+            this.SponsorModal.show();
+        }
   }
 
   getEvent(){
@@ -110,14 +109,6 @@ export class OrganizerChallengeComponent implements OnInit {
         //this.personList.splice(id, 1);
   }
 
-
-  add() {
-    if (this.awaitingPersonList.length > 0) {
-      const person = this.awaitingPersonList[0];
-      this.personList.push(person);
-      this.awaitingPersonList.splice(0, 1);
-    }
-  }
 
   changeValue(id: number, property: string, event: any) {
     this.editField = event.target.textContent;

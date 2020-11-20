@@ -17,6 +17,8 @@
           <th class="text-center">Es Privado</th>
           <th class="text-center">Cuentas Bancarias</th>
           <th class="text-center">Categorias</th>
+          <th class="text-center">Costo</th>
+          <th class="text-center">Kilometraje</th>
           <th class="text-center">Lista de Patrocinadores</th>
           <th class="text-center">Inscripciones</th>
           <th class="text-center">Eliminar</th>
@@ -26,32 +28,38 @@
             <span (keyup)="changeValue(id, 'nombre', $event)" (blur)="updateList(id, 'idEventoNavigation','nombre', $event)" contenteditable="true">{{event.idEventoNavigation.nombre}}</span>
           </td>
           <td>
-            <span contenteditable="true" (keyup)="changeValue(id, 'age', $event)" (blur)="updateList(id,'idEventoNavigation', 'age', $event)">{{event.idEventoNavigation.fecha}}</span>
+            <span contenteditable="true" (blur)="updateList(id,'idEventoNavigation', 'age', $event)">{{event.idEventoNavigation.fecha}}</span>
           </td>
           <td>
-            <span contenteditable="true" (keyup)="changeValue(id, 'companyName', $event)" (blur)="updateList(id, 'idEventoNavigation', 'companyName', $event)">{{event.idEventoNavigation.recorrido}}</span>
+            <span contenteditable="true" (blur)="updateList(id, 'idEventoNavigation', 'companyName', $event)">{{event.idEventoNavigation.recorrido}}</span>
           </td>
           <td>
-            <span contenteditable="true" (keyup)="changeValue(id, 'country', $event)" (blur)="updateList(id, 'idEventoNavigation', 'country', $event)">{{event.idEventoNavigation}}</span>
+            <span contenteditable="true" (blur)="updateList(id, 'idEventoNavigation', 'country', $event)">{{event.idEventoNavigation.idDeporte}}</span>
           </td>
           <td>
-            <span contenteditable="true" (keyup)="changeValue(id, 'city', $event)" (blur)="updateList(id, 'idEventoNavigation', 'city', $event)">{{event.idEventoNavigation.privado}}</span>
+            <span contenteditable="true"  (blur)="updateList(id, 'idEventoNavigation', 'city', $event)">{{event.idEventoNavigation.privado}}</span>
           </td>
           <td>
-              <span contenteditable="true" (keyup)="changeValue(id, 'city', $event)" (blur)="updateList(id, 'idEventoNavigation', 'city', $event)">{{event.idEventoNavigation.cuenta}}</span>
+              <span contenteditable="true"  (blur)="updateList(id, 'idEventoNavigation', 'city', $event)">{{event.idEventoNavigation.cuenta}}</span>
           </td>
           <td>
-              <span contenteditable="true" (keyup)="changeValue(id, 'city', $event)" (blur)="updateList(id, 'idEventoNavigation', 'city', $event)">{{event.idEventoNavigation.categoria}}</span>
+              <span contenteditable="true" (blur)="updateList(id, 'idEventoNavigation', 'city', $event)">{{event.idEventoNavigation.categoria}}</span>
+          </td>
+          <td>
+              <span contenteditable="true" (blur)="updateList(id, 'idEventoNavigation', 'city', $event)">{{event.idEventoNavigation.costo}}</span>
+          </td>
+          <td>
+              <span contenteditable="true" (blur)="updateList(id, 'idEventoNavigation', 'city', $event)">{{event.idEventoNavigation.kilometraje}}</span>
           </td>
           <td>
 
             <span class="table-remove">
-              <button type="button" mdbBtn color="blue" rounded="true" size="sm" class="my-0" (click)="basicModal.show()">Ver lista</button>
+              <button type="button" mdbBtn color="blue" rounded="true" size="sm" class="my-0" (click)="getSponsors(id)">Ver Patrocinadores</button>
             </span>
           </td>  
           <td>
             <span class="table-remove">
-              <button type="button" mdbBtn color="blue" rounded="true" size="sm" class="my-0" (click)="basicModal.show()">Solicitudes</button>
+              <button type="button" mdbBtn color="blue" rounded="true" size="sm" class="my-0" (click)="getSubs(id)">Solicitudes</button>
             </span>
           </td>  
           <td>
@@ -104,6 +112,34 @@
         </mdb-error>
         <mdb-success
           *ngIf="contactFormModalDate.valid && (contactFormModalDate.dirty || contactFormModalDate.touched)">Input
+          valid
+        </mdb-success>
+      </div>
+
+      <div class="md-form mb-5">
+        <mdb-icon fas icon="dollar-sign" class="prefix grey-text"></mdb-icon>
+        <input type="number" id="price" class="form-control" mdbInput mdbValidate [formControl]="contactFormModalPrice">
+        <label for="form30">Precio</label>
+        <mdb-error
+          *ngIf="contactFormModalPrice.invalid && (contactFormModalPrice.dirty || contactFormModalPrice.touched)">
+          Input invalid
+        </mdb-error>
+        <mdb-success
+          *ngIf="contactFormModalPrice.valid && (contactFormModalPrice.dirty || contactFormModalPrice.touched)">Input
+          valid
+        </mdb-success>
+      </div>
+
+      <div class="md-form mb-5">
+        <mdb-icon fas icon="route" class="prefix grey-text"></mdb-icon>
+        <input type="number" id="distance" class="form-control" mdbInput mdbValidate [formControl]="contactFormModalDistance">
+        <label for="form30">Kilometraje</label>
+        <mdb-error
+          *ngIf="contactFormModalDistance.invalid && (contactFormModalDistance.dirty || contactFormModalDistance.touched)">
+          Input invalid
+        </mdb-error>
+        <mdb-success
+          *ngIf="contactFormModalDistance.valid && (contactFormModalDistance.dirty || contactFormModalDistance.touched)">Input
           valid
         </mdb-success>
       </div>
@@ -236,35 +272,11 @@ aria-hidden="true">
       </button>
       <h4 class="modal-title w-100" id="myModalLabel">Lista de Inscripciones</h4>
     </div>
-    <div class="modal-body">
+    <tr > 
+    <div class="modal-body" >
       <ul class="list-group z-depth-0">
-        <li class="list-group-item justify-content-between">
-            Cras justo odio
-            <button type="button" mdbBtn color="primary" class="relative waves-light float-right" mdbWavesEffect>Aceptar</button>
-            <button type="button" mdbBtn color="danger" class="relative waves-light float-right" mdbWavesEffect>Rechazar</button>
-        </li>
-        <li class="list-group-item justify-content-between">
-            Dapibus ac facilisis in
-            <button type="button" mdbBtn color="primary" class="relative waves-light float-right" mdbWavesEffect>Aceptar</button>
-            <button type="button" mdbBtn color="danger" class="relative waves-light float-right" mdbWavesEffect>Rechazar</button>
-        </li>
-        <li class="list-group-item justify-content-between">
-            Morbi leo risus
-            <button type="button" mdbBtn color="primary" class="relative waves-light float-right" mdbWavesEffect>Aceptar</button>
-            <button type="button" mdbBtn color="danger" class="relative waves-light float-right" mdbWavesEffect>Rechazar</button>
-        </li>
-        <li class="list-group-item justify-content-between">
-            Cras justo odio
-            <button type="button" mdbBtn color="primary" class="relative waves-light float-right" mdbWavesEffect>Aceptar</button>
-            <button type="button" mdbBtn color="danger" class="relative waves-light float-right" mdbWavesEffect>Rechazar</button>
-        </li>
-        <li class="list-group-item justify-content-between">
-            Dapibus ac facilisis in
-            <button type="button" mdbBtn color="primary" class="relative waves-light float-right" mdbWavesEffect>Aceptar</button>
-            <button type="button" mdbBtn color="danger" class="relative waves-light float-right" mdbWavesEffect>Rechazar</button>
-        </li>
-        <li class="list-group-item justify-content-between">
-            Morbi leo risus
+        <li class="list-group-item justify-content-between" *ngFor="let subs of listSubs; let id = index">
+            {{subs.idUsuario}}
             <button type="button" mdbBtn color="primary" class="relative waves-light float-right" mdbWavesEffect>Aceptar</button>
             <button type="button" mdbBtn color="danger" class="relative waves-light float-right" mdbWavesEffect>Rechazar</button>
         </li>
@@ -272,6 +284,62 @@ aria-hidden="true">
     </div>
     <div class="modal-footer">
       <button type="button" mdbBtn color="secondary" class="waves-light" aria-label="Close" (click)="basicModal.hide()" mdbWavesEffect>Close</button>
+      <button type="button" mdbBtn color="primary" class="relative waves-light" mdbWavesEffect>Save!</button>
+    </div>
+  </div>
+</div>
+</div>
+
+<div mdbModal #SponsorModal="mdbModal" class="modal fade top" tabindex="-1" role="dialog" aria-labelledby="myBasicModalLabel"
+aria-hidden="true">
+<div class="modal-dialog modal-full-height modal-top" role="document">
+  <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="close pull-top" aria-label="Close" (click)="SponsorModal.hide()">
+        <span aria-hidden="true">×</span>
+      </button>
+      <h4 class="modal-title w-100" id="myModalLabel">Lista de Patrocinadores</h4>
+    </div>
+    <tr > 
+    <div class="modal-body" >
+      <ul class="list-group z-depth-0">
+        <li class="list-group-item justify-content-between" *ngFor="let subs of listSubs; let id = index">
+            {{subs.idUsuario}}
+            <button type="button" mdbBtn color="primary" class="relative waves-light float-right" mdbWavesEffect>Aceptar</button>
+            <button type="button" mdbBtn color="danger" class="relative waves-light float-right" mdbWavesEffect>Rechazar</button>
+        </li>
+    </ul>
+    </div>
+    <div class="modal-footer">
+      <button type="button" mdbBtn color="secondary" class="waves-light" aria-label="Close" (click)="SponsorModal.hide()" mdbWavesEffect>Close</button>
+      <button type="button" mdbBtn color="primary" class="relative waves-light" mdbWavesEffect>Save!</button>
+    </div>
+  </div>
+</div>
+</div>
+
+<div mdbModal #AddSponsorModal="mdbModal" class="modal fade top" tabindex="-1" role="dialog" aria-labelledby="myBasicModalLabel"
+aria-hidden="true">
+<div class="modal-dialog modal-full-height modal-top" role="document">
+  <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="close pull-top" aria-label="Close" (click)="AddSponsorModal.hide()">
+        <span aria-hidden="true">×</span>
+      </button>
+      <h4 class="modal-title w-100" id="myModalLabel">Lista de Patrocinadores</h4>
+    </div>
+    <tr > 
+    <div class="modal-body" >
+      <ul class="list-group z-depth-0">
+        <li class="list-group-item justify-content-between" *ngFor="let subs of listSubs; let id = index">
+            {{subs.idUsuario}}
+            <button type="button" mdbBtn color="primary" class="relative waves-light float-right" mdbWavesEffect>Aceptar</button>
+            <button type="button" mdbBtn color="danger" class="relative waves-light float-right" mdbWavesEffect>Rechazar</button>
+        </li>
+    </ul>
+    </div>
+    <div class="modal-footer">
+      <button type="button" mdbBtn color="secondary" class="waves-light" aria-label="Close" (click)="AddSponsorModal.hide()" mdbWavesEffect>Close</button>
       <button type="button" mdbBtn color="primary" class="relative waves-light" mdbWavesEffect>Save!</button>
     </div>
   </div>

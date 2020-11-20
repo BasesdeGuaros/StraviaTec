@@ -48,6 +48,34 @@ namespace StraviaTECAPI.Controllers
             }
             return Ok(reply);
         }
+
+        [HttpGet]
+        [Route("api/[controller]/{cedula}/{idGrupo}")]
+        public IActionResult Get(int cedula, int idGrupo)
+        {
+            MyReply reply = new MyReply();
+            try
+            {
+
+                //codigo que se ejecuta una vez
+                using (StraviaContext db = new StraviaContext())
+                {
+                    var list = db.ParticipacionUsuarioGrupo
+                        .Where(a => a.IdGrupo == idGrupo)
+                        .Count();
+
+     
+                    reply.conexionSuccess = 1;
+                    reply.data = list;
+                }
+            }
+            catch (Exception ex)
+            {
+                reply.conexionSuccess = 0;
+                reply.message = ex.Message;
+            }
+            return Ok(reply);
+        }
         /**
          * Protocolo Post
          */

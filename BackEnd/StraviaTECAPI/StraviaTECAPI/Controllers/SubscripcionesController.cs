@@ -22,8 +22,8 @@ namespace StraviaTECAPI.Controllers
       */
 
         [HttpGet]
-        [Route("api/[controller]/{cedula}")]
-        public IActionResult Get(string cedula)
+        [Route("api/[controller]/{cedula}/{idEvento}")]
+        public IActionResult Get(string cedula,int idEvento)
         {
             MyReply reply = new MyReply();
             try
@@ -33,6 +33,7 @@ namespace StraviaTECAPI.Controllers
                 {
                     var list = db.Subscripciones
                         .Where(a => a.IdUsuario == int.Parse(cedula))
+                        .Where(a => a.IdEvento == idEvento)
                         .Include(a => a.IdEventoNavigation)
                         .Include(a => a.IdEventoNavigation.EventoTieneTipo)
                         .ToList();

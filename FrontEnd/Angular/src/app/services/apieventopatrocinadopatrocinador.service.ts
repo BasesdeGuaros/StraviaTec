@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Reply } from '../Models/reply'
-import { Subscripciones } from '../Models/Subscripciones';
+import { Patrocinador } from '../Models/Patrocinador';
 
 const httpOption = {
   headers: new HttpHeaders({
@@ -13,18 +13,17 @@ const httpOption = {
 @Injectable({
   providedIn: 'root'
 })
-export class ApisubscripcionesService {
+export class ApieventopatrocinadopatrocinadorService {
 
-    
     url: string = "https://localhost:44385/api/Subscripciones";
 
     constructor(private _http: HttpClient) { }
 
-    getSubs(cedula: string, idEvento: string): Observable<Reply> {
+    getSponsor(cedula: string, idEvento: string): Observable<Reply> {
         return this._http.get<Reply>(`${this.url}/${cedula}/${idEvento}`);
     }
 
-    addSubs(subs: Subscripciones): Observable<Reply> {
-        return this._http.post<Reply>(this.url, subs, httpOption)
+    addSponsor(sponsor: Patrocinador): Observable<Reply> {
+        return this._http.post<Reply>(this.url, sponsor, httpOption)
     }
 }

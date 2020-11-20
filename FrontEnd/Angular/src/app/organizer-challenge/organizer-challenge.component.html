@@ -26,7 +26,7 @@
             <span contenteditable="true" (keyup)="changeValue(id, 'age', $event)" (blur)="updateList(id, 'idEventoNavigation', 'age', $event)">{{event.idEventoNavigation.age}}</span>
           </td>
           <td>
-            <span contenteditable="true" (keyup)="changeValue(id, 'companyName', $event)" (blur)="updateList(id, 'idEventoNavigation', 'companyName', $event)">{{event.idEventoNavigation.companyName}}</span>
+            <span contenteditable="true" (keyup)="changeValue(id, 'companyName', $event)" (blur)="updateList(id, 'idEventoNavigation', 'companyName', $event)">{{event.idEventoNavigation.idDeporte}}</span>
           </td>
           <td>
             <span contenteditable="true" (keyup)="changeValue(id, 'country', $event)" (blur)="updateList(id, 'idEventoNavigation', 'country', $event)">{{event.idEventoNavigation.privado}}</span>
@@ -35,8 +35,11 @@
             <span contenteditable="true" (keyup)="changeValue(id, 'city', $event)" (blur)="updateList(id, 'idEventoNavigation', 'city', $event)">{{event.idEventoNavigation.fondoAltitud}}</span>
           </td>
           <td>
-              <span contenteditable="true" (keyup)="changeValue(id, 'city', $event)" (blur)="updateList(id, 'idEventoNavigation', 'city', $event)">{{event.idEventoNavigation.subscripciones}}</span>
-          </td>
+
+            <span class="table-remove">
+              <button type="button" mdbBtn color="blue" rounded="true" size="sm" class="my-0" (click)="getSponsors(id)">Ver Patrocinadores</button>
+            </span>
+          </td> 
           <td>
             <span class="table-remove">
               <button type="button" mdbBtn color="danger" rounded="true" size="sm" class="my-0" (click)="remove(id)">Eliminar</button>
@@ -172,6 +175,30 @@
 </div>
 </div> 
 
-<!--
-  btn aqua-gradient btn-rounded btn-sm my-0
--->
+<div mdbModal #SponsorModal="mdbModal" class="modal fade top" tabindex="-1" role="dialog" aria-labelledby="myBasicModalLabel"
+aria-hidden="true">
+<div class="modal-dialog modal-full-height modal-top" role="document">
+  <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="close pull-top" aria-label="Close" (click)="SponsorModal.hide()">
+        <span aria-hidden="true">×</span>
+      </button>
+      <h4 class="modal-title w-100" id="myModalLabel">Lista de Patrocinadores</h4>
+    </div>
+    <tr > 
+    <div class="modal-body" >
+      <ul class="list-group z-depth-0">
+        <li class="list-group-item justify-content-between" *ngFor="let subs of listSponsor; let id = index">
+            {{subs.idUsuario}}
+            <button type="button" mdbBtn color="primary" class="relative waves-light float-right" mdbWavesEffect>Aceptar</button>
+            <button type="button" mdbBtn color="danger" class="relative waves-light float-right" mdbWavesEffect>Rechazar</button>
+        </li>
+    </ul>
+    </div>
+    <div class="modal-footer">
+      <button type="button" mdbBtn color="secondary" class="waves-light" aria-label="Close" (click)="SponsorModal.hide()" mdbWavesEffect>Close</button>
+      <button type="button" mdbBtn color="primary" class="relative waves-light" mdbWavesEffect>Save!</button>
+    </div>
+  </div>
+</div>
+</div>

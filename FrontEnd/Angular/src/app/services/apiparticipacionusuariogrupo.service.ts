@@ -15,6 +15,7 @@ const httpOption = {
   providedIn: 'root'
 })
 
+
 export class ApiparticipacionusuariogrupoService {
 
     url: string = "https://localhost:44385/api/ParticipacionUsuarioGrupo";
@@ -23,6 +24,10 @@ export class ApiparticipacionusuariogrupoService {
 
     getGroup(cedula: string): Observable<Reply> {
         return this._http.get<Reply>(`${this.url}/${cedula}`);
+    }
+
+    getGroupParticipants(cedula: string, idGrupo: string): Observable<Reply> {
+        return this._http.get<Reply>(`${this.url}/${cedula}/${idGrupo}`);
     }
 
     add(grupo: Grupo, rol: string, cedula: string): Observable<Reply> {
