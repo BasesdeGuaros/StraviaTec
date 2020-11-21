@@ -20,6 +20,8 @@ export class MisCarrerasRetosComponent implements OnInit {
   public listRaces = [];
   public listChallenges = [];
   public listActivities = [];
+  public listKilometres = [];
+  public listProgress = [];
 
   infoNombre : string;
   infoFinicial :string;
@@ -37,6 +39,7 @@ export class MisCarrerasRetosComponent implements OnInit {
       this.cedula = this.route.snapshot.paramMap.get('cedula');
       this.getSubs();
       this.getActivities();
+      this.calculateProgress();
 
     this.validatingForm = new FormGroup({
       loginFormModalEmail: new FormControl('', Validators.email),
@@ -54,12 +57,40 @@ export class MisCarrerasRetosComponent implements OnInit {
               
               if (this.listEvents[i].idEventoNavigation.eventoTieneTipo[0].idTipoEvento == 1) { //es una carrera
                   this.listRaces.push(this.listEvents[i]);
-              }else{
+                 
+              }else if(this.listEvents[i].idEventoNavigation.eventoTieneTipo[0].idTipoEvento == 2){
                   this.listChallenges.push(this.listEvents[i]);
+                  var listtemp = [];
+                  listtemp.push(this.listEvents[i].idEvento,this.listEvents[i].idEventoNavigation.kilometraje);
+                  this.listKilometres.push(listtemp);
+                  
               }
         }
         console.log(this.listRaces);
         console.log(this.listChallenges);
+
+        console.log("LISTA KILOMETROS");
+        console.log(this.listKilometres);
+
+
+        var i;
+      for(i = 0; i<this.listKilometres.length; i++){
+          var j
+          var total = this.listKilometres[i][1];
+          for(j = 0; j < this.listActivities; j++){
+              if(this.listActivities[j].actividadPerteneceEvento[0].idEvento == this.listKilometres[i][0]){
+                  this.listKilometres[i][1] = this.listKilometres[i][1] - this.listActivities[j].kilometraje;
+              }
+          }
+
+          var porcentaje = (this.listKilometres[i][1]*100)/total
+          this.listProgress.push(porcentaje);
+      }
+
+      console.log("PROGRESS BAR");
+      console.log(this.listProgress);
+
+
       });
   }
 
@@ -70,9 +101,12 @@ export class MisCarrerasRetosComponent implements OnInit {
           console.log(reply);
           this.listActivities = reply.data;
           
-
     });
 
+  }
+
+  calculateProgress(){
+      
   }
   
   

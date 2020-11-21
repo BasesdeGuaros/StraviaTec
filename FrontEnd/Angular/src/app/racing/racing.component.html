@@ -102,15 +102,11 @@
                   Numero de cuenta: {{infoCuenta}}
               </div>
 
-              <div class="row" *ngIf="infoPrivado == 1; else notval">
+              <div class="row" >
                   Privado: Si
               </div>
 
-              <ng-template #notval>
-                Privado: No
-              </ng-template>
-
-              
+  
               <div class="md-form mb-5">
                 <mdb-icon fas icon="file-alt" class="prefix grey-text"></mdb-icon>
                 <input
