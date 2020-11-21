@@ -79,7 +79,7 @@
     
           <!-- Cards of challenges-->
           <div>
-            <mdb-card *ngFor="let challenge of listChallenges; let i = index" class="myborder">
+            <mdb-card *ngFor="let challenge of listChallenges;let i = index;" class="myborder">
                 <div class="view overlay waves-light" mdbWavesEffect>
                   <!-- Card img -->
                   <!---- MAPA QUE NO SIRVE XD
@@ -115,7 +115,8 @@
                     <div class="black-text"> Progreso </div>
 
                     <div class="progress">
-                      <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                      <div class="progress-bar" role="progressbar" [style.width]="listProgress[i] + '%'"
+                       aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">{{listProgress[i]}}%</div>
                     </div>
                     
                   </div>
