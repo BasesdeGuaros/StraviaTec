@@ -8,6 +8,7 @@
           <mdb-icon fas icon="plus" size="2x"></mdb-icon>
         </a>
       </span>
+      
       <table class="table table-bordered table-responsive-md table-striped text-center">
         <tr>
           <th class="text-center">Nombre de Carrrera</th>
@@ -25,7 +26,7 @@
         </tr>
         <tr *ngFor="let event of listEvent; let id = index"> <!--ng for de la lista de la base de datos--->
           <td>
-            <span (keyup)="changeValue(id, 'nombre', $event)" (blur)="updateList(id, 'idEventoNavigation','nombre', $event)" contenteditable="true">{{event.idEventoNavigation.nombre}}</span>
+            <span (blur)="updateList(id, 'idEventoNavigation','nombre', $event)" contenteditable="true">{{event.idEventoNavigation.nombre}}</span>
           </td>
           <td>
             <span contenteditable="true" (blur)="updateList(id,'idEventoNavigation', 'age', $event)">{{event.idEventoNavigation.fecha}}</span>

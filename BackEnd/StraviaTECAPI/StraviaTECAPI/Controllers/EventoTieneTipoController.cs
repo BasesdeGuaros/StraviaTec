@@ -195,11 +195,20 @@ namespace StraviaTECAPI.Controllers
                     db.Remove(evento);
 
                     /*
+                    ActividadPerteneceEvento actividadPerteneceEvento = db.ActividadPerteneceEvento.Find(evento.ActividadPerteneceEvento, IdEvento);
+
+                    
                     EventoPatrocinadoPatrocinador eventoPatrocinado = db.EventoPatrocinadoPatrocinador.Find(IdEvento, 1); //arreglar el error del patrocinador
                     db.Remove(eventoPatrocinado);
 
                     Subscripciones subs = db.Subscripciones.Find(evento.IdAdmin, IdEvento);
                     db.Remove(subs);
+
+
+                    subscripciones ak7
+                    eventotiene tipo ak7
+                    actividad pertenece evento
+                    evento patrocinado patrocinador ak7
                     */
 
                     db.SaveChanges();

@@ -16,14 +16,14 @@
             <th class="text-center">Eliminar</th>
           </tr>
           <tr *ngFor="let group of listGroup; let id = index"> <!--ng for de la lista de la base de datos--->
-            <td>
-              <span (keyup)="changeValue(id, 'name', $event)" (blur)="updateList(id, 'idGrupoNavigation', 'nombre', $event)" contenteditable="true">{{group.idGrupoNavigation.nombre}}</span>
+            <td> 
+              <span (blur)="updateList(id, 'idGrupoNavigation', 'nombre', $event)" contenteditable="true">{{group.idGrupoNavigation.nombre}}</span>
             </td>
             <td>
-              <span contenteditable="true" (keyup)="changeValue(id, 'age', $event)" (blur)="updateList(id, 'idGrupoNavigation', 'age', $event)">{{group.idUsuario}}</span>
+              <span contenteditable="true" (blur)="updateList(id, 'idGrupoNavigation', 'age', $event)">{{group.idUsuario}}</span>
             </td>
             <td>
-              <span contenteditable="true" (keyup)="changeValue(id, 'companyName', $event)" (blur)="updateList(id, 'idGrupoNavigation', 'companyName', $event)">{{gruposize[id]}}</span>
+              <span contenteditable="true" (blur)="updateList(id, 'idGrupoNavigation', 'companyName', $event)">{{gruposize[id]}}</span>
             </td>
             <td>
               <span class="table-remove">
